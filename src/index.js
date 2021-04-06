@@ -260,10 +260,10 @@
                                                          <tr>
                                                                 <td  colspan = "4">
                                                                   <div className="row">
-                                                                    <div  className="col-md-7"> AB115M1-020-S2-P1 / PANASONIC MDME152G1</div> 
-                                                                    <div  className="col-md-1">4</div> 
-                                                                       <div  className="col-md-2">3,937</div> 
-                                                                       <div className = "col-md-2">
+                                                                    <div  className="col-md-7 text-right"> AB115M1-020-S2-P1 / PANASONIC MDME152G1</div> 
+                                                                    <div  className="col-md-1 text-right">4</div> 
+                                                                       <div  className="col-md-2 text-right">3,937</div> 
+                                                                       <div className = "col-md-2 text-right">
                                                                        <button type="button" className="btn btn-success btn-sm  " data-toggle="modal" data-target="#Modal2">
                                                                       Detail
                                                                     </button>
