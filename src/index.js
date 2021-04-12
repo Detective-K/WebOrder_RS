@@ -135,18 +135,18 @@ class Order extends React.Component {
 
                         </ul>
                         <div class="tab-content">
-                            <div id="home" class="container tab-pane active"> <br />  
-                                <dl class="row">
+                            <div id="home" class="container tab-pane active"> <br />
+                                <dl class="row no-gutters">
                                     <dd class="col-sm-12">
                                         <div id="accordion">
                                             <div className="card">
-                                                <div className="card-header" id="headingOne">
+                                                <div className="card-header " id="headingOne">
                                                     <h5 className="mb-0">
                                                         <button className="btn btn-link accordionBtn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                            <legend>      <div className="row">
-                                                                <div className="col-md-3">AA00031003100</div>
-                                                                <div className="col-md-3">OB21032902</div>
-                                                                <div className="col-md-3">2021/03/29</div>
+                                                            <legend>      <div className="row no-gutters">
+                                                                <div className="col  col-sm-6 col-md-4 col-lg-2 ">AA00031003100</div>
+                                                                <div className="col  col-sm-6 col-md-4 col-lg-2 ">OB21032902</div>
+                                                                <div className="col  col-sm-6 col-md-4 col-lg-2">2021/03/29</div>
                                                             </div></legend>
                                                         </button>
                                                     </h5>
@@ -158,17 +158,17 @@ class Order extends React.Component {
                                                             <thead>
                                                                 <tr>
                                                                     <th scope="col">Ordering Code</th>
-                                                                    <th scope="col">{"Q'ty"}</th>
-                                                                    <th scope="col">Price</th>
-                                                                    <th scope="col"></th>
+                                                                    <th scope="col ">{"Q'ty"}</th>
+                                                                    <th scope="col ">Price</th>
+                                                                    <th scope="col "></th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
                                                                 <tr>
                                                                     <td>AB142-005-S2-P2 / YASKAWA SGM7G-30A</td>
-                                                                    <td>5</td>
-                                                                    <td>3,715</td>
-                                                                    <td>
+                                                                    <td >5</td>
+                                                                    <td >3,715</td>
+                                                                    <td className=" text-right" >
 
                                                                         <button type="button" className="btn btn-success btn-sm  " data-toggle="modal" data-target="#exampleModalCenter">
                                                                             Detail
@@ -240,13 +240,13 @@ class Order extends React.Component {
                                     <dd className="col-sm-12">
                                         <div id="accordion2">
                                             <div className="card">
-                                                <div className="card-header" id="headingOne">
+                                                <div className="card-header no-padding-LR" id="headingOne">
                                                     <h5 className="mb-0">
-                                                        <button className="btn btn-link accordionBtn" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                                            <legend>      <div className="row">
-                                                                <div className="col-md-4">BAC0011003074</div>
-                                                                <div className="col-md-4">AC210331-2</div>
-                                                                <div className="col-md-4">2021/03/31</div>
+                                                        <button className="btn btn-link accordionBtn no-padding-LR" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                                            <legend>      <div className="row  no-gutters">
+                                                                <div className="col-5 col-sm-5 col-md-4 col-lg-4">BAC0011003074</div>
+                                                                <div className="col-3  col-sm-3 col-md-4 col-lg-4">AC210331-2</div>
+                                                                <div className="col-4  col-sm-4 col-md-4 col-lg-4">2021/03/31</div>
                                                             </div></legend>
                                                         </button>
                                                     </h5>
@@ -257,20 +257,25 @@ class Order extends React.Component {
                                                         <table className="table table-sm table-striped" >
                                                             <thead>
                                                                 <tr>
-                                                                    <th scope="col">Ordering Code</th>
-                                                                    <th scope="col">{"Q'ty"}</th>
-                                                                    <th scope="col">Price</th>
-                                                                    <th scope="col"></th>
+                                                                    <th style={{ width: "100%" }} >
+
+                                                                        <div className="row">
+                                                                            <div className="  col-6 col-sm-5 col-md-7 col-lg-7 col-xl-7      ">Ordering Code </div>
+                                                                            <div className="col-3 col-sm-3  col-md-2  col-lg-1 col-xl-1  text-right">{"Q'ty"}</div>
+                                                                            <div className="col-3 col-sm-3 col-md-2   col-lg-2 col-xl-2  text-right">Price</div>
+                                                                            <div className="col-1 col-sm-1 col-md-12  col-lg-12 col-xl-2  text-right "></div>
+                                                                        </div>
+                                                                    </th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
                                                                 <tr>
-                                                                    <td colspan="4">
+                                                                    <td colSpan="4">
                                                                         <div className="row">
-                                                                            <div className="col-md-7 text-right"> AB115M1-020-S2-P1 / PANASONIC MDME152G1</div>
-                                                                            <div className="col-md-1 text-right">4</div>
-                                                                            <div className="col-md-2 text-right">3,937</div>
-                                                                            <div className="col-md-2 text-right">
+                                                                            <div className="col-12  col-sm-7 col-md-7 col-lg-7 col-xl-7  "> AB115M1-020-S2-P1 / PANASONIC MDME152G1</div>
+                                                                            <div className="col-12  col-sm-1 col-md-2 col-lg-1 col-xl-1 text-right ">4</div>
+                                                                            <div className="col-12 col-sm-3  col-md-2 col-lg-2 col-xl-2 text-right">3,937</div>
+                                                                            <div className="col-12 col-sm-12 col-md-12 col-lg-2  col-xl-2 text-right">
                                                                                 <button type="button" className="btn btn-success btn-sm  " data-toggle="modal" data-target="#Modal2">
                                                                                     Detail
                                                                                 </button>
@@ -325,12 +330,10 @@ class Order extends React.Component {
                                                                                 </button>
                                                                             </div>
                                                                         </div>
-
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
-
                                                     </div>
                                                 </div>
                                             </div>
@@ -340,7 +343,7 @@ class Order extends React.Component {
                                     </dd>
                                 </dl>
                             </div>
-                            <div id="menu1" class="container tab-pane fade"><br /> 
+                            <div id="menu1" class="container tab-pane fade"><br />
                                 <dl class="row">
                                     <dd class="col-sm-12">
                                         <div id="accordion">
@@ -349,9 +352,9 @@ class Order extends React.Component {
                                                     <h5 className="mb-0">
                                                         <button className="btn btn-link accordionBtn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                                             <legend>      <div className="row">
-                                                                <div className="col-md-3">AA00031003100</div>
-                                                                <div className="col-md-3">OB21032902</div>
-                                                                <div className="col-md-3">2021/03/29</div>
+                                                                <div className="col  col-sm-6 col-md-4 col-lg-2">AA00031003100</div>
+                                                                <div className="col  col-sm-6 col-md-4 col-lg-2">OB21032902</div>
+                                                                <div className="col  col-sm-6 col-md-4 col-lg-2">2021/03/29</div>
                                                             </div></legend>
                                                         </button>
                                                     </h5>
@@ -449,9 +452,9 @@ class Order extends React.Component {
                                                     <h5 className="mb-0">
                                                         <button className="btn btn-link accordionBtn" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                                                             <legend>      <div className="row">
-                                                                <div className="col-md-4">BAC0011003074</div>
-                                                                <div className="col-md-4">AC210331-2</div>
-                                                                <div className="col-md-4">2021/03/31</div>
+                                                                <div className="col  col-sm-6 col-md-4 col-lg-2">BAC0011003074</div>
+                                                                <div className="col  col-sm-6 col-md-4 col-lg-2">AC210331-2</div>
+                                                                <div className="col  col-sm-6 col-md-4 col-lg-2">2021/03/31</div>
                                                             </div></legend>
                                                         </button>
                                                     </h5>
