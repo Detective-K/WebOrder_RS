@@ -140,13 +140,13 @@ class Order extends React.Component {
                                     <dd class="col-sm-12">
                                         <div id="accordion">
                                             <div className="card">
-                                                <div className="card-header " id="headingOne">
+                                                <div className="card-header no-padding-LR " id="headingOne">
                                                     <h5 className="mb-0">
-                                                        <button className="btn btn-link accordionBtn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                        <button className="btn btn-link accordionBtn no-padding-LR" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                                             <legend>      <div className="row no-gutters">
-                                                                <div className="col  col-sm-6 col-md-4 col-lg-2 ">AA00031003100</div>
-                                                                <div className="col  col-sm-6 col-md-4 col-lg-2 ">OB21032902</div>
-                                                                <div className="col  col-sm-6 col-md-4 col-lg-2">2021/03/29</div>
+                                                                <div className="col-5 col-sm-5 col-md-4 col-lg-4 ">AA00031003100</div>
+                                                                <div className="col-3  col-sm-3 col-md-4 col-lg-4 ">OB21032902</div>
+                                                                <div className="col-4  col-sm-4 col-md-4 col-lg-4">2021/03/29</div>
                                                             </div></legend>
                                                         </button>
                                                     </h5>
@@ -157,71 +157,139 @@ class Order extends React.Component {
                                                         <table className="table table-sm table-striped" >
                                                             <thead>
                                                                 <tr>
-                                                                    <th scope="col">Ordering Code</th>
-                                                                    <th scope="col ">{"Q'ty"}</th>
-                                                                    <th scope="col ">Price</th>
-                                                                    <th scope="col "></th>
+                                                                    <th colSpan="4" >
+                                                                        <div className="row">
+                                                                            <div className="  col-6 col-sm-5 col-md-7 col-lg-7 col-xl-7      ">Ordering Code </div>
+                                                                            <div className="col-3 col-sm-3  col-md-2  col-lg-1 col-xl-1  text-right">{"Q'ty"}</div>
+                                                                            <div className="col-3 col-sm-3 col-md-2   col-lg-2 col-xl-2  text-right">Price</div>
+                                                                            <div className="col-1 col-sm-1 col-md-12  col-lg-12 col-xl-2  text-right "></div>
+                                                                        </div>
+                                                                    </th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
                                                                 <tr>
-                                                                    <td>AB142-005-S2-P2 / YASKAWA SGM7G-30A</td>
-                                                                    <td >5</td>
-                                                                    <td >3,715</td>
-                                                                    <td className=" text-right" >
+                                                                    <td colSpan="4">
+                                                                        <div className="row">
+                                                                            <div className="col-12  col-sm-7 col-md-7 col-lg-7 col-xl-7  "> AB142-005-S2-P2 / YASKAWA SGM7G-30A</div>
+                                                                            <div className="col-12  col-sm-1 col-md-2 col-lg-1 col-xl-1 text-right ">5</div>
+                                                                            <div className="col-12 col-sm-3  col-md-2 col-lg-2 col-xl-2 text-right">3,715</div>
+                                                                            <div className="col-12 col-sm-12 col-md-12 col-lg-2  col-xl-2 text-right">
+                                                                                <button type="button" className="btn btn-success btn-sm  " data-toggle="modal" data-target="#Modal1">
+                                                                                    Detail
+                                                                                </button>                                                                              
+                                                                                &nbsp;&nbsp;&nbsp;
+                                                                                <button type="button" class="btn btn-danger btn-sm">
+                                                                                    <i class="fas fa-trash-alt"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div className="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                                                <div className="modal-dialog modal-dialog-centered" role="document">
+                                                                                    <div className="modal-content">
+                                                                                        <div className="modal-header">
+                                                                                            <h5 className="modal-title" id="exampleModalLongTitle">Detail</h5>
+                                                                                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                                                                                <span aria-hidden="true">&times;</span>
+                                                                                            </button>
+                                                                                        </div>
+                                                                                        <div className="modal-body">
+                                                                                            <dl className="row">
+                                                                                                <dt className="col-5 col-sm-5">Part No.</dt>
+                                                                                                <dd className="col-7 col-sm-7">A0101041021</dd>
+                                                                                                <dt className="col-5 col-sm-5">Discount</dt>
+                                                                                                <dd className="col-7 col-sm-7">0</dd>
 
-                                                                        <button type="button" className="btn btn-success btn-sm  " data-toggle="modal" data-target="#exampleModalCenter">
-                                                                            Detail
-                                                                    </button>
+                                                                                                <dt className="col-5 col-sm-5">Total</dt>
+                                                                                                <dd className="col-7 col-sm-7">15,748</dd>
 
-                                                                        <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                                            <div className="modal-dialog modal-dialog-centered" role="document">
-                                                                                <div className="modal-content">
-                                                                                    <div className="modal-header">
-                                                                                        <h5 className="modal-title" id="exampleModalLongTitle">Detail</h5>
-                                                                                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                                                                            <span aria-hidden="true">&times;</span>
-                                                                                        </button>
-                                                                                    </div>
-                                                                                    <div className="modal-body">
-                                                                                        <dl className="row">
-                                                                                            <dt className="col-sm-3">Part No.</dt>
-                                                                                            <dd className="col-sm-9">A0100050322</dd>
-                                                                                            <dt className="col-sm-3">Discount</dt>
-                                                                                            <dd className="col-sm-9">0</dd>
-
-                                                                                            <dt className="col-sm-3">Total</dt>
-                                                                                            <dd className="col-sm-9">433</dd>
-
-                                                                                            <dt className="col-sm-4">Lubrication</dt>
-                                                                                            <dd className="col-sm-8">Grease</dd>
-                                                                                            <dt className="col-sm-4">Warranty</dt>
-                                                                                            <dd className="col-sm-8">yes<sup><font color="red">(2)</font></sup></dd>
-                                                                                            <dt className="col-sm-4">Memo</dt>
-                                                                                            <dd className="col-sm-8"></dd>
-                                                                                            <dt className="col-sm-4">Customization</dt>
-                                                                                            <dd className="col-sm-8">NEW STYLE LOW FRICTION</dd>
-                                                                                        </dl>
-                                                                                        <dl className="row">
-                                                                                            <dt className="col-sm-12"><font color="red">(1)&nbsp;Non-standard lubrication.</font></dt>
-                                                                                            <dt className="col-sm-12"><font color="red">(2)&nbsp;WARNING!!&nbsp;<sup>(*)</sup></font></dt>
-                                                                                            <dt className="col-sm-12"><font color="red">(3)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty by the selected ratio.</font></dt>
-                                                                                            <dt className="col-sm-12"><font color="red">(4)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty due to exceeding back-drive torque from application.</font></dt>
-                                                                                            <dt className="col-sm-12"><font color="red">*&nbsp;Price for reference only. For the real price, refer to P/I.</font></dt>
-                                                                                        </dl>
-                                                                                    </div>
+                                                                                                <dt className="col-5 col-sm-5">Lubrication</dt>
+                                                                                                <dd className="col-7 col-sm-7">Oil / Gel</dd>
+                                                                                                <dt className="col-5 col-sm-5">Warranty</dt>
+                                                                                                <dd className="col-7 col-sm-7">yes<sup><font color="red">(2)</font></sup></dd>
+                                                                                                <dt className="col-5 col-sm-5">Memo</dt>
+                                                                                                <dd className="col-7 col-sm-7"></dd>
+                                                                                                <dt className="col-5 col-sm-5">Customization</dt>
+                                                                                                <dd className="col-7 col-sm-7"></dd>
+                                                                                            </dl>
+                                                                                            <dl className="row">
+                                                                                                <dt className="col-sm-12"><font color="red">(1)&nbsp;Non-standard lubrication.</font></dt>
+                                                                                                <dt className="col-sm-12"><font color="red">(2)&nbsp;WARNING!!&nbsp;<sup>(*)</sup></font></dt>
+                                                                                                <dt className="col-sm-12"><font color="red">(3)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty by the selected ratio.</font></dt>
+                                                                                                <dt className="col-sm-12"><font color="red">(4)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty due to exceeding back-drive torque from application.</font></dt>
+                                                                                                <dt className="col-sm-12"><font color="red">*&nbsp;Price for reference only. For the real price, refer to P/I.</font></dt>
+                                                                                            </dl>
+                                                                                        </div>
 
 
-                                                                                    <div className="modal-footer">
-                                                                                        <button type="button" className="btn btn-secondary " data-dismiss="modal">Close</button>
+                                                                                        <div className="modal-footer">
+                                                                                            <button type="button" className="btn btn-secondary " data-dismiss="modal">Close</button>
+                                                                                        </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                         &nbsp;&nbsp;&nbsp;
-                                                                        <button type="button" class="btn btn-danger btn-sm">
-                                                                            <i class="fas fa-trash-alt"></i>
-                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td colSpan="4">
+                                                                        <div className="row">
+                                                                            <div className="col-12  col-sm-7 col-md-7 col-lg-7 col-xl-7  "> PAII090-005-S2 / MITSUBISHI HG-KR73 </div>
+                                                                            <div className="col-12  col-sm-1 col-md-2 col-lg-1 col-xl-1 text-right ">11</div>
+                                                                            <div className="col-12 col-sm-3  col-md-2 col-lg-2 col-xl-2 text-right">4,431</div>
+                                                                            <div className="col-12 col-sm-12 col-md-12 col-lg-2  col-xl-2 text-right">
+                                                                                <button type="button" className="btn btn-success btn-sm  " data-toggle="modal" data-target="#Modal2">
+                                                                                    Detail
+                                                                                </button>                                                                                
+                                                                                &nbsp;&nbsp;&nbsp;
+                                                                                <button type="button" class="btn btn-danger btn-sm">
+                                                                                    <i class="fas fa-trash-alt"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div className="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                                                <div className="modal-dialog modal-dialog-centered" role="document">
+                                                                                    <div className="modal-content">
+                                                                                        <div className="modal-header">
+                                                                                            <h5 className="modal-title" id="exampleModalLongTitle">Detail</h5>
+                                                                                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                                                                                <span aria-hidden="true">&times;</span>
+                                                                                            </button>
+                                                                                        </div>
+                                                                                        <div className="modal-body">
+                                                                                            <dl className="row">
+                                                                                                <dt className="col-5 col-sm-5">Part No.</dt>
+                                                                                                <dd className="col-7 col-sm-7">A0101041021</dd>
+                                                                                                <dt className="col-5 col-sm-5">Discount</dt>
+                                                                                                <dd className="col-7 col-sm-7">0</dd>
+
+                                                                                                <dt className="col-5 col-sm-5">Total</dt>
+                                                                                                <dd className="col-7 col-sm-7">15,748</dd>
+
+                                                                                                <dt className="col-5 col-sm-5">Lubrication</dt>
+                                                                                                <dd className="col-7 col-sm-7">Oil / Gel</dd>
+                                                                                                <dt className="col-5 col-sm-5">Warranty</dt>
+                                                                                                <dd className="col-7 col-sm-7">yes<sup><font color="red">(2)</font></sup></dd>
+                                                                                                <dt className="col-5 col-sm-5">Memo</dt>
+                                                                                                <dd className="col-7 col-sm-7"></dd>
+                                                                                                <dt className="col-5 col-sm-5">Customization</dt>
+                                                                                                <dd className="col-7 col-sm-7"></dd>
+                                                                                            </dl>
+                                                                                            <dl className="row">
+                                                                                                <dt className="col-sm-12"><font color="red">(1)&nbsp;Non-standard lubrication.</font></dt>
+                                                                                                <dt className="col-sm-12"><font color="red">(2)&nbsp;WARNING!!&nbsp;<sup>(*)</sup></font></dt>
+                                                                                                <dt className="col-sm-12"><font color="red">(3)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty by the selected ratio.</font></dt>
+                                                                                                <dt className="col-sm-12"><font color="red">(4)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty due to exceeding back-drive torque from application.</font></dt>
+                                                                                                <dt className="col-sm-12"><font color="red">*&nbsp;Price for reference only. For the real price, refer to P/I.</font></dt>
+                                                                                            </dl>
+                                                                                        </div>
+
+
+                                                                                        <div className="modal-footer">
+                                                                                            <button type="button" className="btn btn-secondary " data-dismiss="modal">Close</button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
@@ -257,7 +325,284 @@ class Order extends React.Component {
                                                         <table className="table table-sm table-striped" >
                                                             <thead>
                                                                 <tr>
-                                                                    <th style={{ width: "100%" }} >
+                                                                    <th colSpan="4" >
+
+                                                                        <div className="row">
+                                                                            <div className="  col-6 col-sm-5 col-md-7 col-lg-7 col-xl-7      ">Ordering Code </div>
+                                                                            <div className="col-3 col-sm-3  col-md-2  col-lg-1 col-xl-1  text-right">{"Q'ty"}</div>
+                                                                            <div className="col-3 col-sm-3 col-md-2   col-lg-2 col-xl-2  text-right">Price</div>
+                                                                            <div className="col-1 col-sm-1 col-md-12  col-lg-12 col-xl-2  text-right "></div>
+                                                                        </div>
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td colSpan="4">
+                                                                        <div className="row">
+                                                                            <div className="col-12  col-sm-7 col-md-7 col-lg-7 col-xl-7  "> AB115M1-020-S2-P1 / PANASONIC MDME152G1</div>
+                                                                            <div className="col-12  col-sm-1 col-md-2 col-lg-1 col-xl-1 text-right ">4</div>
+                                                                            <div className="col-12 col-sm-3  col-md-2 col-lg-2 col-xl-2 text-right">3,937</div>
+                                                                            <div className="col-12 col-sm-12 col-md-12 col-lg-2  col-xl-2 text-right">
+                                                                                <button type="button" className="btn btn-success btn-sm  " data-toggle="modal" data-target="#Modal3">
+                                                                                    Detail
+                                                                                </button>                                                                             
+                                                                                &nbsp;&nbsp;&nbsp;
+                                                                                <button type="button" class="btn btn-danger btn-sm">
+                                                                                    <i class="fas fa-trash-alt"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div className="modal fade" id="Modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                                                <div className="modal-dialog modal-dialog-centered" role="document">
+                                                                                    <div className="modal-content">
+                                                                                        <div className="modal-header">
+                                                                                            <h5 className="modal-title" id="exampleModalLongTitle">Detail</h5>
+                                                                                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                                                                                <span aria-hidden="true">&times;</span>
+                                                                                            </button>
+                                                                                        </div>
+                                                                                        <div className="modal-body">
+                                                                                            <dl className="row">
+                                                                                                <dt className="col-5 col-sm-5">Part No.</dt>
+                                                                                                <dd className="col-7 col-sm-7">A0101041021</dd>
+                                                                                                <dt className="col-5 col-sm-5">Discount</dt>
+                                                                                                <dd className="col-7 col-sm-7">0</dd>
+
+                                                                                                <dt className="col-5 col-sm-5">Total</dt>
+                                                                                                <dd className="col-7 col-sm-7">15,748</dd>
+
+                                                                                                <dt className="col-5 col-sm-5">Lubrication</dt>
+                                                                                                <dd className="col-7 col-sm-7">Oil / Gel</dd>
+                                                                                                <dt className="col-5 col-sm-5">Warranty</dt>
+                                                                                                <dd className="col-7 col-sm-7">yes<sup><font color="red">(2)</font></sup></dd>
+                                                                                                <dt className="col-5 col-sm-5">Memo</dt>
+                                                                                                <dd className="col-7 col-sm-7"></dd>
+                                                                                                <dt className="col-5 col-sm-5">Customization</dt>
+                                                                                                <dd className="col-7 col-sm-7"></dd>
+                                                                                            </dl>
+                                                                                            <dl className="row">
+                                                                                                <dt className="col-sm-12"><font color="red">(1)&nbsp;Non-standard lubrication.</font></dt>
+                                                                                                <dt className="col-sm-12"><font color="red">(2)&nbsp;WARNING!!&nbsp;<sup>(*)</sup></font></dt>
+                                                                                                <dt className="col-sm-12"><font color="red">(3)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty by the selected ratio.</font></dt>
+                                                                                                <dt className="col-sm-12"><font color="red">(4)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty due to exceeding back-drive torque from application.</font></dt>
+                                                                                                <dt className="col-sm-12"><font color="red">*&nbsp;Price for reference only. For the real price, refer to P/I.</font></dt>
+                                                                                            </dl>
+                                                                                        </div>
+
+
+                                                                                        <div className="modal-footer">
+                                                                                            <button type="button" className="btn btn-secondary " data-dismiss="modal">Close</button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div id="menu1" class="container tab-pane fade"><br />
+                                <dl class="row no-gutters">
+                                    <dd class="col-sm-12">
+                                        <div id="accordion3">
+                                            <div className="card">
+                                                <div className="card-header no-padding-LR " id="headingOne">
+                                                    <h5 className="mb-0">
+                                                        <button className="btn btn-link accordionBtn no-padding-LR" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                                            <legend>      <div className="row no-gutters">
+                                                                <div className="col-5 col-sm-5 col-md-4 col-lg-4 ">AA00031003100</div>
+                                                                <div className="col-3  col-sm-3 col-md-4 col-lg-4 ">OB21032902</div>
+                                                                <div className="col-4  col-sm-4 col-md-4 col-lg-4">2021/03/29</div>
+                                                            </div></legend>
+                                                        </button>
+                                                    </h5>
+                                                </div>
+
+                                                <div id="collapseThree" className="collapse " aria-labelledby="headingOne" data-parent="#accordion3">
+                                                    <div className="card-body">
+                                                        <table className="table table-sm table-striped" >
+                                                            <thead>
+                                                                <tr>
+                                                                    <th colSpan="4" >
+                                                                        <div className="row">
+                                                                            <div className="  col-6 col-sm-5 col-md-7 col-lg-7 col-xl-7      ">Ordering Code </div>
+                                                                            <div className="col-3 col-sm-3  col-md-2  col-lg-1 col-xl-1  text-right">{"Q'ty"}</div>
+                                                                            <div className="col-3 col-sm-3 col-md-2   col-lg-2 col-xl-2  text-right">Price</div>
+                                                                            <div className="col-1 col-sm-1 col-md-12  col-lg-12 col-xl-2  text-right "></div>
+                                                                        </div>
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td colSpan="4">
+                                                                        <div className="row">
+                                                                            <div className="col-12  col-sm-7 col-md-7 col-lg-7 col-xl-7  "> AB142-005-S2-P2 / YASKAWA SGM7G-30A</div>
+                                                                            <div className="col-12  col-sm-1 col-md-2 col-lg-1 col-xl-1 text-right ">5</div>
+                                                                            <div className="col-12 col-sm-3  col-md-2 col-lg-2 col-xl-2 text-right">3,715</div>
+                                                                            <div className="col-12 col-sm-12 col-md-12 col-lg-2  col-xl-2 text-right">
+                                                                                <button type="button" className="btn btn-success btn-sm  " data-toggle="modal" data-target="#Modal4">
+                                                                                    Detail
+                                                                                </button>
+
+                                                                                <div className="modal fade" id="Modal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                                                    <div className="modal-dialog modal-dialog-centered" role="document">
+                                                                                        <div className="modal-content">
+                                                                                            <div className="modal-header">
+                                                                                                <h5 className="modal-title" id="exampleModalLongTitle">Detail</h5>
+                                                                                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                                </button>
+                                                                                            </div>
+                                                                                            <div className="modal-body">
+                                                                                                <dl className="row">
+                                                                                                    <dt className="col-sm-3">Part No.</dt>
+                                                                                                    <dd className="col-sm-9">A0101041021</dd>
+                                                                                                    <dt className="col-sm-3">Discount</dt>
+                                                                                                    <dd className="col-sm-9">0</dd>
+
+                                                                                                    <dt className="col-sm-3">Total</dt>
+                                                                                                    <dd className="col-sm-9">15,748</dd>
+
+                                                                                                    <dt className="col-sm-4">Lubrication</dt>
+                                                                                                    <dd className="col-sm-8">Oil / Gel</dd>
+                                                                                                    <dt className="col-sm-4">Warranty</dt>
+                                                                                                    <dd className="col-sm-8">yes<sup><font color="red">(2)</font></sup></dd>
+                                                                                                    <dt className="col-sm-4">Memo</dt>
+                                                                                                    <dd className="col-sm-8"></dd>
+                                                                                                    <dt className="col-sm-4">Customization</dt>
+                                                                                                    <dd className="col-sm-8"></dd>
+                                                                                                </dl>
+                                                                                                <dl className="row">
+                                                                                                    <dt className="col-sm-12"><font color="red">(1)&nbsp;Non-standard lubrication.</font></dt>
+                                                                                                    <dt className="col-sm-12"><font color="red">(2)&nbsp;WARNING!!&nbsp;<sup>(*)</sup></font></dt>
+                                                                                                    <dt className="col-sm-12"><font color="red">(3)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty by the selected ratio.</font></dt>
+                                                                                                    <dt className="col-sm-12"><font color="red">(4)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty due to exceeding back-drive torque from application.</font></dt>
+                                                                                                    <dt className="col-sm-12"><font color="red">*&nbsp;Price for reference only. For the real price, refer to P/I.</font></dt>
+                                                                                                </dl>
+                                                                                            </div>
+
+
+                                                                                            <div className="modal-footer">
+                                                                                                <button type="button" className="btn btn-secondary " data-dismiss="modal">Close</button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                &nbsp;&nbsp;&nbsp;
+                                                                                <button type="button" class="btn btn-danger btn-sm">
+                                                                                    <i class="fas fa-trash-alt"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td colSpan="4">
+                                                                        <div className="row">
+                                                                            <div className="col-12  col-sm-7 col-md-7 col-lg-7 col-xl-7  "> PAII090-005-S2 / MITSUBISHI HG-KR73 </div>
+                                                                            <div className="col-12  col-sm-1 col-md-2 col-lg-1 col-xl-1 text-right ">11</div>
+                                                                            <div className="col-12 col-sm-3  col-md-2 col-lg-2 col-xl-2 text-right">4,431</div>
+                                                                            <div className="col-12 col-sm-12 col-md-12 col-lg-2  col-xl-2 text-right">
+                                                                                <button type="button" className="btn btn-success btn-sm  " data-toggle="modal" data-target="#Modal5">
+                                                                                    Detail
+                                                                                </button>
+
+                                                                                <div className="modal fade" id="Modal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                                                    <div className="modal-dialog modal-dialog-centered" role="document">
+                                                                                        <div className="modal-content">
+                                                                                            <div className="modal-header">
+                                                                                                <h5 className="modal-title" id="exampleModalLongTitle">Detail</h5>
+                                                                                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                                </button>
+                                                                                            </div>
+                                                                                            <div className="modal-body">
+                                                                                                <dl className="row">
+                                                                                                    <dt className="col-sm-3">Part No.</dt>
+                                                                                                    <dd className="col-sm-9">A0101041021</dd>
+                                                                                                    <dt className="col-sm-3">Discount</dt>
+                                                                                                    <dd className="col-sm-9">0</dd>
+
+                                                                                                    <dt className="col-sm-3">Total</dt>
+                                                                                                    <dd className="col-sm-9">15,748</dd>
+
+                                                                                                    <dt className="col-sm-4">Lubrication</dt>
+                                                                                                    <dd className="col-sm-8">Oil / Gel</dd>
+                                                                                                    <dt className="col-sm-4">Warranty</dt>
+                                                                                                    <dd className="col-sm-8">yes<sup><font color="red">(2)</font></sup></dd>
+                                                                                                    <dt className="col-sm-4">Memo</dt>
+                                                                                                    <dd className="col-sm-8"></dd>
+                                                                                                    <dt className="col-sm-4">Customization</dt>
+                                                                                                    <dd className="col-sm-8"></dd>
+                                                                                                </dl>
+                                                                                                <dl className="row">
+                                                                                                    <dt className="col-sm-12"><font color="red">(1)&nbsp;Non-standard lubrication.</font></dt>
+                                                                                                    <dt className="col-sm-12"><font color="red">(2)&nbsp;WARNING!!&nbsp;<sup>(*)</sup></font></dt>
+                                                                                                    <dt className="col-sm-12"><font color="red">(3)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty by the selected ratio.</font></dt>
+                                                                                                    <dt className="col-sm-12"><font color="red">(4)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty due to exceeding back-drive torque from application.</font></dt>
+                                                                                                    <dt className="col-sm-12"><font color="red">*&nbsp;Price for reference only. For the real price, refer to P/I.</font></dt>
+                                                                                                </dl>
+                                                                                            </div>
+
+
+                                                                                            <div className="modal-footer">
+                                                                                                <button type="button" className="btn btn-secondary " data-dismiss="modal">Close</button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                &nbsp;&nbsp;&nbsp;
+                                                                                <button type="button" class="btn btn-danger btn-sm">
+                                                                                    <i class="fas fa-trash-alt"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </dd>
+                                </dl>
+
+                                <dl class="row">
+                                    <dd className="col-sm-12">
+                                        <div id="accordion2">
+                                            <div className="card">
+                                                <div className="card-header no-padding-LR" id="headingOne">
+                                                    <h5 className="mb-0">
+                                                        <button className="btn btn-link accordionBtn no-padding-LR" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                                            <legend>      <div className="row  no-gutters">
+                                                                <div className="col-5 col-sm-5 col-md-4 col-lg-4">BAC0011003074</div>
+                                                                <div className="col-3  col-sm-3 col-md-4 col-lg-4">AC210331-2</div>
+                                                                <div className="col-4  col-sm-4 col-md-4 col-lg-4">2021/03/31</div>
+                                                            </div></legend>
+                                                        </button>
+                                                    </h5>
+                                                </div>
+
+                                                <div id="collapseTwo" className="collapse " aria-labelledby="headingOne" data-parent="#accordion2">
+                                                    <div className="card-body">
+                                                        <table className="table table-sm table-striped" >
+                                                            <thead>
+                                                                <tr>
+                                                                    <th colSpan="4" >
 
                                                                         <div className="row">
                                                                             <div className="  col-6 col-sm-5 col-md-7 col-lg-7 col-xl-7      ">Ordering Code </div>
@@ -334,211 +679,6 @@ class Order extends React.Component {
                                                                 </tr>
                                                             </tbody>
                                                         </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-                                    </dd>
-                                </dl>
-                            </div>
-                            <div id="menu1" class="container tab-pane fade"><br />
-                                <dl class="row">
-                                    <dd class="col-sm-12">
-                                        <div id="accordion">
-                                            <div className="card">
-                                                <div className="card-header" id="headingOne">
-                                                    <h5 className="mb-0">
-                                                        <button className="btn btn-link accordionBtn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                            <legend>      <div className="row">
-                                                                <div className="col  col-sm-6 col-md-4 col-lg-2">AA00031003100</div>
-                                                                <div className="col  col-sm-6 col-md-4 col-lg-2">OB21032902</div>
-                                                                <div className="col  col-sm-6 col-md-4 col-lg-2">2021/03/29</div>
-                                                            </div></legend>
-                                                        </button>
-                                                    </h5>
-                                                </div>
-
-                                                <div id="collapseOne" className="collapse " aria-labelledby="headingOne" data-parent="#accordion">
-                                                    <div className="card-body">
-                                                        <table className="table table-sm table-striped" >
-                                                            <thead>
-                                                                <tr>
-                                                                    <th scope="col">Ordering Code</th>
-                                                                    <th scope="col">{"Q'ty"}</th>
-                                                                    <th scope="col">Price</th>
-                                                                    <th scope="col"></th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>AB142-005-S2-P2 / YASKAWA SGM7G-30A</td>
-                                                                    <td>5</td>
-                                                                    <td>3,715</td>
-                                                                    <td>
-
-                                                                        <button type="button" className="btn btn-success btn-sm  " data-toggle="modal" data-target="#exampleModalCenter">
-                                                                            Detail
-                                                                    </button>
-
-                                                                        <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                                            <div className="modal-dialog modal-dialog-centered" role="document">
-                                                                                <div className="modal-content">
-                                                                                    <div className="modal-header">
-                                                                                        <h5 className="modal-title" id="exampleModalLongTitle">Detail</h5>
-                                                                                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                                                                            <span aria-hidden="true">&times;</span>
-                                                                                        </button>
-                                                                                    </div>
-                                                                                    <div className="modal-body">
-                                                                                        <dl className="row">
-                                                                                            <dt className="col-sm-3">Part No.</dt>
-                                                                                            <dd className="col-sm-9">A0100050322</dd>
-                                                                                            <dt className="col-sm-3">Discount</dt>
-                                                                                            <dd className="col-sm-9">0</dd>
-
-                                                                                            <dt className="col-sm-3">Total</dt>
-                                                                                            <dd className="col-sm-9">433</dd>
-
-                                                                                            <dt className="col-sm-4">Lubrication</dt>
-                                                                                            <dd className="col-sm-8">Grease</dd>
-                                                                                            <dt className="col-sm-4">Warranty</dt>
-                                                                                            <dd className="col-sm-8">yes<sup><font color="red">(2)</font></sup></dd>
-                                                                                            <dt className="col-sm-4">Memo</dt>
-                                                                                            <dd className="col-sm-8"></dd>
-                                                                                            <dt className="col-sm-4">Customization</dt>
-                                                                                            <dd className="col-sm-8">NEW STYLE LOW FRICTION</dd>
-                                                                                        </dl>
-                                                                                        <dl className="row">
-                                                                                            <dt className="col-sm-12"><font color="red">(1)&nbsp;Non-standard lubrication.</font></dt>
-                                                                                            <dt className="col-sm-12"><font color="red">(2)&nbsp;WARNING!!&nbsp;<sup>(*)</sup></font></dt>
-                                                                                            <dt className="col-sm-12"><font color="red">(3)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty by the selected ratio.</font></dt>
-                                                                                            <dt className="col-sm-12"><font color="red">(4)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty due to exceeding back-drive torque from application.</font></dt>
-                                                                                            <dt className="col-sm-12"><font color="red">*&nbsp;Price for reference only. For the real price, refer to P/I.</font></dt>
-                                                                                        </dl>
-                                                                                    </div>
-
-
-                                                                                    <div className="modal-footer">
-                                                                                        <button type="button" className="btn btn-secondary " data-dismiss="modal">Close</button>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                         &nbsp;&nbsp;&nbsp;
-                                                                        <button type="button" class="btn btn-danger btn-sm">
-                                                                            <i class="fas fa-trash-alt"></i>
-                                                                        </button>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-                                    </dd>
-                                </dl>
-
-                                <dl class="row">
-                                    <dd className="col-sm-12">
-                                        <div id="accordion2">
-                                            <div className="card">
-                                                <div className="card-header" id="headingOne">
-                                                    <h5 className="mb-0">
-                                                        <button className="btn btn-link accordionBtn" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                                            <legend>      <div className="row">
-                                                                <div className="col  col-sm-6 col-md-4 col-lg-2">BAC0011003074</div>
-                                                                <div className="col  col-sm-6 col-md-4 col-lg-2">AC210331-2</div>
-                                                                <div className="col  col-sm-6 col-md-4 col-lg-2">2021/03/31</div>
-                                                            </div></legend>
-                                                        </button>
-                                                    </h5>
-                                                </div>
-
-                                                <div id="collapseTwo" className="collapse " aria-labelledby="headingOne" data-parent="#accordion2">
-                                                    <div className="card-body">
-                                                        <table className="table table-sm table-striped" >
-                                                            <thead>
-                                                                <tr>
-                                                                    <th scope="col">Ordering Code</th>
-                                                                    <th scope="col">{"Q'ty"}</th>
-                                                                    <th scope="col">Price</th>
-                                                                    <th scope="col"></th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td colspan="4">
-                                                                        <div className="row">
-                                                                            <div className="col-md-7 text-right"> AB115M1-020-S2-P1 / PANASONIC MDME152G1</div>
-                                                                            <div className="col-md-1 text-right">4</div>
-                                                                            <div className="col-md-2 text-right">3,937</div>
-                                                                            <div className="col-md-2 text-right">
-                                                                                <button type="button" className="btn btn-success btn-sm  " data-toggle="modal" data-target="#Modal2">
-                                                                                    Detail
-                                                                                </button>
-
-                                                                                <div className="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                                                    <div className="modal-dialog modal-dialog-centered" role="document">
-                                                                                        <div className="modal-content">
-                                                                                            <div className="modal-header">
-                                                                                                <h5 className="modal-title" id="exampleModalLongTitle">Detail</h5>
-                                                                                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                                                                                    <span aria-hidden="true">&times;</span>
-                                                                                                </button>
-                                                                                            </div>
-                                                                                            <div className="modal-body">
-                                                                                                <dl className="row">
-                                                                                                    <dt className="col-sm-3">Part No.</dt>
-                                                                                                    <dd className="col-sm-9">A0101041021</dd>
-                                                                                                    <dt className="col-sm-3">Discount</dt>
-                                                                                                    <dd className="col-sm-9">0</dd>
-
-                                                                                                    <dt className="col-sm-3">Total</dt>
-                                                                                                    <dd className="col-sm-9">15,748</dd>
-
-                                                                                                    <dt className="col-sm-4">Lubrication</dt>
-                                                                                                    <dd className="col-sm-8">Oil / Gel</dd>
-                                                                                                    <dt className="col-sm-4">Warranty</dt>
-                                                                                                    <dd className="col-sm-8">yes<sup><font color="red">(2)</font></sup></dd>
-                                                                                                    <dt className="col-sm-4">Memo</dt>
-                                                                                                    <dd className="col-sm-8"></dd>
-                                                                                                    <dt className="col-sm-4">Customization</dt>
-                                                                                                    <dd className="col-sm-8"></dd>
-                                                                                                </dl>
-                                                                                                <dl className="row">
-                                                                                                    <dt className="col-sm-12"><font color="red">(1)&nbsp;Non-standard lubrication.</font></dt>
-                                                                                                    <dt className="col-sm-12"><font color="red">(2)&nbsp;WARNING!!&nbsp;<sup>(*)</sup></font></dt>
-                                                                                                    <dt className="col-sm-12"><font color="red">(3)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty by the selected ratio.</font></dt>
-                                                                                                    <dt className="col-sm-12"><font color="red">(4)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty due to exceeding back-drive torque from application.</font></dt>
-                                                                                                    <dt className="col-sm-12"><font color="red">*&nbsp;Price for reference only. For the real price, refer to P/I.</font></dt>
-                                                                                                </dl>
-                                                                                            </div>
-
-
-                                                                                            <div className="modal-footer">
-                                                                                                <button type="button" className="btn btn-secondary " data-dismiss="modal">Close</button>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                &nbsp;&nbsp;&nbsp;
-                                                                                <button type="button" class="btn btn-danger btn-sm">
-                                                                                    <i class="fas fa-trash-alt"></i>
-                                                                                </button>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-
                                                     </div>
                                                 </div>
                                             </div>
