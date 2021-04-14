@@ -138,15 +138,15 @@ class Order extends React.Component {
                             <div id="home" class="container tab-pane active"> <br />
                                 <dl class="row no-gutters">
                                     <dd class="col-sm-12">
+                                        <span class="badge badge-secondary">2021/03/29</span>
                                         <div id="accordion">
                                             <div className="card">
                                                 <div className="card-header no-padding-LR " id="headingOne">
                                                     <h5 className="mb-0">
                                                         <button className="btn btn-link accordionBtn no-padding-LR" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                                             <legend>      <div className="row no-gutters">
-                                                                <div className="col-5 col-sm-5 col-md-4 col-lg-4 ">AA00031003100</div>
-                                                                <div className="col-3  col-sm-3 col-md-4 col-lg-4 ">OB21032902</div>
-                                                                <div className="col-4  col-sm-4 col-md-4 col-lg-4">2021/03/29</div>
+                                                                <div className="col-6 col-sm-6 col-md-6 col-lg-6 ">AA00031003100</div>
+                                                                <div className="col-6  col-sm-6 col-md-6 col-lg-6 ">OB21032902</div>
                                                             </div></legend>
                                                         </button>
                                                     </h5>
@@ -159,7 +159,7 @@ class Order extends React.Component {
                                                                 <tr>
                                                                     <th colSpan="4" >
                                                                         <div className="row">
-                                                                            <div className="  col-6 col-sm-5 col-md-7 col-lg-7 col-xl-7      ">Ordering Code </div>
+                                                                            <div className="  col-6 col-sm-5 col-md-7 col-lg-7 col-xl-7    ">Ordering Code </div>
                                                                             <div className="col-3 col-sm-3  col-md-2  col-lg-1 col-xl-1  text-right">{"Q'ty"}</div>
                                                                             <div className="col-3 col-sm-3 col-md-2   col-lg-2 col-xl-2  text-right">Price</div>
                                                                             <div className="col-1 col-sm-1 col-md-12  col-lg-12 col-xl-2  text-right "></div>
@@ -171,13 +171,13 @@ class Order extends React.Component {
                                                                 <tr>
                                                                     <td colSpan="4">
                                                                         <div className="row">
-                                                                            <div className="col-12  col-sm-7 col-md-7 col-lg-7 col-xl-7  "> AB142-005-S2-P2 / YASKAWA SGM7G-30A</div>
-                                                                            <div className="col-12  col-sm-1 col-md-2 col-lg-1 col-xl-1 text-right ">5</div>
-                                                                            <div className="col-12 col-sm-3  col-md-2 col-lg-2 col-xl-2 text-right">3,715</div>
+                                                                            <div className="col-12  col-sm-6 col-md-7 col-lg-7 col-xl-7  "> AB142-005-S2-P2 / YASKAWA SGM7G-30A</div>
+                                                                            <div className="col-9  col-sm-2 col-md-2 col-lg-1 col-xl-1 text-right ">5</div>
+                                                                            <div className="col-3 col-sm-3  col-md-2 col-lg-2 col-xl-2 text-right">3,715</div>
                                                                             <div className="col-12 col-sm-12 col-md-12 col-lg-2  col-xl-2 text-right">
-                                                                                <button type="button" className="btn btn-success btn-sm  " data-toggle="modal" data-target="#Modal1">
+                                                                                <button type="button" className="btn btn-info btn-sm  " data-toggle="modal" data-target="#Modal1">
                                                                                     Detail
-                                                                                </button>                                                                              
+                                                                                </button>
                                                                                 &nbsp;&nbsp;&nbsp;
                                                                                 <button type="button" class="btn btn-danger btn-sm">
                                                                                     <i class="fas fa-trash-alt"></i>
@@ -187,13 +187,17 @@ class Order extends React.Component {
                                                                                 <div className="modal-dialog modal-dialog-centered" role="document">
                                                                                     <div className="modal-content">
                                                                                         <div className="modal-header">
-                                                                                            <h5 className="modal-title" id="exampleModalLongTitle">Detail</h5>
+                                                                                            <h5 className="modal-title" id="exampleModalLongTitle">AB142-005-S2-P2 / YASKAWA SGM7G-30A</h5>
                                                                                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                                                                                 <span aria-hidden="true">&times;</span>
                                                                                             </button>
                                                                                         </div>
                                                                                         <div className="modal-body">
                                                                                             <dl className="row">
+                                                                                                <dt className="col-5 col-sm-5">{"Q'ty"}</dt>
+                                                                                                <dd className="col-7 col-sm-7">5</dd>
+                                                                                                <dt className="col-5 col-sm-5">Price</dt>
+                                                                                                <dd className="col-7 col-sm-7">3,715</dd>
                                                                                                 <dt className="col-5 col-sm-5">Part No.</dt>
                                                                                                 <dd className="col-7 col-sm-7">A0101041021</dd>
                                                                                                 <dt className="col-5 col-sm-5">Discount</dt>
@@ -201,6 +205,8 @@ class Order extends React.Component {
 
                                                                                                 <dt className="col-5 col-sm-5">Total</dt>
                                                                                                 <dd className="col-7 col-sm-7">15,748</dd>
+                                                                                                <dt className="col-5 col-sm-5">Currency</dt>
+                                                                                                <dd className="col-7 col-sm-7">TWD</dd>
 
                                                                                                 <dt className="col-5 col-sm-5">Lubrication</dt>
                                                                                                 <dd className="col-7 col-sm-7">Oil / Gel</dd>
@@ -212,11 +218,11 @@ class Order extends React.Component {
                                                                                                 <dd className="col-7 col-sm-7"></dd>
                                                                                             </dl>
                                                                                             <dl className="row">
-                                                                                                <dt className="col-sm-12"><font color="red">(1)&nbsp;Non-standard lubrication.</font></dt>
-                                                                                                <dt className="col-sm-12"><font color="red">(2)&nbsp;WARNING!!&nbsp;<sup>(*)</sup></font></dt>
-                                                                                                <dt className="col-sm-12"><font color="red">(3)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty by the selected ratio.</font></dt>
-                                                                                                <dt className="col-sm-12"><font color="red">(4)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty due to exceeding back-drive torque from application.</font></dt>
-                                                                                                <dt className="col-sm-12"><font color="red">*&nbsp;Price for reference only. For the real price, refer to P/I.</font></dt>
+                                                                                                <dt className="col-sm-12 description-red"><font color="red">(1)&nbsp;Non-standard lubrication.</font></dt>
+                                                                                                <dt className="col-sm-12 description-red"><font color="red">(2)&nbsp;WARNING!!&nbsp;<sup>(*)</sup></font></dt>
+                                                                                                <dt className="col-sm-12 description-red"><font color="red">(3)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty by the selected ratio.</font></dt>
+                                                                                                <dt className="col-sm-12 description-red"><font color="red">(4)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty due to exceeding back-drive torque from application.</font></dt>
+                                                                                                <dt className="col-sm-12 description-red"><font color="red">*&nbsp;Price for reference only. For the real price, refer to P/I.</font></dt>
                                                                                             </dl>
                                                                                         </div>
 
@@ -233,13 +239,13 @@ class Order extends React.Component {
                                                                 <tr>
                                                                     <td colSpan="4">
                                                                         <div className="row">
-                                                                            <div className="col-12  col-sm-7 col-md-7 col-lg-7 col-xl-7  "> PAII090-005-S2 / MITSUBISHI HG-KR73 </div>
-                                                                            <div className="col-12  col-sm-1 col-md-2 col-lg-1 col-xl-1 text-right ">11</div>
-                                                                            <div className="col-12 col-sm-3  col-md-2 col-lg-2 col-xl-2 text-right">4,431</div>
+                                                                            <div className="col-12  col-sm-6 col-md-7 col-lg-7 col-xl-7  "> PAII090-005-S2 / MITSUBISHI HG-KR73 </div>
+                                                                            <div className="col-9  col-sm-2 col-md-2 col-lg-1 col-xl-1 text-right ">11</div>
+                                                                            <div className="col-3 col-sm-3  col-md-2 col-lg-2 col-xl-2 text-right">4,431</div>
                                                                             <div className="col-12 col-sm-12 col-md-12 col-lg-2  col-xl-2 text-right">
-                                                                                <button type="button" className="btn btn-success btn-sm  " data-toggle="modal" data-target="#Modal2">
+                                                                                <button type="button" className="btn btn-info btn-sm  " data-toggle="modal" data-target="#Modal2">
                                                                                     Detail
-                                                                                </button>                                                                                
+                                                                                </button>
                                                                                 &nbsp;&nbsp;&nbsp;
                                                                                 <button type="button" class="btn btn-danger btn-sm">
                                                                                     <i class="fas fa-trash-alt"></i>
@@ -294,6 +300,19 @@ class Order extends React.Component {
                                                                 </tr>
                                                             </tbody>
                                                         </table>
+                                                        <dl className="row">
+                                                            <dd className="col text-right">
+                                                                <div class="btn-group" role="group">
+                                                                    <button id="btnGroupDrop1" type="button" className="btn btn btn-success dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                        Add Item
+                                                                     </button>
+                                                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                                        <a class="dropdown-item" href="#/DesignTool">D.T. Gearbox</a>
+                                                                        <a class="dropdown-item" href="#/DesignTool">D.T. Rack and Pinion</a>
+                                                                    </div>
+                                                                </div>
+                                                            </dd>
+                                                        </dl>
 
                                                     </div>
                                                 </div>
@@ -344,9 +363,9 @@ class Order extends React.Component {
                                                                             <div className="col-12  col-sm-1 col-md-2 col-lg-1 col-xl-1 text-right ">4</div>
                                                                             <div className="col-12 col-sm-3  col-md-2 col-lg-2 col-xl-2 text-right">3,937</div>
                                                                             <div className="col-12 col-sm-12 col-md-12 col-lg-2  col-xl-2 text-right">
-                                                                                <button type="button" className="btn btn-success btn-sm  " data-toggle="modal" data-target="#Modal3">
+                                                                                <button type="button" className="btn btn-info btn-sm  " data-toggle="modal" data-target="#Modal3">
                                                                                     Detail
-                                                                                </button>                                                                             
+                                                                                </button>
                                                                                 &nbsp;&nbsp;&nbsp;
                                                                                 <button type="button" class="btn btn-danger btn-sm">
                                                                                     <i class="fas fa-trash-alt"></i>
@@ -450,7 +469,7 @@ class Order extends React.Component {
                                                                             <div className="col-12  col-sm-1 col-md-2 col-lg-1 col-xl-1 text-right ">5</div>
                                                                             <div className="col-12 col-sm-3  col-md-2 col-lg-2 col-xl-2 text-right">3,715</div>
                                                                             <div className="col-12 col-sm-12 col-md-12 col-lg-2  col-xl-2 text-right">
-                                                                                <button type="button" className="btn btn-success btn-sm  " data-toggle="modal" data-target="#Modal4">
+                                                                                <button type="button" className="btn btn-info btn-sm  " data-toggle="modal" data-target="#Modal4">
                                                                                     Detail
                                                                                 </button>
 
@@ -513,7 +532,7 @@ class Order extends React.Component {
                                                                             <div className="col-12  col-sm-1 col-md-2 col-lg-1 col-xl-1 text-right ">11</div>
                                                                             <div className="col-12 col-sm-3  col-md-2 col-lg-2 col-xl-2 text-right">4,431</div>
                                                                             <div className="col-12 col-sm-12 col-md-12 col-lg-2  col-xl-2 text-right">
-                                                                                <button type="button" className="btn btn-success btn-sm  " data-toggle="modal" data-target="#Modal5">
+                                                                                <button type="button" className="btn btn-info btn-sm  " data-toggle="modal" data-target="#Modal5">
                                                                                     Detail
                                                                                 </button>
 
@@ -621,7 +640,7 @@ class Order extends React.Component {
                                                                             <div className="col-12  col-sm-1 col-md-2 col-lg-1 col-xl-1 text-right ">4</div>
                                                                             <div className="col-12 col-sm-3  col-md-2 col-lg-2 col-xl-2 text-right">3,937</div>
                                                                             <div className="col-12 col-sm-12 col-md-12 col-lg-2  col-xl-2 text-right">
-                                                                                <button type="button" className="btn btn-success btn-sm  " data-toggle="modal" data-target="#Modal2">
+                                                                                <button type="button" className="btn btn-info btn-sm  " data-toggle="modal" data-target="#Modal2">
                                                                                     Detail
                                                                                 </button>
 
@@ -722,7 +741,7 @@ class DesignTool extends React.Component {
 
 
                                         <div className="row">
-                                            <div className="col-xs-6 col-md-6">
+                                            <div className="col-6 col-sm-6 col-md-6">
                                                 <label>Brand</label>
                                                 <select name="month" className="form-control input-lg">
                                                     <option value="01">ABB</option>
@@ -730,7 +749,7 @@ class DesignTool extends React.Component {
                                                     <option value="03">ALLEN BRADLEY</option>
                                                 </select>
                                             </div>
-                                            <div className="col-xs-6 col-md-6">
+                                            <div className="col-6 col-sm-6 col-md-6">
                                                 <label>Model</label>
                                                 <select name="month" className="form-control input-lg">
                                                     <option value="8C1.1.30.1.xxxxxx.G.xxB">8C1.1.30.1.xxxxxx.G.xxB</option>
@@ -747,11 +766,8 @@ class DesignTool extends React.Component {
                                                 </select>
                                             </div>
                                         </div>
-
-
-                                        <button className="btn btn-lg btn-primary btn-block signup-btn" type="submit">
-                                            Next</button>
-                                    </form>                </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
 
