@@ -45,7 +45,9 @@ class Order extends React.Component {
 
     render() {
         return (
-            <div>
+            <main role="main" className="container-fluid">
+                <br />
+                <br />
                 <br />
                 <div className="row">
                     <div className="col-lg-4 col-lg-offset-4"> <input type="search" id="search" value="" className="form-control" placeholder="Search" /> </div>
@@ -714,71 +716,198 @@ class Order extends React.Component {
 
                     </div>
                 </div>
-            </div>
+            </main>
         );
     }
 };
 class DesignTool extends React.Component {
     render() {
         return (
+            <main role="main" className="container-fluid"> <br />
+                <br />
+                <br />
+                <div className="row">
+                    <div className="offset-md-3 col-md-6">
+                        <div id="accordion">
+                            <div className="card">
+                                <div className="card-header" id="headingOne">
+                                    <h5 className="mb-0">
+                                        <button className="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <legend>Motor GearBox Information</legend>
+                                        </button>
+                                    </h5>
+                                </div>
 
-            <div className="row">
-                <div className="offset-md-3 col-md-6">
-
-                    <div id="accordion">
-                        <div className="card">
-                            <div className="card-header" id="headingOne">
-                                <h5 className="mb-0">
-                                    <button className="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        <legend>Motor GearBox Information</legend>
-                                    </button>
-                                </h5>
-                            </div>
-
-                            <div id="collapseOne" className="collapse " aria-labelledby="headingOne" data-parent="#accordion">
-                                <div className="card-body">
-                                    <form action="r" method="post" accept-charset="utf-8" className="form" role="form">
+                                <div id="collapseOne" className="collapse " aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div className="card-body">
+                                        <form action="r" method="post" accept-charset="utf-8" className="form" role="form">
 
 
-                                        <div className="row">
-                                            <div className="col-6 col-sm-6 col-md-6">
-                                                <label>Brand</label>
-                                                <select name="month" className="form-control input-lg">
-                                                    <option value="01">ABB</option>
-                                                    <option value="02">ALLEN BRADLEY</option>
-                                                    <option value="03">ALLEN BRADLEY</option>
-                                                </select>
+                                            <div className="row">
+                                                <div className="col-6 col-sm-6 col-md-6">
+                                                    <label>Brand</label>
+                                                    <select name="month" className="form-control input-lg">
+                                                        <option value="01">ABB</option>
+                                                        <option value="02">ALLEN BRADLEY</option>
+                                                        <option value="03">ALLEN BRADLEY</option>
+                                                    </select>
+                                                </div>
+                                                <div className="col-6 col-sm-6 col-md-6">
+                                                    <label>Model</label>
+                                                    <select name="month" className="form-control input-lg">
+                                                        <option value="8C1.1.30.1.xxxxxx.G.xxB">8C1.1.30.1.xxxxxx.G.xxB</option>
+                                                        <option value="1326AB-A1G-11-xx">1326AB-A1G-11-xx</option>
+                                                    </select>
+                                                </div>
                                             </div>
-                                            <div className="col-6 col-sm-6 col-md-6">
-                                                <label>Model</label>
-                                                <select name="month" className="form-control input-lg">
-                                                    <option value="8C1.1.30.1.xxxxxx.G.xxB">8C1.1.30.1.xxxxxx.G.xxB</option>
-                                                    <option value="1326AB-A1G-11-xx">1326AB-A1G-11-xx</option>
-                                                </select>
+                                            <div className="row">
+                                                <div className="col-6 col-sm-6 col-md-6">
+                                                    <label>GearBox</label>
+                                                    <select name="month" className="form-control input-lg" disabled>
+                                                        <option value="R01" selected="selected">AB Series</option>
+                                                        <option value="R02">ABR Series</option>
+                                                    </select>
+                                                </div>
+                                                <div className="col-6 col-sm-6 col-md-6">
+                                                    <label>Model</label>
+                                                    <select name="month" className="form-control input-lg" disabled>
+                                                        <option selected="selected" value="AB090">AB090</option>
+                                                        <option value="AB090A">AB090A</option>
+                                                    </select>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div className="row">
-                                            <div className="col-xs-12 col-md-12">
-                                                <label>GearBox</label>
-                                                <select name="month" className="form-control input-lg">
-                                                    <option selected="selected" value="R01">AB Series</option>
-                                                    <option value="R02">ABR Series</option>
-                                                </select>
+                                            <div className="row">
+                                                <div className="col-6 col-sm-6 col-md-6">
+                                                    <label>Ratio</label>
+                                                    <select name="month" className="form-control input-lg" disabled>
+                                                        <option selected="selected" value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </div>
+                                                <div className="col-6 col-sm-6 col-md-6">
+                                                    <label>Shaft Option</label>
+                                                    <select name="month" className="form-control input-lg" disabled>
+                                                        <option selected="selected" value="S2">S2</option>
+                                                        <option value="S3">S3</option>
+                                                    </select>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </form>
+                                            <div className="row">
+                                                <div className="col-6 col-sm-6 col-md-6">
+                                                    <label>Backlash</label>
+                                                    <select name="month" className="form-control input-lg" disabled>
+                                                        <option value="P0">P0</option>
+                                                        <option value="P1">P1</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
 
+
+
                     </div>
 
+                </div> <br />
+                <div className="row">
+                    <div className="offset-md-3 col-md-6">
+                        <div id="accordion2">
+                            <div className="card">
+                                <div className="card-header" id="headingTwo">
+                                    <h5 className="mb-0">
+                                        <button className="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                            <legend> Information</legend>
+                                        </button>
+                                    </h5>
+                                </div>
+
+                                <div id="collapseTwo" className="collapse " aria-labelledby="headingOne" data-parent="#accordion2">
+                                    <div className="card-body">
+
+                                        <div className="row">
+                                            <div className="col-12 col-sm-12 col-md-12">
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">S1</span>
+                                                    </div>
+                                                    <div class="list-group-item list-group-item-light" >
+                                                        Smooth Output Shaft
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="col-12 col-sm-12 col-md-12">
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">S2</span>
+                                                    </div>
+                                                    <div class="list-group-item list-group-item-light" >
+                                                        With Key Way
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="col-12 col-sm-12 col-md-12">
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">S3</span>
+                                                    </div>
+                                                    <div class="list-group-item list-group-item-light" >
+                                                        DIN5480
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="col-12 col-sm-12 col-md-12">
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">P0</span>
+                                                    </div>
+                                                    <div class="list-group-item list-group-item-light" >
+                                                        Micro Backlash
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="col-12 col-sm-12 col-md-12">
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">P1</span>
+                                                    </div>
+                                                    <div class="list-group-item list-group-item-light" >
+                                                        Reduced Backlash
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="col-12 col-sm-12 col-md-12">
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">P2</span>
+                                                    </div>
+                                                    <div class="list-group-item list-group-item-light" >
+                                                        Standard Backlash
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
 
                 </div>
-            </div>
+            </main>
+
+
+
 
 
         );
@@ -796,7 +925,7 @@ const App = () => (
 
     <ReactRouterDOM.HashRouter>
 
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <a className="navbar-brand" href="#">APEX</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
