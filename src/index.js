@@ -140,7 +140,7 @@ class Order extends React.Component {
                             <div id="home" class="container tab-pane active"> <br />
                                 <dl class="row no-gutters">
                                     <dd class="col-sm-12">
-                                        <span class="badge badge-secondary">2021/03/29</span>
+                                        <h4><span class="badge badge-secondary">2021/03/29</span></h4>
                                         <div id="accordion">
                                             <div className="card">
                                                 <div className="card-header no-padding-LR " id="headingOne">
@@ -156,7 +156,7 @@ class Order extends React.Component {
 
                                                 <div id="collapseOne" className="collapse " aria-labelledby="headingOne" data-parent="#accordion">
                                                     <div className="card-body">
-                                                        <table className="table table-sm table-striped" >
+                                                        <table className="table table-sm table-striped table-bordered" >
                                                             <thead>
                                                                 <tr>
                                                                     <th colSpan="4" >
@@ -213,18 +213,19 @@ class Order extends React.Component {
                                                                                                 <dt className="col-5 col-sm-5">Lubrication</dt>
                                                                                                 <dd className="col-7 col-sm-7">Oil / Gel</dd>
                                                                                                 <dt className="col-5 col-sm-5">Warranty</dt>
-                                                                                                <dd className="col-7 col-sm-7">yes<sup><font color="red">(2)</font></sup></dd>
+                                                                                                <dd className="col-7 col-sm-7">Yes<sup><font color="red">(2)</font></sup></dd>
                                                                                                 <dt className="col-5 col-sm-5">Memo</dt>
                                                                                                 <dd className="col-7 col-sm-7"></dd>
                                                                                                 <dt className="col-5 col-sm-5">Customization</dt>
                                                                                                 <dd className="col-7 col-sm-7"></dd>
                                                                                             </dl>
                                                                                             <dl className="row">
-                                                                                                <dt className="col-sm-12 description-red"><font color="red">(1)&nbsp;Non-standard lubrication.</font></dt>
-                                                                                                <dt className="col-sm-12 description-red"><font color="red">(2)&nbsp;WARNING!!&nbsp;<sup>(*)</sup></font></dt>
-                                                                                                <dt className="col-sm-12 description-red"><font color="red">(3)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty by the selected ratio.</font></dt>
-                                                                                                <dt className="col-sm-12 description-red"><font color="red">(4)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty due to exceeding back-drive torque from application.</font></dt>
-                                                                                                <dt className="col-sm-12 description-red"><font color="red">*&nbsp;Price for reference only. For the real price, refer to P/I.</font></dt>
+                                                                                                <dt className="col-sm-12 description-red text-danger">(1)&nbsp;Non-standard lubrication.</dt>
+                                                                                                <dt className="col-sm-12 description-red text-danger">(2)&nbsp;WARNING!!&nbsp;<sup>(*)</sup>></dt>
+                                                                                                <dt className="col-sm-12 description-red text-danger">(3)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty by the selected ratio.</dt>
+                                                                                                <dt className="col-sm-12 description-red text-danger">(4)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty due to exceeding back-drive </dt>
+                                                                                                <dt className="col-sm-12 description-red text-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;torque from application.</dt>
+                                                                                                <dt className="col-sm-12 description-red text-danger">*&nbsp;Price for reference only. For the real price, refer to P/I.</dt>
                                                                                             </dl>
                                                                                         </div>
 
@@ -275,7 +276,7 @@ class Order extends React.Component {
                                                                                                 <dt className="col-5 col-sm-5">Lubrication</dt>
                                                                                                 <dd className="col-7 col-sm-7">Oil / Gel</dd>
                                                                                                 <dt className="col-5 col-sm-5">Warranty</dt>
-                                                                                                <dd className="col-7 col-sm-7">yes<sup><font color="red">(2)</font></sup></dd>
+                                                                                                <dd className="col-7 col-sm-7">Yes<sup><font color="red">(2)</font></sup></dd>
                                                                                                 <dt className="col-5 col-sm-5">Memo</dt>
                                                                                                 <dd className="col-7 col-sm-7"></dd>
                                                                                                 <dt className="col-5 col-sm-5">Customization</dt>
@@ -303,7 +304,7 @@ class Order extends React.Component {
                                                             </tbody>
                                                         </table>
                                                         <dl className="row">
-                                                            <dd className="col text-right">
+                                                            <dd className="col text-center">
                                                                 <div class="btn-group" role="group">
                                                                     <button id="btnGroupDrop1" type="button" className="btn btn btn-success dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                                         Add Item
@@ -733,7 +734,7 @@ class DesignTool extends React.Component {
                                 <div className="card-header" id="headingOne">
                                     <h5 className="mb-0">
                                         <button className="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            <legend>Motor GearBox Information</legend>
+                                            <legend>Motor Information</legend>
                                         </button>
                                     </h5>
                                 </div>
@@ -741,78 +742,35 @@ class DesignTool extends React.Component {
                                 <div id="collapseOne" className="collapse " aria-labelledby="headingOne" data-parent="#accordion">
                                     <div className="card-body">
                                         <form action="r" method="post" accept-charset="utf-8" className="form" role="form">
-
-
-                                            <div className="row">
-                                                <div className="col-6 col-sm-6 col-md-6">
+                                            <dl className="row">
+                                                <dd className="col-6 col-sm-6 col-md-6">
                                                     <label>Brand</label>
                                                     <select name="month" className="form-control input-lg">
                                                         <option value="01">ABB</option>
                                                         <option value="02">ALLEN BRADLEY</option>
                                                         <option value="03">ALLEN BRADLEY</option>
                                                     </select>
-                                                </div>
-                                                <div className="col-6 col-sm-6 col-md-6">
+                                                </dd>
+                                                <dd className="col-6 col-sm-6 col-md-6">
                                                     <label>Model</label>
                                                     <select name="month" className="form-control input-lg">
                                                         <option value="8C1.1.30.1.xxxxxx.G.xxB">8C1.1.30.1.xxxxxx.G.xxB</option>
                                                         <option value="1326AB-A1G-11-xx">1326AB-A1G-11-xx</option>
                                                     </select>
-                                                </div>
-                                            </div>
-                                            <div className="row">
-                                                <div className="col-6 col-sm-6 col-md-6">
-                                                    <label>GearBox</label>
-                                                    <select name="month" className="form-control input-lg" disabled>
-                                                        <option value="R01" selected="selected">AB Series</option>
-                                                        <option value="R02">ABR Series</option>
-                                                    </select>
-                                                </div>
-                                                <div className="col-6 col-sm-6 col-md-6">
-                                                    <label>Model</label>
-                                                    <select name="month" className="form-control input-lg" disabled>
-                                                        <option selected="selected" value="AB090">AB090</option>
-                                                        <option value="AB090A">AB090A</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div className="row">
-                                                <div className="col-6 col-sm-6 col-md-6">
-                                                    <label>Ratio</label>
-                                                    <select name="month" className="form-control input-lg" disabled>
-                                                        <option selected="selected" value="3">3</option>
-                                                        <option value="4">4</option>
-                                                    </select>
-                                                </div>
-                                                <div className="col-6 col-sm-6 col-md-6">
-                                                    <label>Shaft Option</label>
-                                                    <select name="month" className="form-control input-lg" disabled>
-                                                        <option selected="selected" value="S2">S2</option>
-                                                        <option value="S3">S3</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div className="row">
-                                                <div className="col-6 col-sm-6 col-md-6">
-                                                    <label>Backlash</label>
-                                                    <select name="month" className="form-control input-lg" disabled>
-                                                        <option value="P0">P0</option>
-                                                        <option value="P1">P1</option>
-                                                    </select>
-                                                </div>
-
-                                            </div>
+                                                </dd>
+                                                <dd className="col-12">
+                                                    <div class="form-group">
+                                                        <label for="inputKg">The max. Moment of Inertia of Application (*)</label>
+                                                        <input type="text" class="form-control" id="inputKg" placeholder="(Kg . cm2)" />
+                                                    </div>
+                                                </dd>
+                                            </dl>
                                         </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
-
-
                     </div>
-
                 </div> <br />
                 <div className="row">
                     <div className="offset-md-3 col-md-6">
@@ -821,77 +779,126 @@ class DesignTool extends React.Component {
                                 <div className="card-header" id="headingTwo">
                                     <h5 className="mb-0">
                                         <button className="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                            <legend> Information</legend>
+                                            <legend>GearBox Information</legend>
                                         </button>
                                     </h5>
                                 </div>
 
                                 <div id="collapseTwo" className="collapse " aria-labelledby="headingOne" data-parent="#accordion2">
                                     <div className="card-body">
-
                                         <div className="row">
-                                            <div className="col-12 col-sm-12 col-md-12">
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="basic-addon1">S1</span>
-                                                    </div>
-                                                    <div class="list-group-item list-group-item-light" >
-                                                        Smooth Output Shaft
-                                                    </div>
-                                                </div>
+                                            <div className="col-6 col-sm-6 col-md-6">
+                                                <label>GearBox</label>
+                                                <select name="month" className="form-control input-lg" disabled>
+                                                    <option value="R01" selected="selected">AB Series</option>
+                                                    <option value="R02">ABR Series</option>
+                                                </select>
                                             </div>
-                                            <div className="col-12 col-sm-12 col-md-12">
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="basic-addon1">S2</span>
-                                                    </div>
-                                                    <div class="list-group-item list-group-item-light" >
-                                                        With Key Way
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-12 col-sm-12 col-md-12">
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="basic-addon1">S3</span>
-                                                    </div>
-                                                    <div class="list-group-item list-group-item-light" >
-                                                        DIN5480
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-12 col-sm-12 col-md-12">
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="basic-addon1">P0</span>
-                                                    </div>
-                                                    <div class="list-group-item list-group-item-light" >
-                                                        Micro Backlash
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-12 col-sm-12 col-md-12">
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="basic-addon1">P1</span>
-                                                    </div>
-                                                    <div class="list-group-item list-group-item-light" >
-                                                        Reduced Backlash
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-12 col-sm-12 col-md-12">
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="basic-addon1">P2</span>
-                                                    </div>
-                                                    <div class="list-group-item list-group-item-light" >
-                                                        Standard Backlash
-                                                    </div>
-                                                </div>
+                                            <div className="col-6 col-sm-6 col-md-6">
+                                                <label>Model</label>
+                                                <select name="month" className="form-control input-lg" disabled>
+                                                    <option selected="selected" value="AB090">AB090</option>
+                                                    <option value="AB090A">AB090A</option>
+                                                </select>
                                             </div>
                                         </div>
+                                        <div className="row">
+                                            <div className="col-6 col-sm-6 col-md-6">
+                                                <label>Ratio</label>
+                                                <select name="month" className="form-control input-lg" disabled>
+                                                    <option selected="selected" value="3">3</option>
+                                                    <option value="4">4</option>
+                                                </select>
+                                            </div>
+                                            <div className="col-6 col-sm-6 col-md-6">
+                                                <label>Shaft Option</label>
+                                                <select name="month" className="form-control input-lg" disabled>
+                                                    <option selected="selected" value="S2">S2</option>
+                                                    <option value="S3">S3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-6 col-sm-6 col-md-6">
+                                                <label>Backlash</label>
+                                                <select name="month" className="form-control input-lg" disabled>
+                                                    <option value="P0">P0</option>
+                                                    <option value="P1">P1</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <br />
+                <div className="row">
+                    <div className="offset-md-3 col-md-6">
+                        <div id="accordion3">
+                            <div className="card">
+                                <div className="card-header" id="headingThree">
+                                    <h5 className="mb-0">
+                                        <button className="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                            <legend> Information</legend>
+                                        </button>
+                                    </h5>
+                                </div>
 
+                                <div id="collapseThree" className="collapse " aria-labelledby="headingOne" data-parent="#accordion3">
+                                    <div className="card-body">
+
+                                        <div className="row no-gutters">
+                                            <div class="col-auto">
+                                                <img src="https://picsum.photos/100/100?random=10" />
+                                            </div>
+                                            <div class="col">
+                                                <div class="card-block px-2">
+                                                    <h4 class="card-title">Ordering Code</h4>
+                                                    <p class="card-text"><span class="badge badge-primary">AB090 - 003 - S2 - P2 / ABB 8C1.1.30.1.xxxxxx.G.xxB</span></p>
+                                                    <div class="btn-group" role="group">
+                                                        <button id="btnGroupDrop1" type="button" className="btn btn btn-success dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            DownLoad
+                                                                     </button>
+                                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                            <a class="dropdown-item" href="#/DesignTool">PDF</a>
+                                                            <a class="dropdown-item" href="#/DesignTool">DXF</a>
+                                                            <a class="dropdown-item" href="#/DesignTool">IGS</a>
+                                                            <a class="dropdown-item" href="#/DesignTool">STP</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div><br />
+                                        <dl className="row no-gutters">
+                                            <dt className="col-12"><h4>Gearbox Specification</h4></dt>
+                                            <dt className="col-4" >Model </dt> <dd className="col-8">AB090 - 003 - S2 - P2</dd>
+                                            <dt className="col-4" >Ratio </dt> <dd className="col-8">3</dd>
+                                            <dt className="col-4" >Shaft Option </dt> <dd className="col-8">KEYWAY</dd>
+                                            <dt className="col-4" >Backlash </dt> <dd className="col-8">P2:Standard Backlash</dd>
+                                            <dt className="col-4" >ADAPTER </dt> <dd className="col-8">P0401300503 / AD-W90-M100-3</dd>
+                                            <dt className="col-4" >Output Torque</dt> <dd className="col-8">130 Nm</dd>
+                                            <dt className="col-4" >Rated Speed</dt> <dd className="col-8">4000 rpm</dd>
+                                            <dt className="col-4" >Max. Torque</dt> <dd className="col-8">234 Nm</dd>
+                                            <dt className="col-4" >Max. Speed</dt> <dd className="col-8">8000 rpm</dd>
+                                            <dt className="col-4" >Inertia</dt> <dd className="col-8">0.61 kgcm<font size="1"><sup>^2</sup></font></dd>
+                                            <dt className="col-4" >Weight </dt> <dd className="col-8">3.70 kg</dd>
+                                            <dt className="col-4" >No Load </dt> <dd className="col-8">0.67 Nm<sup><font color="red">(3)</font></sup></dd>
+                                        </dl>
+
+                                        <dl className="row no-gutters">
+                                            <dt className="col-12"><h4>Motor Specification</h4></dt>
+                                            <dt className="col-4" >Brand </dt> <dd className="col-8">ABB</dd>
+                                            <dt className="col-4" >Model </dt> <dd className="col-8">8C1.1.30.1.xxxxxx.G.xxB</dd>
+                                            <dt className="col-4" >Motor Shaft</dt> <dd className="col-8">19 mm</dd>
+                                            <dt className="col-4" >Output Power </dt> <dd className="col-8">0.38 Kw</dd>
+                                            <dt className="col-4" >Rated Speed </dt> <dd className="col-8">3000 rpm</dd>
+                                            <dt className="col-4" >Rated Torque</dt> <dd className="col-8">1.20 Nm</dd>
+                                            <dt className="col-4" >Max. Speed</dt> <dd className="col-8">3000 rpm</dd>
+                                            <dt className="col-4" >Peak Torque</dt> <dd className="col-8">4.60 Nm</dd>
+                                            <dt className="col-4" >Inertia</dt> <dd className="col-8">0.90 kgcm<font size="1"><sup>^2</sup></font></dd>
+                                        </dl>
 
                                     </div>
                                 </div>
