@@ -321,7 +321,7 @@ class Order extends React.Component {
                                     </dd>
                                 </dl>
 
-        
+
                             </div>
                             <div id="menu1" class="container tab-pane fade"><br />
                                 <dl class="row no-gutters">
@@ -632,33 +632,68 @@ class DesignTool extends React.Component {
 
                                 <div id="collapseOne" className="collapse " aria-labelledby="headingOne" data-parent="#accordion">
                                     <div className="card-body">
-                                        <form action="r" method="post" accept-charset="utf-8" className="form" role="form">
-                                            <dl className="row">
-                                                <dd className="col-6 col-sm-6 col-md-6">
-                                                    <label>Brand</label>
-                                                    <select name="month" className="form-control input-lg">
-                                                        <option value="00"></option>
-                                                        <option value="01">ABB</option>
-                                                        <option value="02">ALLEN BRADLEY</option>
-                                                        <option value="03">ALLEN BRADLEY</option>
-                                                    </select>
-                                                </dd>
-                                                <dd className="col-6 col-sm-6 col-md-6">
-                                                    <label>Model</label>
-                                                    <select name="month" className="form-control input-lg">
-                                                        <option value="00"></option>
-                                                        <option value="8C1.1.30.1.xxxxxx.G.xxB">8C1.1.30.1.xxxxxx.G.xxB</option>
-                                                        <option value="1326AB-A1G-11-xx">1326AB-A1G-11-xx</option>
-                                                    </select>
-                                                </dd>
-                                                <dd className="col-12">
+
+                                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class=" nav-link active " id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">1</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Motor Dimension</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Adapter Part-No.</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content" id="pills-tabContent">
+                                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                                <form action="r" method="post" accept-charset="utf-8" className="form" role="form">
+                                                    <dl className="row">
+                                                        <dd className="col-6 col-sm-6 col-md-6">
+                                                            <label>Brand</label>
+                                                            <select name="month" className="form-control input-lg">
+                                                                <option value="00"></option>
+                                                                <option value="01">ABB</option>
+                                                                <option value="02">ALLEN BRADLEY</option>
+                                                                <option value="03">ALLEN BRADLEY</option>
+                                                            </select>
+                                                        </dd>
+                                                        <dd className="col-6 col-sm-6 col-md-6">
+                                                            <label>Model</label>
+                                                            <select name="month" className="form-control input-lg">
+                                                                <option value="00"></option>
+                                                                <option value="8C1.1.30.1.xxxxxx.G.xxB">8C1.1.30.1.xxxxxx.G.xxB</option>
+                                                                <option value="1326AB-A1G-11-xx">1326AB-A1G-11-xx</option>
+                                                            </select>
+                                                        </dd>
+                                                        <dd className="col-12">
+                                                            <div class="form-group">
+                                                                <label for="inputKg">The max. Moment of Inertia of Application (*)</label>
+                                                                <input type="text" class="form-control" id="inputKg" placeholder="(Kg . cm2)" />
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </form>
+                                            </div>
+                                            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+                                            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                                <form>
                                                     <div class="form-group">
-                                                        <label for="inputKg">The max. Moment of Inertia of Application (*)</label>
-                                                        <input type="text" class="form-control" id="inputKg" placeholder="(Kg . cm2)" />
+                                                        <label for="inputAdapter">Adapter Part-No.</label>
+                                                        <input type="text" class="form-control" id="inputAdapter"/>                                                        
                                                     </div>
-                                                </dd>
-                                            </dl>
-                                        </form>
+                                                    <div class="form-group">
+                                                        <label for="inputMotorShaft">Motor Shaft</label>
+                                                        <input type="text" class="form-control" id="inputMotorShaft"  />
+                                                    </div>
+                                              
+                                                    <button type="submit" class="btn btn-success btn-sm">Confirm</button>
+                                                </form>
+                                            </div>
+                                        </div>
+
+
+
+
                                     </div>
                                 </div>
                             </div>
@@ -683,17 +718,17 @@ class DesignTool extends React.Component {
                                             <div className="col-12">
                                                 <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                                                     <div class="btn-group mr-2" role="group" aria-label="First group">
-                                                        <button type="button" class="btn btn btn-success btn-sm">Standard</button>                                             
+                                                        <button type="button" class="btn btn btn-success btn-sm">Standard</button>
                                                     </div>
                                                     <div class="btn-group mr-2" role="group" aria-label="Second group">
-                                                        <button type="button" class="btn btn btn-success btn-sm">Unlimited 1</button>  
+                                                        <button type="button" class="btn btn btn-success btn-sm">Unlimited 1</button>
                                                     </div>
                                                     <div class="btn-group" role="group" aria-label="Third group">
-                                                        <button type="button" class="btn btn btn-success btn-sm">Unlimited 2</button>  
+                                                        <button type="button" class="btn btn btn-success btn-sm">Unlimited 2</button>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div><br/>
+                                        </div><br />
                                         <div className="row">
                                             <div className="col-6 col-sm-6 col-md-6">
                                                 <label>GearBox</label>
@@ -770,12 +805,12 @@ class DesignTool extends React.Component {
 
                                         </div><br />
                                         <dl className="row no-gutters">
-                                       
+
                                             <dt className="col-12"><h4>Download</h4></dt>
-                                            <dt className="col-2" ><button type="button" className="btn btn btn-success btn-sm">PDF</button> </dt> 
-                                            <dt className="col-2" ><button type="button" className="btn btn btn-success btn-sm">DXF</button> </dt> 
-                                            <dt className="col-2" ><button type="button" className="btn btn btn-success btn-sm">IGS</button> </dt> 
-                                            <dt className="col-2" ><button type="button" className="btn btn btn-success btn-sm">STP</button> </dt> 
+                                            <dt className="col-2" ><button type="button" className="btn btn btn-success btn-sm">PDF</button> </dt>
+                                            <dt className="col-2" ><button type="button" className="btn btn btn-success btn-sm">DXF</button> </dt>
+                                            <dt className="col-2" ><button type="button" className="btn btn btn-success btn-sm">IGS</button> </dt>
+                                            <dt className="col-2" ><button type="button" className="btn btn btn-success btn-sm">STP</button> </dt>
                                         </dl>
 
                                         <dl className="row no-gutters">
@@ -823,7 +858,7 @@ class DesignTool extends React.Component {
                                             <dt className="col-4" >(*) </dt> <dd className="col-8">Without giving the max. moment of inertia of application or giving a wrong value, the warranty could be invalid in case of a gearbox damage due to the back-drive torque from application.</dd>
                                             <dt className="col-4" >Note (1) </dt> <dd className="col-8">The available piece-no. in stock is variable depending on incoming orders in the time.</dd>
                                             <dt className="col-4" >Note (2)</dt> <dd className="col-8">The gearboxes in stock are filled with standard grease. For non-standard grease or any customization please contact APEX.</dd>
-                                            <dt className="col-4" >Note (3)</dt> <dd className="col-8">The values are measured by gearbox with ratio = 10 without loading at 3,000 rpm, or at the Nominal Input Speed(n<sub>1N</sub>).</dd>                                            
+                                            <dt className="col-4" >Note (3)</dt> <dd className="col-8">The values are measured by gearbox with ratio = 10 without loading at 3,000 rpm, or at the Nominal Input Speed(n<sub>1N</sub>).</dd>
                                         </dl>
                                     </div>
                                 </div>
