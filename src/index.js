@@ -791,19 +791,19 @@ class DesignTool extends React.Component {
                                 <div id="collapseThree" className="collapse " aria-labelledby="headingOne" data-parent="#accordion3">
                                     <div className="card-body">
 
-                                        <div className="row no-gutters">
-                                            <div class="col-auto">
-                                                <img src="https://picsum.photos/100/100?random=10" />
-                                            </div>
-                                            <div class="offset-1 col">
+                                        <dl className="row no-gutters">
+                                            <dd class="col-12 text-center">
+                                                <img src="https://picsum.photos/80/80?random=10" />
+                                            </dd>
+                                            <dd class="col-12 text-center">
                                                 <div class="card-block px-2">
                                                     <h4 class="card-title">Ordering Code</h4>
-                                                    <p class="card-text"><span class="badge badge-primary">AB090 - 003 - S2 - P2 /</span></p>
-                                                    <p class="card-text"><span class="badge badge-primary">ABB 8C1.1.30.1.xxxxxx.G.xxB</span></p>
+                                                    <h4 class="card-text"><span class="badge badge-primary">AB090 - 003 - S2 - P2 /</span></h4>
+                                                    <h4 class="card-text"><span class="badge badge-primary">ABB 8C1.1.30.1.xxxxxx.G.xxB</span></h4>
                                                 </div>
-                                            </div>
+                                            </dd>
 
-                                        </div><br />
+                                        </dl><br />
                                         <dl className="row no-gutters">
 
                                             <dt className="col-12"><h4>Download</h4></dt>
