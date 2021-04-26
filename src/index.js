@@ -143,7 +143,7 @@ class Order extends React.Component {
                                         <h4><span class="badge badge-secondary">2021/03/29</span></h4>
                                         <div id="accordion">
                                             <div className="card">
-                                                <div className="card-header no-padding-LR " id="headingOne">
+                                                <div className="card-header no-padding-LR no-padding-TB " id="headingOne">
                                                     <h5 className="mb-0">
                                                         <button className="btn btn-link accordionBtn no-padding-LR" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                                             <legend>      <div className="row no-gutters">
@@ -328,7 +328,7 @@ class Order extends React.Component {
                                     <dd class="col-sm-12">
                                         <div id="accordion3">
                                             <div className="card">
-                                                <div className="card-header no-padding-LR " id="headingOne">
+                                                <div className="card-header no-padding-LR  " id="headingOne">
                                                     <h5 className="mb-0">
                                                         <button className="btn btn-link accordionBtn no-padding-LR" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                                                             <legend>      <div className="row no-gutters">
@@ -622,9 +622,9 @@ class DesignTool extends React.Component {
                     <div className="offset-md-3 col-md-6">
                         <div id="accordion">
                             <div className="card">
-                                <div className="card-header" id="headingOne">
+                                <div className="card-header no-padding-TB" id="headingOne">
                                     <h5 className="mb-0">
-                                        <button className="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <button className="btn btn-link accordionBtn " data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                             <legend>Select Motor</legend>
                                         </button>
                                     </h5>
@@ -633,15 +633,15 @@ class DesignTool extends React.Component {
                                 <div id="collapseOne" className="collapse " aria-labelledby="headingOne" data-parent="#accordion">
                                     <div className="card-body">
 
-                                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                        <ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">
                                             <li class="nav-item">
-                                                <a class=" nav-link active " id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">1</a>
+                                                <a class=" nav-link active " id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Motor<br/>Model</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Motor Dimension</a>
+                                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Motor<br />Dimension</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Adapter Part-No.</a>
+                                                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Adapter<br />Part-No.</a>
                                             </li>
                                         </ul>
                                         <div class="tab-content" id="pills-tabContent">
@@ -650,7 +650,7 @@ class DesignTool extends React.Component {
                                                     <dl className="row">
                                                         <dd className="col-6 col-sm-6 col-md-6">
                                                             <label>Brand</label>
-                                                            <select name="month" className="form-control input-lg">
+                                                            <select name="month" className="form-control form-control-xs">
                                                                 <option value="00"></option>
                                                                 <option value="01">ABB</option>
                                                                 <option value="02">ALLEN BRADLEY</option>
@@ -659,7 +659,7 @@ class DesignTool extends React.Component {
                                                         </dd>
                                                         <dd className="col-6 col-sm-6 col-md-6">
                                                             <label>Model</label>
-                                                            <select name="month" className="form-control input-lg">
+                                                            <select name="month" className="form-control form-control-xs">
                                                                 <option value="00"></option>
                                                                 <option value="8C1.1.30.1.xxxxxx.G.xxB">8C1.1.30.1.xxxxxx.G.xxB</option>
                                                                 <option value="1326AB-A1G-11-xx">1326AB-A1G-11-xx</option>
@@ -667,7 +667,27 @@ class DesignTool extends React.Component {
                                                         </dd>
                                                         <dd className="col-12">
                                                             <div class="form-group">
-                                                                <label for="inputKg">The max. Moment of Inertia of Application (*)</label>
+                                                                <label for="inputKg">
+                                                                    <a href="#" data-toggle="modal" data-target="#motorInfoModal" >The max. Moment of Inertia of Application  <i class="fas fa-info-circle fa-lg"></i>
+                                                                    </a>
+
+                                                                    <div class="modal fade" id="motorInfoModal">
+                                                                        <div class="modal-dialog modal-dialog-centered">
+                                                                            <div class="modal-content">
+                                                                                <div class="modal-header">
+                                                                                    <h4 class="modal-title">Information</h4>
+                                                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                                </div>
+                                                                                <div class="modal-body">
+                                                                                    <dl className="row">
+                                                                                        <dt className="col-2 text-danger">(*)</dt> <dd className="col-10 text-danger">Without giving the max. moment of inertia of application or giving a wrong value, the warranty could be invalid in case of a gearbox damage due to the back-drive torque from application. </dd>
+                                                                                        <dt className="col-2 text-danger">(**)</dt> <dd className="col-10 text-danger">Material of AT series: Stainless<br />Material of ATB series: Carbon Steel with Phosphate<br />Material of AExxxS / AERxxxS series: Full Stainless</dd>
+                                                                                    </dl>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </label>
                                                                 <input type="text" class="form-control" id="inputKg" placeholder="(Kg . cm2)" />
                                                             </div>
                                                         </dd>
@@ -679,13 +699,13 @@ class DesignTool extends React.Component {
                                                 <form>
                                                     <div class="form-group">
                                                         <label for="inputAdapter">Adapter Part-No.</label>
-                                                        <input type="text" class="form-control" id="inputAdapter"/>                                                        
+                                                        <input type="text" class="form-control" id="inputAdapter" />
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="inputMotorShaft">Motor Shaft</label>
-                                                        <input type="text" class="form-control" id="inputMotorShaft"  />
+                                                        <input type="text" class="form-control" id="inputMotorShaft" />
                                                     </div>
-                                              
+
                                                     <button type="submit" class="btn btn-success btn-sm">Confirm</button>
                                                 </form>
                                             </div>
@@ -704,9 +724,9 @@ class DesignTool extends React.Component {
                     <div className="offset-md-3 col-md-6">
                         <div id="accordion2">
                             <div className="card">
-                                <div className="card-header" id="headingTwo">
+                                <div className="card-header no-padding-TB" id="headingTwo">
                                     <h5 className="mb-0">
-                                        <button className="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                        <button className="btn btn-link accordionBtn " data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                                             <legend>Select Gearbox </legend>
                                         </button>
                                     </h5>
@@ -714,62 +734,67 @@ class DesignTool extends React.Component {
 
                                 <div id="collapseTwo" className="collapse " aria-labelledby="headingOne" data-parent="#accordion2">
                                     <div className="card-body">
-                                        <div className="row">
-                                            <div className="col-12">
+                                        <dl className="row">
+                                            <dt className="col-12">
                                                 <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                                                    <div class="btn-group mr-2" role="group" aria-label="First group">
-                                                        <button type="button" class="btn btn btn-success btn-sm">Standard</button>
+                                                    <div class="btn-group mr-2 " role="group" aria-label="First group">
+                                                        <button type="button" class="btn btn-success btn-sm">Standard</button>
                                                     </div>
                                                     <div class="btn-group mr-2" role="group" aria-label="Second group">
-                                                        <button type="button" class="btn btn btn-success btn-sm">Unlimited 1</button>
+                                                        <button type="button" class="btn btn-success btn-sm">Unlimited 1</button>
                                                     </div>
                                                     <div class="btn-group" role="group" aria-label="Third group">
-                                                        <button type="button" class="btn btn btn-success btn-sm">Unlimited 2</button>
+                                                        <button type="button" class="btn btn-success btn-sm">Unlimited 2</button>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div><br />
-                                        <div className="row">
-                                            <div className="col-6 col-sm-6 col-md-6">
+                                            </dt>
+                                        </dl><br />
+                                        <dl className="row">
+                                            <dt className="col-6 col-sm-6 col-md-6">
                                                 <label>GearBox</label>
-                                                <select name="month" className="form-control input-lg" disabled>
+                                                <select name="month" className="form-control form-control-xs" disabled>
                                                     <option value="R01" selected="selected">AB Series</option>
                                                     <option value="R02">ABR Series</option>
                                                 </select>
-                                            </div>
-                                            <div className="col-6 col-sm-6 col-md-6">
+                                            </dt>
+                                            <dt className="col-6 col-sm-6 col-md-6">
                                                 <label>Model</label>
-                                                <select name="month" className="form-control input-lg" disabled>
+                                                <select name="month" className="form-control form-control-xs" disabled>
                                                     <option selected="selected" value="AB090">AB090</option>
                                                     <option value="AB090A">AB090A</option>
                                                 </select>
-                                            </div>
-                                        </div>
-                                        <div className="row">
-                                            <div className="col-6 col-sm-6 col-md-6">
+                                            </dt>
+                                        </dl>
+                                        <dl className="row">
+                                            <dt className="col-6 col-sm-6 col-md-6">
                                                 <label>Ratio</label>
-                                                <select name="month" className="form-control input-lg" disabled>
+                                                <select name="month" className="form-control form-control-xs" disabled>
                                                     <option selected="selected" value="3">3</option>
                                                     <option value="4">4</option>
                                                 </select>
-                                            </div>
-                                            <div className="col-6 col-sm-6 col-md-6">
+                                            </dt>
+                                            <dt className="col-6 col-sm-6 col-md-6">
                                                 <label>Shaft Option</label>
-                                                <select name="month" className="form-control input-lg" disabled>
+                                                <select name="month" className="form-control form-control-xs" disabled>
                                                     <option selected="selected" value="S2">S2</option>
                                                     <option value="S3">S3</option>
                                                 </select>
-                                            </div>
-                                        </div>
-                                        <div className="row">
-                                            <div className="col-6 col-sm-6 col-md-6">
+                                            </dt>
+                                        </dl>
+                                        <dl className="row">
+                                            <dt className="col-6 col-sm-6 col-md-6">
                                                 <label>Backlash</label>
-                                                <select name="month" className="form-control input-lg" disabled>
+                                                <select name="month" className="form-control form-control-xs" disabled>
                                                     <option value="P0">P0</option>
                                                     <option value="P1">P1</option>
                                                 </select>
-                                            </div>
-                                        </div>
+                                            </dt>
+                                        </dl>
+                                        <dl className="row">
+                                            <dt className="col-12 text-center" >
+                                                <button type="button" className=" btn btn-success btn-sm">Check</button>
+                                            </dt>
+                                        </dl>  
                                     </div>
                                 </div>
                             </div>
@@ -780,9 +805,9 @@ class DesignTool extends React.Component {
                     <div className="offset-md-3 col-md-6">
                         <div id="accordion3">
                             <div className="card">
-                                <div className="card-header" id="headingThree">
+                                <div className="card-header no-padding-TB" id="headingThree">
                                     <h5 className="mb-0">
-                                        <button className="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                        <button className="btn btn-link accordionBtn " data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                                             <legend> Result</legend>
                                         </button>
                                     </h5>
@@ -793,15 +818,13 @@ class DesignTool extends React.Component {
 
                                         <dl className="row no-gutters">
                                             <dd class="col-12 text-center">
-                                                <img src="https://picsum.photos/80/80?random=10" />
+                                                <img src="http://www.apexdyna.com/images/gearbox/pro_samll01.png" width="80px" height="80px"  />
                                             </dd>
-                                            <dd class="col-12 text-center">
-                                                <div class="card-block px-2">
+                                            <dt class="col-12 text-left">
                                                     <h4 class="card-title">Ordering Code</h4>
                                                     <h4 class="card-text"><span class="badge badge-primary">AB090 - 003 - S2 - P2 /</span></h4>
                                                     <h4 class="card-text"><span class="badge badge-primary">ABB 8C1.1.30.1.xxxxxx.G.xxB</span></h4>
-                                                </div>
-                                            </dd>
+                                            </dt>
 
                                         </dl><br />
                                         <dl className="row no-gutters">
