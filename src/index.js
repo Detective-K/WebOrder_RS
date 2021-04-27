@@ -635,7 +635,7 @@ class DesignTool extends React.Component {
 
                                         <ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">
                                             <li class="nav-item">
-                                                <a class=" nav-link active " id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Motor<br/>Model</a>
+                                                <a class=" nav-link active " id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Motor<br />Model</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Motor<br />Dimension</a>
@@ -694,7 +694,13 @@ class DesignTool extends React.Component {
                                                     </dl>
                                                 </form>
                                             </div>
-                                            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+                                            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                                <dl className="row">
+                                                    <dd class="col-12 text-center">
+                                                        <img src="http://www.apexdyna.com/weborder/image/moto_photo2.png" width="444px" height="220px" />
+                                                    </dd>
+                                                </dl>
+                                            </div>
                                             <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                                                 <form>
                                                     <div class="form-group">
@@ -794,7 +800,7 @@ class DesignTool extends React.Component {
                                             <dt className="col-12 text-center" >
                                                 <button type="button" className=" btn btn-success btn-sm">Check</button>
                                             </dt>
-                                        </dl>  
+                                        </dl>
                                     </div>
                                 </div>
                             </div>
@@ -818,22 +824,22 @@ class DesignTool extends React.Component {
 
                                         <dl className="row no-gutters">
                                             <dd class="col-12 text-center">
-                                                <img src="http://www.apexdyna.com/images/gearbox/pro_samll01.png" width="80px" height="80px"  />
+                                                <img src="http://www.apexdyna.com/images/gearbox/pro_samll01.png" width="80px" height="80px" />
                                             </dd>
                                             <dt class="col-12 text-left">
-                                                    <h4 class="card-title">Ordering Code</h4>
-                                                    <h4 class="card-text"><span class="badge badge-primary">AB090 - 003 - S2 - P2 /</span></h4>
-                                                    <h4 class="card-text"><span class="badge badge-primary">ABB 8C1.1.30.1.xxxxxx.G.xxB</span></h4>
+                                                <h4 class="card-title">Ordering Code</h4>
+                                                <h4 class="card-text"><span class="badge badge-primary">AB090 - 003 - S2 - P2 /</span></h4>
+                                                <h4 class="card-text"><span class="badge badge-primary">ABB 8C1.1.30.1.xxxxxx.G.xxB</span></h4>
                                             </dt>
 
                                         </dl><br />
-                                        <dl className="row no-gutters">
+                                        <dl className="row no-gutters bg-light ">
 
                                             <dt className="col-12"><h4>Download</h4></dt>
-                                            <dt className="col-2" ><button type="button" className="btn btn btn-success btn-sm">PDF</button> </dt>
-                                            <dt className="col-2" ><button type="button" className="btn btn btn-success btn-sm">DXF</button> </dt>
-                                            <dt className="col-2" ><button type="button" className="btn btn btn-success btn-sm">IGS</button> </dt>
-                                            <dt className="col-2" ><button type="button" className="btn btn btn-success btn-sm">STP</button> </dt>
+                                            <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">PDF</button> </dt>
+                                            <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">DXF</button> </dt>
+                                            <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">IGS</button> </dt>
+                                            <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">STP</button> </dt>
                                         </dl>
 
                                         <dl className="row no-gutters">
@@ -848,7 +854,7 @@ class DesignTool extends React.Component {
                                         </dl>
 
 
-                                        <dl className="row no-gutters">
+                                        <dl className="row no-gutters bg-light ">
                                             <dt className="col-12"><h4>Gearbox Specification</h4></dt>
                                             <dt className="col-4" >Model </dt> <dd className="col-8">AB090 - 003 - S2 - P2</dd>
                                             <dt className="col-4" >Ratio </dt> <dd className="col-8">3</dd>
@@ -877,7 +883,7 @@ class DesignTool extends React.Component {
                                             <dt className="col-4" >Inertia</dt> <dd className="col-8">0.90 kgcm<font size="1"><sup>^2</sup></font></dd>
                                         </dl>
 
-                                        <dl className="row no-gutters">
+                                        <dl className="row no-gutters bg-light  text-danger ">
                                             <dt className="col-4" >(*) </dt> <dd className="col-8">Without giving the max. moment of inertia of application or giving a wrong value, the warranty could be invalid in case of a gearbox damage due to the back-drive torque from application.</dd>
                                             <dt className="col-4" >Note (1) </dt> <dd className="col-8">The available piece-no. in stock is variable depending on incoming orders in the time.</dd>
                                             <dt className="col-4" >Note (2)</dt> <dd className="col-8">The gearboxes in stock are filled with standard grease. For non-standard grease or any customization please contact APEX.</dd>
