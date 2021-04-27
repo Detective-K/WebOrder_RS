@@ -697,7 +697,7 @@ class DesignTool extends React.Component {
                                             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                                                 <dl className="row">
                                                     <dd class="col-12 text-center">
-                                                        <img src="http://www.apexdyna.com/weborder/image/moto_photo2.png" width="444px" height="220px" />
+                                                        <img src="http://www.apexdyna.com/weborder/image/moto_photo2.png" className="img-thumbnail" />
                                                     </dd>
                                                 </dl>
                                             </div>
