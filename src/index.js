@@ -305,8 +305,8 @@ class Order extends React.Component {
                                                                         Add Item
                                                                      </button>
                                                                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                                                        <a class="dropdown-item" href="#/DesignTool">Design Tool Gearbox</a>
-                                                                        <a class="dropdown-item" href="#/DesignTool">Design Tool Rack and Pinion</a>
+                                                                        <a class="dropdown-item" href="#/DesignTool">Gearbox</a>
+                                                                        <a class="dropdown-item" href="#/DesignTool">Rack and Pinion</a>
                                                                     </div>
                                                                 </div>
                                                             </dd>
@@ -623,11 +623,9 @@ class DesignTool extends React.Component {
                         <div id="accordion">
                             <div className="card">
                                 <div className="card-header no-padding-TB" id="headingOne">
-                                    <h5 className="mb-0">
                                         <button className="btn btn-link accordionBtn " data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                             <legend>Select Motor</legend>
                                         </button>
-                                    </h5>
                                 </div>
 
                                 <div id="collapseOne" className="collapse " aria-labelledby="headingOne" data-parent="#accordion">
@@ -688,7 +686,8 @@ class DesignTool extends React.Component {
                                                                         </div>
                                                                     </div>
                                                                 </label>
-                                                                <input type="text" class="form-control" id="inputKg" placeholder="(Kg . cm2)" />
+                                                                <input type="text" className="form-control" id="inputKg" placeholder="(Kg . cm2)" />
+                                                                <small className="form-text  text-danger">To calculate the moment of inertia: <a href="https://www.apexdyna.com/dynamax.aspx" className="text-danger" > GO TO !!</a></small>
                                                             </div>
                                                         </dd>
                                                     </dl>
@@ -698,7 +697,9 @@ class DesignTool extends React.Component {
                                                 <dl className="row">
                                                     <dd class="col-12 text-center">
                                                         <img src="http://www.apexdyna.com/weborder/image/moto_photo2.png" className="img-thumbnail" />
+                                                 
                                                     </dd>
+                          
                                                 </dl>
                                             </div>
                                             <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
@@ -741,10 +742,10 @@ class DesignTool extends React.Component {
                                 <div id="collapseTwo" className="collapse " aria-labelledby="headingOne" data-parent="#accordion2">
                                     <div className="card-body">
                                         <dl className="row">
-                                            <dt className="col-12">
-                                                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                                            <dt className="col-12 text-center">
+                                                <div class="btn-toolbar d-inline-block" role="toolbar" aria-label="Toolbar with button groups">
                                                     <div class="btn-group mr-2 " role="group" aria-label="First group">
-                                                        <button type="button" class="btn btn-success btn-sm">Standard</button>
+                                                        <button type="button" class="btn btn-success btn-sm"> &nbsp; Standard &nbsp;  &nbsp;</button>
                                                     </div>
                                                     <div class="btn-group mr-2" role="group" aria-label="Second group">
                                                         <button type="button" class="btn btn-success btn-sm">Unlimited 1</button>
@@ -757,7 +758,7 @@ class DesignTool extends React.Component {
                                         </dl><br />
                                         <dl className="row">
                                             <dt className="col-6 col-sm-6 col-md-6">
-                                                <label>GearBox</label>
+                                                <label>Gearbox</label>
                                                 <select name="month" className="form-control form-control-xs" disabled>
                                                     <option value="R01" selected="selected">AB Series</option>
                                                     <option value="R02">ABR Series</option>
@@ -795,10 +796,10 @@ class DesignTool extends React.Component {
                                                     <option value="P1">P1</option>
                                                 </select>
                                             </dt>
-                                        </dl>
+                                        </dl><br/>
                                         <dl className="row">
                                             <dt className="col-12 text-center" >
-                                                <button type="button" className=" btn btn-success btn-sm">Check</button>
+                                                <button type="button" className=" btn btn-success btn-sm">&nbsp;&nbsp;&nbsp; Check &nbsp;&nbsp;&nbsp;</button>
                                             </dt>
                                         </dl>
                                     </div>
@@ -822,12 +823,14 @@ class DesignTool extends React.Component {
                                 <div id="collapseThree" className="collapse " aria-labelledby="headingOne" data-parent="#accordion3">
                                     <div className="card-body">
 
-                                        <dl className="row no-gutters">
-                                            <dd class="col-12 text-center">
-                                                <img src="http://www.apexdyna.com/images/gearbox/pro_samll01.png" width="80px" height="80px" />
+                                        <dl className="row no-gutters">   
+                                      
+                                            <dd class=" col-12 text-center">
+                                                <img src="http://www.apexdyna.com/images/gearbox/pro_samll01.png" width="191" height="180" />
                                             </dd>
-                                            <dt class="col-12 text-left">
-                                                <h4 class="card-title">Ordering Code</h4>
+                               
+                                            <dt class="col-12 text-center">
+                                                <h5 class="card-title">Ordering Code</h5>
                                                 <h4 class="card-text"><span class="badge badge-primary">AB090 - 003 - S2 - P2 /</span></h4>
                                                 <h4 class="card-text"><span class="badge badge-primary">ABB 8C1.1.30.1.xxxxxx.G.xxB</span></h4>
                                             </dt>
@@ -835,27 +838,27 @@ class DesignTool extends React.Component {
                                         </dl><br />
                                         <dl className="row no-gutters bg-light ">
 
-                                            <dt className="col-12"><h4>Download</h4></dt>
-                                            <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">PDF</button> </dt>
-                                            <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">DXF</button> </dt>
-                                            <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">IGS</button> </dt>
-                                            <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">STP</button> </dt>
-                                        </dl>
+                                            <dt className="col-12"><h5>Download</h5></dt>
+                                            <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; PDF &nbsp;&nbsp;</button> </dt>
+                                            <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; DXF &nbsp;&nbsp;</button> </dt>
+                                            <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; IGS &nbsp;&nbsp;</button> </dt>
+                                            <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; STP &nbsp;&nbsp;</button> </dt>
+                                        </dl><br />
 
                                         <dl className="row no-gutters">
-                                            <dt className="col-9"><h4>List</h4></dt>  <dt className="col-3"><h4>Stock<sup className="text-danger">(1)</sup></h4></dt>
+                                            <dt className="col-9"><h5>List</h5></dt>  <dt className="col-3"><h5>Stock<sup className="text-danger">(1)</sup></h5></dt>
                                             <dt className="col-3" >Bom</dt> <dd className="col-6">Spec</dd><dd className="col-3"></dd>
-                                            <dt className="col-3" >Gearbox</dt> <dd className="col-6">AB090 - 003 - S2 - P2 / A0100030122</dd><dd className="col-3">> 100 pcs<sup className="text-danger" >(2)</sup></dd>
+                                            <dt className="col-3" >Gearbox</dt> <dd className="col-6">AB090 - 003 - S2 - P2 / A0100030122</dd><dd className="col-3">{">"}100 pcs<sup className="text-danger" >(2)</sup></dd>
                                             <dt className="col-3" >Adapter</dt> <dd className="col-6">AD-W90-M100-3 / S0401300503</dd><dd className="col-3">Re-Stocking</dd>
-                                            <dt className="col-3" >FixPlate</dt> <dd className="col-6">[No need]</dd><dd className="col-3"></dd>
+                                            <dt className="col-3" >Fix Plate</dt> <dd className="col-6">[No need]</dd><dd className="col-3"></dd>
                                             <dt className="col-3" >Bushing</dt> <dd className="col-6">[No need]</dd><dd className="col-3"></dd>
                                             <dt className="col-3" >Screw </dt> <dd className="col-6">SW-1-M8X1.25P-L25 / 2111B108025</dd><dd className="col-3"></dd>
                                             <dt className="col-3" >Washer </dt> <dd className="col-6">WS-B1-D8 / 22120100501</dd><dd className="col-3"></dd>
-                                        </dl>
+                                        </dl><br />
 
 
                                         <dl className="row no-gutters bg-light ">
-                                            <dt className="col-12"><h4>Gearbox Specification</h4></dt>
+                                            <dt className="col-12"><h5>Gearbox Specification</h5></dt>
                                             <dt className="col-4" >Model </dt> <dd className="col-8">AB090 - 003 - S2 - P2</dd>
                                             <dt className="col-4" >Ratio </dt> <dd className="col-8">3</dd>
                                             <dt className="col-4" >Shaft Option </dt> <dd className="col-8">S2: Keyway</dd>
@@ -868,10 +871,10 @@ class DesignTool extends React.Component {
                                             <dt className="col-4" >Inertia</dt> <dd className="col-8">0.61 kgcm<font size="1"><sup>^2</sup></font></dd>
                                             <dt className="col-4" >Weight </dt> <dd className="col-8">3.70 kg</dd>
                                             <dt className="col-4" >No Load </dt> <dd className="col-8">0.67 Nm<sup><font color="red">(3)</font></sup></dd>
-                                        </dl>
+                                        </dl><br />
 
                                         <dl className="row no-gutters">
-                                            <dt className="col-12"><h4>Motor Specification</h4></dt>
+                                            <dt className="col-12"><h5>Motor Specification</h5></dt>
                                             <dt className="col-4" >Brand </dt> <dd className="col-8">ABB</dd>
                                             <dt className="col-4" >Model </dt> <dd className="col-8">8C1.1.30.1.xxxxxx.G.xxB</dd>
                                             <dt className="col-4" >Motor Shaft</dt> <dd className="col-8">19 mm</dd>
@@ -881,13 +884,13 @@ class DesignTool extends React.Component {
                                             <dt className="col-4" >Max. Speed</dt> <dd className="col-8">3000 rpm</dd>
                                             <dt className="col-4" >Peak Torque</dt> <dd className="col-8">4.60 Nm</dd>
                                             <dt className="col-4" >Inertia</dt> <dd className="col-8">0.90 kgcm<font size="1"><sup>^2</sup></font></dd>
-                                        </dl>
+                                        </dl><br />
 
-                                        <dl className="row no-gutters bg-light  text-danger ">
-                                            <dt className="col-4" >(*) </dt> <dd className="col-8">Without giving the max. moment of inertia of application or giving a wrong value, the warranty could be invalid in case of a gearbox damage due to the back-drive torque from application.</dd>
-                                            <dt className="col-4" >Note (1) </dt> <dd className="col-8">The available piece-no. in stock is variable depending on incoming orders in the time.</dd>
-                                            <dt className="col-4" >Note (2)</dt> <dd className="col-8">The gearboxes in stock are filled with standard grease. For non-standard grease or any customization please contact APEX.</dd>
-                                            <dt className="col-4" >Note (3)</dt> <dd className="col-8">The values are measured by gearbox with ratio = 10 without loading at 3,000 rpm, or at the Nominal Input Speed(n<sub>1N</sub>).</dd>
+                                        <dl className="row no-gutters bg-light  text-danger  small">
+                                            <dt className="col-2" >(*) </dt> <dd className="col-10">Without giving the max. moment of inertia of application or giving a wrong value, the warranty could be invalid in case of a gearbox damage due to the back-drive torque from application.</dd>
+                                            <dt className="col-2" >Note (1) </dt> <dd className="col-10">The available piece-no. in stock is variable depending on incoming orders in the time.</dd>
+                                            <dt className="col-2" >Note (2)</dt> <dd className="col-10">The gearboxes in stock are filled with standard grease. For non-standard grease or any customization please contact APEX.</dd>
+                                            <dt className="col-2" >Note (3)</dt> <dd className="col-10">The values are measured by gearbox with ratio = 10 without loading at 3,000 rpm, or at the Nominal Input Speed(n<sub>1N</sub>).</dd>
                                         </dl>
                                     </div>
                                 </div>
