@@ -53,7 +53,7 @@ class Order extends React.Component {
                     <div className="col-lg-4 col-lg-offset-4"> <input type="search" id="search" value="" className="form-control" placeholder="Search" /> </div>
                     <div className="col-lg-4 col-lg-offset-4">
                         <button type="button" className="btn btn-success" data-toggle="modal" data-target="#modalSignUP">
-                            Add Orders
+                            Add Order
                                 </button>
                         <div className="modal fade" id="modalSignUP" tabindex="-1" role="dialog" aria-labelledby="ModalLSignUP" aria-hidden="true">
                             <div className="modal-dialog" role="document">
@@ -649,7 +649,7 @@ class DesignTool extends React.Component {
                                                         <label>Brand</label>
                                                     </dt>
                                                     <dd className="col-9">
-                                                  
+
                                                         <select name="month" className="form-control form-control-xs">
                                                             <option value="00"></option>
                                                             <option value="01">ABB</option>
@@ -696,7 +696,7 @@ class DesignTool extends React.Component {
                                                 </dl>
                                                 <dl className="row">
                                                     <dt className="col-12 text-center ">
-                                                        <button type="button" class="btn btn-success btn-sm">Check</button>
+                                                        <button type="button" className=" btn btn-success btn-sm">&nbsp;&nbsp;&nbsp; Check &nbsp;&nbsp;&nbsp;</button>
                                                     </dt>
                                                 </dl>
 
@@ -722,7 +722,7 @@ class DesignTool extends React.Component {
                                                     </div>
                                                     <div className="row">
                                                         <div className="col-12 text-center">
-                                                            <button type="submit" class="btn btn-success btn-sm ">Check</button>
+                                                            <button type="button" className=" btn btn-success btn-sm">&nbsp;&nbsp;&nbsp; Check &nbsp;&nbsp;&nbsp;</button>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -927,13 +927,44 @@ class DesignTool extends React.Component {
                                 </div>
                             </div>
                         </div>
-
-
-
-
                     </div>
+                </div><br />
+                <dl className="row">
+                    <div className="offset-md-3 col-md-6">
+                        <div id="accordion4">
+                            <div className="card">
+                                <div className="card-header no-padding-TB" id="headingFour">
+                                    <h5 className="mb-0">
+                                        <button className="btn btn-link accordionBtn " data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                            <legend>Add to Order</legend>
+                                        </button>
+                                    </h5>
+                                </div>
 
-                </div>
+                                <div id="collapseFour" className="collapse " aria-labelledby="headingOne" data-parent="#accordion4">
+                                    <div className="card-body">
+                                        <dl className="row">
+                                            <dt className="col-12">
+                                                <label>Order</label>
+                                                <select className="form-control form-control-xs" >
+                                                    <option value="AA00051004051">AA00051004051</option>
+                                                    <option value="AA00051004052">AA00051004052</option>
+                                                    <option value="AA00051004053">AA00051004053</option>
+                                                </select>
+                                            </dt>
+                                  
+                                        </dl>   
+                                        <dl className="row">
+                                            <dt className="col-12 text-center">
+                                                <button type="button" className=" btn btn-success btn-sm">&nbsp;&nbsp;&nbsp; &nbsp; Add &nbsp; &nbsp;&nbsp;&nbsp;</button>
+                                            </dt>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </dl>
             </main>
 
 
