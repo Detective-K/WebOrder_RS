@@ -203,7 +203,7 @@ class Order extends React.Component {
                                                                                                 <dt className="col-5 col-sm-5">Part No.</dt>
                                                                                                 <dd className="col-7 col-sm-7">A0101041021</dd>
                                                                                                 <dt className="col-5 col-sm-5">Discount</dt>
-                                                                                                <dd className="col-7 col-sm-7">0</dd>
+                                                                                                <dd className="col-7 col-sm-7">0 %</dd>
 
                                                                                                 <dt className="col-5 col-sm-5">Total Price</dt>
                                                                                                 <dd className="col-7 col-sm-7">15,748</dd>
@@ -623,9 +623,9 @@ class DesignTool extends React.Component {
                         <div id="accordion">
                             <div className="card">
                                 <div className="card-header no-padding-TB" id="headingOne">
-                                        <button className="btn btn-link accordionBtn " data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            <legend>Select Motor</legend>
-                                        </button>
+                                    <button className="btn btn-link accordionBtn " data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <legend>Select Motor</legend>
+                                    </button>
                                 </div>
 
                                 <div id="collapseOne" className="collapse " aria-labelledby="headingOne" data-parent="#accordion">
@@ -644,62 +644,70 @@ class DesignTool extends React.Component {
                                         </ul>
                                         <div class="tab-content" id="pills-tabContent">
                                             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                                                <form action="r" method="post" accept-charset="utf-8" className="form" role="form">
-                                                    <dl className="row">
-                                                        <dd className="col-6 col-sm-6 col-md-6">
-                                                            <label>Brand</label>
-                                                            <select name="month" className="form-control form-control-xs">
-                                                                <option value="00"></option>
-                                                                <option value="01">ABB</option>
-                                                                <option value="02">ALLEN BRADLEY</option>
-                                                                <option value="03">ALLEN BRADLEY</option>
-                                                            </select>
-                                                        </dd>
-                                                        <dd className="col-6 col-sm-6 col-md-6">
-                                                            <label>Model</label>
-                                                            <select name="month" className="form-control form-control-xs">
-                                                                <option value="00"></option>
-                                                                <option value="8C1.1.30.1.xxxxxx.G.xxB">8C1.1.30.1.xxxxxx.G.xxB</option>
-                                                                <option value="1326AB-A1G-11-xx">1326AB-A1G-11-xx</option>
-                                                            </select>
-                                                        </dd>
-                                                        <dd className="col-12">
-                                                            <div class="form-group">
-                                                                <label for="inputKg">
-                                                                    <a href="#" data-toggle="modal" data-target="#motorInfoModal" >The max. Moment of Inertia of Application  <i class="fas fa-info-circle fa-lg"></i>
-                                                                    </a>
+                                                <dl className="row">
+                                                    <dt className="col-3">
+                                                        <label>Brand</label>
+                                                    </dt>
+                                                    <dd className="col-9">
+                                                  
+                                                        <select name="month" className="form-control form-control-xs">
+                                                            <option value="00"></option>
+                                                            <option value="01">ABB</option>
+                                                            <option value="02">ALLEN BRADLEY</option>
+                                                            <option value="03">ALLEN BRADLEY</option>
+                                                        </select>
+                                                    </dd>
+                                                    <dd className="col-12">
+                                                        <label>Model</label>
+                                                        <select name="month" className="form-control form-control-xs">
+                                                            <option value="00"></option>
+                                                            <option value="BMP0701F_PCD82+ATV32H037N4,ATV320U04N4">BMP0701F_PCD82+ATV32H037N4,ATV320U04N4</option>
+                                                            <option value="8C1.1.30.1.xxxxxx.G.xxB">8C1.1.30.1.xxxxxx.G.xxB</option>
+                                                            <option value="1326AB-A1G-11-xx">1326AB-A1G-11-xx</option>
+                                                        </select>
+                                                    </dd>
+                                                    <dd className="col-12">
+                                                        <div class="form-group">
+                                                            <label for="inputKg">
+                                                                <a href="#" data-toggle="modal" data-target="#motorInfoModal" >The max. Moment of Inertia of Application  <i class="fas fa-info-circle fa-lg"></i>
+                                                                </a>
 
-                                                                    <div class="modal fade" id="motorInfoModal">
-                                                                        <div class="modal-dialog modal-dialog-centered">
-                                                                            <div class="modal-content">
-                                                                                <div class="modal-header">
-                                                                                    <h4 class="modal-title">Information</h4>
-                                                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                                                </div>
-                                                                                <div class="modal-body">
-                                                                                    <dl className="row">
-                                                                                        <dt className="col-2 text-danger">(*)</dt> <dd className="col-10 text-danger">Without giving the max. moment of inertia of application or giving a wrong value, the warranty could be invalid in case of a gearbox damage due to the back-drive torque from application. </dd>
-                                                                                        <dt className="col-2 text-danger">(**)</dt> <dd className="col-10 text-danger">Material of AT series: Stainless<br />Material of ATB series: Carbon Steel with Phosphate<br />Material of AExxxS / AERxxxS series: Full Stainless</dd>
-                                                                                    </dl>
-                                                                                </div>
+                                                                <div class="modal fade" id="motorInfoModal">
+                                                                    <div class="modal-dialog modal-dialog-centered">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h4 class="modal-title">Information</h4>
+                                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <dl className="row">
+                                                                                    <dt className="col-2 text-danger">(*)</dt> <dd className="col-10 text-danger">Without giving the max. moment of inertia of application or giving a wrong value, the warranty could be invalid in case of a gearbox damage due to the back-drive torque from application. </dd>
+                                                                                    <dt className="col-2 text-danger">(**)</dt> <dd className="col-10 text-danger">Material of AT series: Stainless<br />Material of ATB series: Carbon Steel with Phosphate<br />Material of AExxxS / AERxxxS series: Full Stainless</dd>
+                                                                                </dl>
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                </label>
-                                                                <input type="text" className="form-control" id="inputKg" placeholder="(Kg . cm2)" />
-                                                                <small className="form-text  text-danger">To calculate the moment of inertia: <a href="https://www.apexdyna.com/dynamax.aspx" className="text-danger" > GO TO !!</a></small>
-                                                            </div>
-                                                        </dd>
-                                                    </dl>
-                                                </form>
+                                                                </div>
+                                                            </label>
+                                                            <input type="text" className="form-control" id="inputKg" placeholder="(Kg . cm2)" />
+                                                            <small className="form-text  text-danger">To calculate the moment of inertia: <a href="https://www.apexdyna.com/dynamax.aspx" className="text-danger" target="_blank" > GO TO !!</a></small>
+                                                        </div>
+                                                    </dd>
+                                                </dl>
+                                                <dl className="row">
+                                                    <dt className="col-12 text-center ">
+                                                        <button type="button" class="btn btn-success btn-sm">Check</button>
+                                                    </dt>
+                                                </dl>
+
                                             </div>
                                             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                                                 <dl className="row">
                                                     <dd class="col-12 text-center">
                                                         <img src="http://www.apexdyna.com/weborder/image/moto_photo2.png" className="img-thumbnail" />
-                                                 
+
                                                     </dd>
-                          
+
                                                 </dl>
                                             </div>
                                             <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
@@ -712,8 +720,11 @@ class DesignTool extends React.Component {
                                                         <label for="inputMotorShaft">Motor Shaft</label>
                                                         <input type="text" class="form-control" id="inputMotorShaft" />
                                                     </div>
-
-                                                    <button type="submit" class="btn btn-success btn-sm">Confirm</button>
+                                                    <div className="row">
+                                                        <div className="col-12 text-center">
+                                                            <button type="submit" class="btn btn-success btn-sm ">Check</button>
+                                                        </div>
+                                                    </div>
                                                 </form>
                                             </div>
                                         </div>
@@ -758,7 +769,26 @@ class DesignTool extends React.Component {
                                         </dl><br />
                                         <dl className="row">
                                             <dt className="col-6 col-sm-6 col-md-6">
-                                                <label>Gearbox</label>
+
+                                                <a href="#" data-toggle="modal" data-target="#gearboxInfoModal" className="text-dark" > <label>Gearbox</label> <i class="fas fa-info-circle fa-lg"></i>
+                                                </a>
+
+                                                <div class="modal fade" id="gearboxInfoModal">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Information</h4>
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <dl className="row">
+                                                                    <dd className="col-12 text-danger">No mortor information, select gearbox only.</dd>
+                                                                </dl>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
                                                 <select name="month" className="form-control form-control-xs" disabled>
                                                     <option value="R01" selected="selected">AB Series</option>
                                                     <option value="R02">ABR Series</option>
@@ -796,7 +826,7 @@ class DesignTool extends React.Component {
                                                     <option value="P1">P1</option>
                                                 </select>
                                             </dt>
-                                        </dl><br/>
+                                        </dl><br />
                                         <dl className="row">
                                             <dt className="col-12 text-center" >
                                                 <button type="button" className=" btn btn-success btn-sm">&nbsp;&nbsp;&nbsp; Check &nbsp;&nbsp;&nbsp;</button>
@@ -823,12 +853,12 @@ class DesignTool extends React.Component {
                                 <div id="collapseThree" className="collapse " aria-labelledby="headingOne" data-parent="#accordion3">
                                     <div className="card-body">
 
-                                        <dl className="row no-gutters">   
-                                      
+                                        <dl className="row no-gutters">
+
                                             <dd class=" col-12 text-center">
                                                 <img src="http://www.apexdyna.com/images/gearbox/pro_samll01.png" width="191" height="180" />
                                             </dd>
-                               
+
                                             <dt class="col-12 text-center">
                                                 <h5 class="card-title">Ordering Code</h5>
                                                 <h4 class="card-text"><span class="badge badge-primary">AB090 - 003 - S2 - P2 /</span></h4>
@@ -836,7 +866,8 @@ class DesignTool extends React.Component {
                                             </dt>
 
                                         </dl><br />
-                                        <dl className="row no-gutters bg-light ">
+                                        <hr />
+                                        <dl className="row no-gutters bg-F0 ">
 
                                             <dt className="col-12"><h5>Download</h5></dt>
                                             <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; PDF &nbsp;&nbsp;</button> </dt>
@@ -844,7 +875,7 @@ class DesignTool extends React.Component {
                                             <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; IGS &nbsp;&nbsp;</button> </dt>
                                             <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; STP &nbsp;&nbsp;</button> </dt>
                                         </dl><br />
-
+                                        <hr />
                                         <dl className="row no-gutters">
                                             <dt className="col-9"><h5>List</h5></dt>  <dt className="col-3"><h5>Stock<sup className="text-danger">(1)</sup></h5></dt>
                                             <dt className="col-3" >Bom</dt> <dd className="col-6">Spec</dd><dd className="col-3"></dd>
@@ -855,9 +886,9 @@ class DesignTool extends React.Component {
                                             <dt className="col-3" >Screw </dt> <dd className="col-6">SW-1-M8X1.25P-L25 / 2111B108025</dd><dd className="col-3"></dd>
                                             <dt className="col-3" >Washer </dt> <dd className="col-6">WS-B1-D8 / 22120100501</dd><dd className="col-3"></dd>
                                         </dl><br />
+                                        <hr />
 
-
-                                        <dl className="row no-gutters bg-light ">
+                                        <dl className="row no-gutters bg-F0 ">
                                             <dt className="col-12"><h5>Gearbox Specification</h5></dt>
                                             <dt className="col-4" >Model </dt> <dd className="col-8">AB090 - 003 - S2 - P2</dd>
                                             <dt className="col-4" >Ratio </dt> <dd className="col-8">3</dd>
@@ -872,7 +903,7 @@ class DesignTool extends React.Component {
                                             <dt className="col-4" >Weight </dt> <dd className="col-8">3.70 kg</dd>
                                             <dt className="col-4" >No Load </dt> <dd className="col-8">0.67 Nm<sup><font color="red">(3)</font></sup></dd>
                                         </dl><br />
-
+                                        <hr />
                                         <dl className="row no-gutters">
                                             <dt className="col-12"><h5>Motor Specification</h5></dt>
                                             <dt className="col-4" >Brand </dt> <dd className="col-8">ABB</dd>
@@ -885,8 +916,8 @@ class DesignTool extends React.Component {
                                             <dt className="col-4" >Peak Torque</dt> <dd className="col-8">4.60 Nm</dd>
                                             <dt className="col-4" >Inertia</dt> <dd className="col-8">0.90 kgcm<font size="1"><sup>^2</sup></font></dd>
                                         </dl><br />
-
-                                        <dl className="row no-gutters bg-light  text-danger  small">
+                                        <hr />
+                                        <dl className="row no-gutters bg-F0  text-danger  small">
                                             <dt className="col-2" >(*) </dt> <dd className="col-10">Without giving the max. moment of inertia of application or giving a wrong value, the warranty could be invalid in case of a gearbox damage due to the back-drive torque from application.</dd>
                                             <dt className="col-2" >Note (1) </dt> <dd className="col-10">The available piece-no. in stock is variable depending on incoming orders in the time.</dd>
                                             <dt className="col-2" >Note (2)</dt> <dd className="col-10">The gearboxes in stock are filled with standard grease. For non-standard grease or any customization please contact APEX.</dd>
