@@ -41,6 +41,109 @@
 
 
 
+class NewOrder extends React.Component {
+    render() {
+        return (
+            <div>
+                <button type="button" className="btn btn-success" data-toggle="modal" data-target="#modalSignUP">
+                    Add Order
+                                </button>
+                <div className="modal fade" id="modalSignUP" tabindex="-1" role="dialog" aria-labelledby="ModalLSignUP" aria-hidden="true">
+                    <div className="modal-dialog" role="document">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title" id="ModalLSignUP">Add New Orders</h5>
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div className="modal-body">
+                                <form>
+                                    <div className="form-group">
+                                        <div className="input-group mb-3">
+                                            <div className="input-group-prepend">
+                                                <span className="input-group-text" id="basic-addon1">P.O. NO</span>
+                                            </div>
+                                            <input type="text" className="form-control" placeholder="P.O. NO" aria-label="P.O. NO" aria-describedby="basic-addon1" />
+                                        </div>
+                                    </div>
+                                    <div className="form-group">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span className="input-group-text" id="basic-addon1">Currency</span>
+                                            </div>
+                                            <select className="form-control" id="currencySel">
+                                                <option></option>
+                                                <option>TWD</option>
+                                                <option>USD</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div className="form-group">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span className="input-group-text" id="basic-addon1">Delivery way</span>
+                                            </div>
+                                            <select className="form-control" id="deliverySel">
+                                                <option>By UPS</option>
+                                                <option>BY DHL</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div className="form-group">
+                                        <div className="input-group mb-3">
+                                            <div className="input-group-prepend">
+                                                <span className="input-group-text" id="basic-addon1">Order Date</span>
+                                            </div>
+                                            <input type="text" className="form-control" value="2021/04/01" aria-describedby="basic-addon1" disabled />
+                                        </div>
+                                        <div className="input-group mb-3">
+                                            <div className="input-group-prepend">
+                                                <span className="input-group-text" id="basic-addon1">Delivery date</span>
+                                            </div>
+                                            <input type="date" class="form-control" id="deliveryDate" name="deliveryDate" />
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" className="btn btn-success">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>);
+    }
+}
+
+class AccordionCt extends React.Component {
+    render() {
+        return (
+            <div id="accordion">
+                <div className="card">
+                    <div className="card-header no-padding-TB" id="headingThree">
+                        <h5 className="mb-0">
+                            <button className="btn btn-link accordionBtn " data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                <legend> {this.props.head}</legend>
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseThree" className="collapse " aria-labelledby="headingOne" data-parent="#accordion">
+                        <div className="card-body">
+                            <dl className="row no-gutters">
+                                {this.props.body}
+                            </dl><br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+
 class Order extends React.Component {
 
     render() {
@@ -52,75 +155,7 @@ class Order extends React.Component {
                 <div className="row">
                     <div className="col-lg-4 col-lg-offset-4"> <input type="search" id="search" value="" className="form-control" placeholder="Search" /> </div>
                     <div className="col-lg-4 col-lg-offset-4">
-                        <button type="button" className="btn btn-success" data-toggle="modal" data-target="#modalSignUP">
-                            Add Order
-                                </button>
-                        <div className="modal fade" id="modalSignUP" tabindex="-1" role="dialog" aria-labelledby="ModalLSignUP" aria-hidden="true">
-                            <div className="modal-dialog" role="document">
-                                <div className="modal-content">
-                                    <div className="modal-header">
-                                        <h5 className="modal-title" id="ModalLSignUP">Add New Orders</h5>
-                                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div className="modal-body">
-                                        <form>
-                                            <div className="form-group">
-                                                <div className="input-group mb-3">
-                                                    <div className="input-group-prepend">
-                                                        <span className="input-group-text" id="basic-addon1">P.O. NO</span>
-                                                    </div>
-                                                    <input type="text" className="form-control" placeholder="P.O. NO" aria-label="P.O. NO" aria-describedby="basic-addon1" />
-                                                </div>
-                                            </div>
-                                            <div className="form-group">
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <span className="input-group-text" id="basic-addon1">Currency</span>
-                                                    </div>
-                                                    <select className="form-control" id="currencySel">
-                                                        <option></option>
-                                                        <option>TWD</option>
-                                                        <option>USD</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div className="form-group">
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <span className="input-group-text" id="basic-addon1">Delivery way</span>
-                                                    </div>
-                                                    <select className="form-control" id="deliverySel">
-                                                        <option>By UPS</option>
-                                                        <option>BY DHL</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div className="form-group">
-                                                <div className="input-group mb-3">
-                                                    <div className="input-group-prepend">
-                                                        <span className="input-group-text" id="basic-addon1">Order Date</span>
-                                                    </div>
-                                                    <input type="text" className="form-control" value="2021/04/01" aria-describedby="basic-addon1" disabled />
-                                                </div>
-                                                <div className="input-group mb-3">
-                                                    <div className="input-group-prepend">
-                                                        <span className="input-group-text" id="basic-addon1">Delivery date</span>
-                                                    </div>
-                                                    <input type="date" class="form-control" id="deliveryDate" name="deliveryDate" />
-                                                </div>
-                                            </div>
-
-                                        </form>
-                                    </div>
-                                    <div className="modal-footer">
-                                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" className="btn btn-success">Add</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <NewOrder />
                     </div>
                 </div>
                 <br />
@@ -756,13 +791,13 @@ class DesignTool extends React.Component {
                                             <dt className="col-12 text-center">
                                                 <div class="btn-toolbar d-inline-block" role="toolbar" aria-label="Toolbar with button groups">
                                                     <div class="btn-group mr-2 " role="group" aria-label="First group">
-                                                        <button type="button" class="btn btn-success btn-sm"> &nbsp; Standard &nbsp;  &nbsp;</button>
+                                                        <button type="button" class="btn btn-outline-success btn-sm"> &nbsp; Standard &nbsp;  &nbsp;</button>
                                                     </div>
                                                     <div class="btn-group mr-2" role="group" aria-label="Second group">
-                                                        <button type="button" class="btn btn-success btn-sm">Unlimited 1</button>
+                                                        <button type="button" class="btn btn-outline-warning btn-sm">Unlimited 1</button>
                                                     </div>
                                                     <div class="btn-group" role="group" aria-label="Third group">
-                                                        <button type="button" class="btn btn-success btn-sm">Unlimited 2</button>
+                                                        <button type="button" class="btn btn-outline-danger btn-sm">Unlimited 2</button>
                                                     </div>
                                                 </div>
                                             </dt>
@@ -782,7 +817,7 @@ class DesignTool extends React.Component {
                                                             </div>
                                                             <div class="modal-body">
                                                                 <dl className="row">
-                                                                    <dd className="col-12 text-danger">No mortor information, select gearbox only.</dd>
+                                                                    <dd className="col-12 text-danger">If there is no mortor information, to select gearbox only.</dd>
                                                                 </dl>
                                                             </div>
                                                         </div>
@@ -867,7 +902,7 @@ class DesignTool extends React.Component {
 
                                         </dl><br />
                                         <hr />
-                                        <dl className="row no-gutters bg-F0 ">
+                                        <dl className="row no-gutters bg-F0 text-center">
 
                                             <dt className="col-12"><h5>Download</h5></dt>
                                             <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; PDF &nbsp;&nbsp;</button> </dt>
@@ -877,10 +912,10 @@ class DesignTool extends React.Component {
                                         </dl><br />
                                         <hr />
                                         <dl className="row no-gutters">
-                                            <dt className="col-9"><h5>List</h5></dt>  <dt className="col-3"><h5>Stock<sup className="text-danger">(1)</sup></h5></dt>
+                                            <dt className="col-9"><h5>List</h5></dt>  <dt className="col-3 text-right"><h5>Stock<sup className="text-danger">(1)</sup></h5></dt>
                                             <dt className="col-3" >Bom</dt> <dd className="col-6">Spec</dd><dd className="col-3"></dd>
-                                            <dt className="col-3" >Gearbox</dt> <dd className="col-6">AB090 - 003 - S2 - P2 / A0100030122</dd><dd className="col-3">{">"}100 pcs<sup className="text-danger" >(2)</sup></dd>
-                                            <dt className="col-3" >Adapter</dt> <dd className="col-6">AD-W90-M100-3 / S0401300503</dd><dd className="col-3">Re-Stocking</dd>
+                                            <dt className="col-3" >Gearbox</dt> <dd className="col-5">AB090003S2P2 / A0100030122</dd><dd className="col-4 text-right">{">"}100 pcs<sup className="text-danger" >(2)</sup></dd>
+                                            <dt className="col-3" >Adapter</dt> <dd className="col-5">AD-W90-M100-3 / S0401300503</dd><dd className="col-4 text-right">Re-Stocking</dd>
                                             <dt className="col-3" >Fix Plate</dt> <dd className="col-6">[No need]</dd><dd className="col-3"></dd>
                                             <dt className="col-3" >Bushing</dt> <dd className="col-6">[No need]</dd><dd className="col-3"></dd>
                                             <dt className="col-3" >Screw </dt> <dd className="col-6">SW-1-M8X1.25P-L25 / 2111B108025</dd><dd className="col-3"></dd>
@@ -952,11 +987,16 @@ class DesignTool extends React.Component {
                                                     <option value="AA00051004053">AA00051004053</option>
                                                 </select>
                                             </dt>
-                                  
-                                        </dl>   
+
+                                        </dl>
                                         <dl className="row">
                                             <dt className="col-12 text-center">
                                                 <button type="button" className=" btn btn-success btn-sm">&nbsp;&nbsp;&nbsp; &nbsp; Add &nbsp; &nbsp;&nbsp;&nbsp;</button>
+                                            </dt>
+                                        </dl>
+                                        <dl className="row">
+                                            <dt className="col-12 text-center">
+                                                <NewOrder />
                                             </dt>
                                         </dl>
                                     </div>
