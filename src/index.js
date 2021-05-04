@@ -46,8 +46,8 @@ class NewOrder extends React.Component {
         return (
             <div>
                 <button type="button" className="btn btn-success" data-toggle="modal" data-target="#modalSignUP">
-                    Add Order
-                                </button>
+                    {this.props.btname}
+                </button>
                 <div className="modal fade" id="modalSignUP" tabindex="-1" role="dialog" aria-labelledby="ModalLSignUP" aria-hidden="true">
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
@@ -133,9 +133,8 @@ class AccordionCt extends React.Component {
 
                     <div id="collapseThree" className="collapse " aria-labelledby="headingOne" data-parent="#accordion">
                         <div className="card-body">
-                            <dl className="row no-gutters">
-                                {this.props.body}
-                            </dl><br />
+                            {this.props.body}
+                            <br />
                         </div>
                     </div>
                 </div>
@@ -143,6 +142,31 @@ class AccordionCt extends React.Component {
         );
     }
 }
+
+class NavTabs extends React.Component {
+    render() {
+        return (
+            <dl className="row no-gutters">
+                <dd className="col-12">
+
+                    <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">{this.props.head}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">{this.props.head2}</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">{this.props.body}</div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">{this.props.body2}</div>
+                    </div>
+                </dd>
+            </dl>
+        );
+    }
+}
+
 
 class Order extends React.Component {
 
@@ -155,7 +179,7 @@ class Order extends React.Component {
                 <div className="row">
                     <div className="col-lg-4 col-lg-offset-4"> <input type="search" id="search" value="" className="form-control" placeholder="Search" /> </div>
                     <div className="col-lg-4 col-lg-offset-4">
-                        <NewOrder />
+                        <NewOrder btname="Add Order" />
                     </div>
                 </div>
                 <br />
@@ -340,8 +364,8 @@ class Order extends React.Component {
                                                                         Add Item
                                                                      </button>
                                                                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                                                        <a class="dropdown-item" href="#/DesignTool">Gearbox</a>
-                                                                        <a class="dropdown-item" href="#/DesignTool">Rack and Pinion</a>
+                                                                        <a class="dropdown-item" href="#/Gearbox">Gearbox</a>
+                                                                        <a class="dropdown-item" href="#/RackPinion">Rack and Pinion</a>
                                                                     </div>
                                                                 </div>
                                                             </dd>
@@ -647,7 +671,7 @@ class Order extends React.Component {
         );
     }
 };
-class DesignTool extends React.Component {
+class Gearbox extends React.Component {
     render() {
         return (
             <main role="main" className="container-fluid"> <br />
@@ -791,13 +815,13 @@ class DesignTool extends React.Component {
                                             <dt className="col-12 text-center">
                                                 <div class="btn-toolbar d-inline-block" role="toolbar" aria-label="Toolbar with button groups">
                                                     <div class="btn-group mr-2 " role="group" aria-label="First group">
-                                                        <button type="button" class="btn btn-outline-success btn-sm"> &nbsp; Standard &nbsp;  &nbsp;</button>
+                                                        <button type="button" class="btn btn-success btn-sm"> &nbsp; Standard &nbsp;  &nbsp;</button>
                                                     </div>
                                                     <div class="btn-group mr-2" role="group" aria-label="Second group">
-                                                        <button type="button" class="btn btn-outline-warning btn-sm">Unlimited 1</button>
+                                                        <button type="button" class="btn btn-warning btn-sm">Unlimited 1</button>
                                                     </div>
                                                     <div class="btn-group" role="group" aria-label="Third group">
-                                                        <button type="button" class="btn btn-outline-danger btn-sm">Unlimited 2</button>
+                                                        <button type="button" class="btn btn-danger btn-sm">Unlimited 2</button>
                                                     </div>
                                                 </div>
                                             </dt>
@@ -991,12 +1015,12 @@ class DesignTool extends React.Component {
                                         </dl>
                                         <dl className="row">
                                             <dt className="col-12 text-center">
-                                                <button type="button" className=" btn btn-success btn-sm">&nbsp;&nbsp;&nbsp; &nbsp; Add &nbsp; &nbsp;&nbsp;&nbsp;</button>
+                                                <button type="button" className=" btn btn-success btn-sm">&nbsp;&nbsp;&nbsp; &nbsp; Add to Order &nbsp; &nbsp;&nbsp;&nbsp;</button>
                                             </dt>
                                         </dl>
                                         <dl className="row">
                                             <dt className="col-12 text-center">
-                                                <NewOrder />
+                                                <NewOrder btname="Add to New Order" />
                                             </dt>
                                         </dl>
                                     </div>
@@ -1014,6 +1038,197 @@ class DesignTool extends React.Component {
         );
     }
 };
+
+
+const RackTabBody = () => {
+    return (
+        <dl className="row">
+            <dd className="col-12">
+                <dl className="row">
+                    <dt className="col-12">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <button class="btn btn-outline-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">APEX</a>
+                                    <a class="dropdown-item" href="#">ATLANTA</a>
+                                </div>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Order Code No" />
+                            <div class="input-group-append">
+                                <button class="btn btn-success" type="button">Check</button>
+                            </div>
+                        </div>
+                    </dt>
+                </dl>
+                <dl className="row  ">
+                    <dt className="col-4">Label</dt> <dd className="col-8">APEX</dd>
+                    <dt className="col-4">Order Code</dt> <dd className="col-8">0106R050C10</dd>
+                    <dt className="col-4">Description</dt> <dd className="col-8">Mn1 / Q6 / Right-Hand Helical / 500 (15x15) mm / Carbon Steel</dd>
+                </dl>
+            </dd>
+        </dl>
+
+
+    );
+};
+const RackTabBody2 = () => {
+    return (
+        <dl className="row">
+            <dd className="col-12">
+                <dl className="row">
+                    <dt className="col-6 col-xl-7">
+                        <div className="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Module</span>
+                            </div>
+                            <div class="input-group-prepend">
+                                <select class="form-control">
+                                    <option selected>1</option>
+                                    <option >1.5</option>
+                                </select>
+                            </div>
+                        </div>
+                    </dt>
+                    <dt className="col-6 col-xl-5">
+                        <div className="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Quality</span>
+                            </div>
+                            <div class="input-group-prepend">
+                                <select class="form-control">
+                                    <option selected>6</option>
+                                    <option >6M</option>
+                                </select>
+                            </div>
+                        </div>
+                    </dt>
+                    <dt className="col-12 col-xl-7">
+                        <div className="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Helical Angle</span>
+                            </div>
+                            <div class="input-group-prepend">
+                                <select class="form-control">
+                                    <option selected>Right-Hand Helical</option>
+                                    <option >Straight</option>
+                                </select>
+                            </div>
+                        </div>
+                    </dt>
+                    <dt className="col-12 col-xl-5">
+                        <div className="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Length </span>
+                            </div>
+                            <div class="input-group-prepend">
+                                <select class="form-control">
+                                    <option selected="selected" value="500">500</option>
+                                    <option selected="selected" value="1000">1000</option>
+                                </select>
+                            </div>
+                        </div>
+                    </dt>
+                    <dt className="col-12 col-xl-7">
+                        <div className="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Material</span>
+                            </div>
+                            <div class="input-group-prepend">
+                                <select class="form-control">
+                                    <option selected="selected" value="Carbon Steel">Carbon Steel</option>
+                                </select>
+                            </div>
+                        </div>
+                    </dt>
+                    <dt className="col-12 col-xl-5">
+                        <div className="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">	Screw Holes</span>
+                            </div>
+                            <div class="input-group-prepend">
+                                <select class="form-control">
+                                    <option value="1">Standard</option>
+                                    <option value="0">Without</option>
+                                </select>
+                            </div>
+                        </div>
+                    </dt>
+                    <dt className="col-12 col-xl-7">
+                        <div className="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Coating</span>
+                            </div>
+                            <div class="input-group-prepend">
+                                <select class="form-control">
+                                    <option selected="selected" value="0">None</option>
+                                    <option value="">Select</option>
+                                </select>
+                            </div>
+                        </div>
+                    </dt>
+                    <dt className="col-12 col-xl-5">
+                        <div className="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Interface</span>
+                            </div>
+                            <div class="input-group-prepend">
+                                <select class="form-control">
+                                    <option selected="selected" value="0">None</option>
+                                    <option value="90">A1</option>
+                                </select>
+                            </div>
+                        </div>
+                    </dt>
+                    <dt className="col-12  ">
+                        <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;Check&nbsp;&nbsp;&nbsp;</button>
+                    </dt>
+                </dl><br/>
+                <dl className="row  ">
+                    <dt className="col-4">Order Code</dt> <dd className="col-8">0106R050C10</dd>
+                    <dt className="col-4">Description</dt> <dd className="col-8">Mn1 / Q6 / Right-Hand Helical / 500 (15x15) mm / Carbon Steel</dd>
+                    <dt className="col-4">Unit Price</dt> <dd className="col-8">XXXX</dd>
+                    <dt className="col-4">PCS Num.</dt> <dd className="col-8"><input type="text" className="form-control" /></dd>
+                    <dt className="col-12"><button type="button" className=" btn btn-success btn-sm">&nbsp;&nbsp;&nbsp; &nbsp; Add to Order &nbsp; &nbsp;&nbsp;&nbsp;</button> </dt>
+                </dl><br />
+                <dl className="row no-gutters bg-F0 ">
+
+                    <dt className="col-12"><h5>Download</h5></dt>
+                    <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; PDF &nbsp;&nbsp;</button> </dt>
+                    <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; DXF &nbsp;&nbsp;</button> </dt>
+                    <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; IGS &nbsp;&nbsp;</button> </dt>
+                    <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; STP &nbsp;&nbsp;</button> </dt>
+                </dl><br />
+            </dd>
+        </dl>
+    );
+};
+
+class RackCt extends React.Component {
+    render() {
+        return (
+            <NavTabs head="SELECTION I" head2="SELECTION II" body={<RackTabBody />} body2={<RackTabBody2 />} />
+        );
+    }
+}
+
+class RackPinion extends React.Component {
+    render() {
+        return (
+            <main role="main" className="container-fluid"> <br />
+                <br />
+                <br />
+                <div className="row">
+                    <div className="offset-md-3 col-md-6">
+                        <AccordionCt head="Rack" body={<RackCt />} />
+                    </div>
+                </div>
+            </main>
+
+        );
+    }
+
+}
 
 const Login = () => <h1>Login</h1>
 const Register = () => <h1>Register</h1>
@@ -1036,7 +1251,7 @@ const App = () => (
 
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item active" ><Link className="nav-link" to="/">Order</Link></li>
-                    <li className="nav-item" ><Link className="nav-link" to="/DesignTool">DesignTool</Link></li>
+                    <li className="nav-item" ><Link className="nav-link" to="/Gearbox">DesignTool</Link></li>
                 </ul>
 
                 <form className="form-inline my-2 my-lg-0">
@@ -1045,7 +1260,8 @@ const App = () => (
             </div>
         </nav>
         <Route path="/" exact component={Order} />
-        <Route path="/DesignTool" component={DesignTool} />
+        <Route path="/Gearbox" component={Gearbox} />
+        <Route path="/RackPinion" component={RackPinion} />
     </ReactRouterDOM.HashRouter>
 
 )
