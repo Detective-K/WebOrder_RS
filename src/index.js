@@ -207,7 +207,7 @@ class Order extends React.Component {
                                                         <button className="btn btn-link accordionBtn no-padding-LR" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                                             <legend>      <div className="row no-gutters">
                                                                 <div className="col-6 col-sm-6 col-md-6 col-lg-6 ">AA00031003100</div>
-                                                                <div className="col-6  col-sm-6 col-md-6 col-lg-6 ">OB21032902</div>
+                                                                <div className="col-6  col-sm-6 col-md-6 col-lg-6 ">Heidelberg 00041980230</div>
                                                             </div></legend>
                                                         </button>
                                                     </h5>
@@ -1006,7 +1006,7 @@ class Gearbox extends React.Component {
                                             <dt className="col-12">
                                                 <label>Order</label>
                                                 <select className="form-control form-control-xs" >
-                                                    <option value="AA00051004051">AA00051004051</option>
+                                                    <option value="AA00051004051/Heidelberg 00041980230">AA00051004051/Heidelberg 00041980230</option>
                                                     <option value="AA00051004052">AA00051004052</option>
                                                     <option value="AA00051004053">AA00051004053</option>
                                                 </select>
@@ -1048,7 +1048,7 @@ const RackTabBody = () => {
                     <dt className="col-12">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <button class="btn btn-outline-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+                                <button class="btn btn-outline-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">APEX </button>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="#">APEX</a>
                                     <a class="dropdown-item" href="#">ATLANTA</a>
