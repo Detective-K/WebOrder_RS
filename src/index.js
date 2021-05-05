@@ -167,6 +167,25 @@ class NavTabs extends React.Component {
     }
 }
 
+class NavOneTabs extends React.Component {
+    render() {
+        return (
+            <dl className="row no-gutters">
+                <dd className="col-12">
+
+                    <ul class="nav nav-tabs mb-3"  role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href={"#" + this.props.home} role="tab" aria-controls={this.props.home} aria-selected="true">{this.props.head}</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" >
+                        <div class="tab-pane fade show active" id={this.props.home} role="tabpanel" aria-labelledby="home-tab">{this.props.body}</div>
+                    </div>
+                </dd>
+            </dl>
+        );
+    }
+}
 
 class Order extends React.Component {
 
@@ -1053,7 +1072,7 @@ class Gearbox extends React.Component {
 };
 
 
-const RackTabBody = () => {
+const RPTabBody = () => {
     return (
         <dl className="row">
             <dd className="col-12">
@@ -1075,7 +1094,7 @@ const RackTabBody = () => {
                     </dt>
                 </dl>
                 <dl className="row  ">
-                    <dt className="col-4">Label</dt> <dd className="col-8">APEX</dd>
+                    <dt className="col-4">Brand</dt> <dd className="col-8">APEX</dd>
                     <dt className="col-4">Order Code</dt> <dd className="col-8">0106R050C10</dd>
                     <dt className="col-4">Description</dt> <dd className="col-8">Mn1 / Q6 / Right-Hand Helical / 500 (15x15) mm / Carbon Steel</dd>
                 </dl>
@@ -1116,7 +1135,8 @@ const RackTabBody = () => {
 
     );
 };
-const RackTabBody2 = () => {
+
+const RackTabBody = () => {
     return (
         <dl className="row">
             <dd className="col-12">
@@ -1281,7 +1301,7 @@ const RackTabBody2 = () => {
 class RackCt extends React.Component {
     render() {
         return (
-            <NavTabs head="SELECTION I" head2="SELECTION II" home="Rackhome" profile="Rackprofile" body={<RackTabBody />} body2={<RackTabBody2 />} />
+            <NavTabs head="SELECTION I" head2="SELECTION II" home="Rackhome" profile="Rackprofile" body={<RPTabBody />} body2={<RackTabBody />} />
         );
     }
 }
@@ -1296,7 +1316,7 @@ const PinionTabBody = () => {
                             <input type="radio" id="RalPinion" name="RalPinion" class="custom-control-input" />
                             <label class="custom-control-label" for="RalPinion">A Series</label>
                         </div>
-                        <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeA.png" className="img-thumbnail thumbnail"  />
+                        <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeA.png" className="img-thumbnail thumbnail" />
                     </dt>
                     <dt className="col-6 col-xl-3">
                         <div class="custom-control custom-radio">
@@ -1396,7 +1416,7 @@ const PinionTabBody = () => {
                             <div class="input-group-prepend">
                                 <select class="form-control">
                                     <option selected>B031</option>
-                                 </select>
+                                </select>
                             </div>
                         </div>
                     </dt>
@@ -1454,14 +1474,86 @@ const PinionTabBody = () => {
     );
 };
 
-
 class PinionCt extends React.Component {
     render() {
         return (
-            <NavTabs head="SELECTION I" head2="SELECTION II" home="Pinionhome" profile="Pinionprofile" body={<RackTabBody />} body2={<PinionTabBody />} />
+            <NavTabs head="SELECTION I" head2="SELECTION II" home="Pinionhome" profile="Pinionprofile" body={<RPTabBody />} body2={<PinionTabBody />} />
         );
     }
 }
+
+const ACRTabBody = () => {
+    return (
+        <dl className="row">
+            <dd className="col-12">
+                <dl className="row">
+                    <dt className="col-12">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <select className="form-control ">
+                                    <option value="A">Rack Gauge for Installation</option>
+                                    <option value="B">Shrink-Disc</option>
+                                    <option value="F">L Series of Gearbox</option>
+                                </select>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Order Code No" />
+                        </div>
+                    </dt>
+                    <dt className="col-12 text-center">
+                        <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;Check&nbsp;&nbsp;&nbsp;</button>
+                    </dt>
+                </dl>
+                <dl className="row  ">                    
+                    <dt className="col-4">Order Code</dt> <dd className="col-8">B020</dd>
+                    <dt className="col-4">Prat No.</dt> <dd className="col-8">Z0947900001</dd>
+                    <dt className="col-4">Description</dt> <dd className="col-8">Mn1-D2-L20(B020)</dd>
+                </dl>
+                <dl className="row">
+                    <dt className="col-4">
+                        <label>Order Piece Number</label>
+                    </dt>
+                    <dd className="col-8">
+                        <input type="text" className="form-control" />
+                    </dd>
+                </dl>
+                <dl className="row">
+                    <dt className="col-4">
+                        <label>Order</label>
+                    </dt>
+                    <dd className="col-8">
+                        <select className="form-control form-control-xs" >
+                            <option value="AA00051004051/Heidelberg 00041980230">AA00051004051/Heidelberg 00041980230</option>
+                            <option value="AA00051004052">AA00051004052</option>
+                            <option value="AA00051004053">AA00051004053</option>
+                        </select>
+                    </dd>
+                </dl>
+                <dl className="row">
+                    <dt className="col-12 text-center">
+                        <button type="button" className=" btn btn-success btn-sm">&nbsp;&nbsp; &nbsp; Add to Order &nbsp; &nbsp;</button>
+                    </dt>
+                </dl>
+                <dl className="row">
+                    <dt className="col-12 text-center">
+                        <NewOrder btname="Add to New Order" />
+                    </dt>
+                </dl>
+
+            </dd>
+        </dl>
+
+
+    );
+};
+
+class AccessoryCt extends React.Component {
+    render() {
+        return (
+            <NavOneTabs head="SELECTION I" head2="SELECTION II" home="Accessoryhome" profile="Accessoryprofile" body={<ACRTabBody />} />
+        );
+    }
+}
+
 
 class RackPinion extends React.Component {
     render() {
@@ -1477,6 +1569,16 @@ class RackPinion extends React.Component {
                 <dl className="row">
                     <div className="offset-md-3 col-md-6">
                         <AccordionCt head="Pinion" accordion="accordion2" collapse="collapse2" body={<PinionCt />} />
+                    </div>
+                </dl>
+                <dl className="row">
+                    <div className="offset-md-3 col-md-6">
+                        <AccordionCt head="Accessory" accordion="accordion3" collapse="collapse3" body={<AccessoryCt />} />
+                    </div>
+                </dl>
+                <dl className="row">
+                    <div className="offset-md-3 col-md-6">
+                        <AccordionCt head="Customized Re-Order" accordion="accordion4" collapse="collapse4" body={<AccessoryCt />} />
                     </div>
                 </dl>
             </main>
@@ -1507,7 +1609,15 @@ const App = () => (
 
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item active" ><Link className="nav-link" to="/">Order</Link></li>
-                    <li className="nav-item" ><Link className="nav-link" to="/Gearbox">DesignTool</Link></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            DesignTool
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <Link className="dropdown-item nav-link" to="/Gearbox">Gearbox</Link>
+                            <Link className="dropdown-item nav-link" to="/RackPinion">Rack and Pinion</Link>
+                        </div>
+                    </li>
                 </ul>
 
                 <form className="form-inline my-2 my-lg-0">
