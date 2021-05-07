@@ -385,6 +385,7 @@ class Order extends React.Component {
                                                                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                                                                         <a class="dropdown-item" href="#/Gearbox">Gearbox</a>
                                                                         <a class="dropdown-item" href="#/RackPinion">Rack / Pinion</a>
+                                                                        <a class="dropdown-item" href="#/RackPinion">Gearbox + Rack + Pinion</a>
                                                                     </div>
                                                                 </div>
                                                             </dd>
@@ -785,11 +786,6 @@ class Gearbox extends React.Component {
                                             </div>
                                             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                                                 <dl className="row">
-                                                    <dd class="col-12 text-center">
-                                                        <img src="http://www.apexdyna.com/weborder/image/moto_photo2.png" className="img-thumbnail" />
-                                                    </dd>
-                                                </dl>
-                                                <dl className="row">
                                                     <dt className="col-12 col-xl-6">
                                                         <div class="input-group mb-3">
                                                             <div class="input-group-prepend ">
@@ -797,7 +793,7 @@ class Gearbox extends React.Component {
                                                             </div>
                                                             <div class="input-group-prepend">
                                                                 <select class="form-control">
-                                                                    <option  value="N">Flange Mount</option>
+                                                                    <option value="N">Flange Mount</option>
                                                                     <option value="Y">Face Mount</option>
                                                                 </select>
                                                             </div>
@@ -816,6 +812,13 @@ class Gearbox extends React.Component {
                                                             </div>
                                                         </div>
                                                     </dt>
+                                                </dl>
+                                                <dl className="row">
+                                                    <dd class="col-12 text-center">
+                                                        <img src="http://www.apexdyna.com/weborder/image/moto_photo2.png" className="img-thumbnail" />
+                                                    </dd>
+                                                </dl>
+                                                <dl className="row">                                                   
                                                     <dt className="col-3 input-group">
                                                         <span className="text-danger">*</span>
                                                         <select className="form-control">
@@ -825,7 +828,7 @@ class Gearbox extends React.Component {
                                                     </dt>
                                                     <dt className="col-3 input-group"> <span className="text-danger">*</span><input type="text" className="form-control" placeholder="LC" /> </dt>
                                                     <dt className="col-3 input-group"> <span className="text-danger">*</span><input type="text" className="form-control" placeholder="LZ" /> </dt>
-                                                    <dt className="col-3"><input type="text" className="form-control" placeholder="LT" /> </dt>                                                   
+                                                    <dt className="col-3"><input type="text" className="form-control" placeholder="LT" /> </dt>
                                                 </dl>
                                                 <dl className="row">
                                                     <dt className="col-3 input-group"> <input type="text" className="form-control" placeholder="LG" />  </dt>
@@ -1080,7 +1083,7 @@ class Gearbox extends React.Component {
                                     <div className="card-body">
                                         <dl className="row">
                                             <dt className="col-4">
-                                                <label>Order Piece Number</label>
+                                                <label>Order Piece No.</label>
                                             </dt>
                                             <dd className="col-8">
                                                 <input type="text" className="form-control" />
@@ -1088,7 +1091,7 @@ class Gearbox extends React.Component {
                                         </dl>
                                         <dl className="row">
                                             <dt className="col-4">
-                                                <label>Order</label>
+                                                <label>To Order No.</label>
                                             </dt>
                                             <dd className="col-8">
                                                 <select className="form-control form-control-xs" >
@@ -1162,7 +1165,7 @@ const RPTabBody = () => {
                 <dl className="row">
                     <dt className="col-12 text-center"><h5>Add to Order</h5></dt>
                     <dt className="col-4">
-                        <label>Order Piece Number</label>
+                        <label>Order Piece No.</label>
                     </dt>
                     <dd className="col-8">
                         <input type="text" className="form-control" />
@@ -1170,7 +1173,7 @@ const RPTabBody = () => {
                 </dl>
                 <dl className="row">
                     <dt className="col-4">
-                        <label>Order</label>
+                        <label>To Order No.</label>
                     </dt>
                     <dd className="col-8">
                         <select className="form-control form-control-xs" >
@@ -1327,7 +1330,7 @@ const RackTabBody = () => {
                 <dl className="row">
                     <dt className="col-12 text-center"><h5>Add to Order</h5></dt>
                     <dt className="col-4">
-                        <label>Order Piece Number</label>
+                        <label>Order Piece No.</label>
                     </dt>
                     <dd className="col-8">
                         <input type="text" className="form-control" />
@@ -1335,7 +1338,7 @@ const RackTabBody = () => {
                 </dl>
                 <dl className="row">
                     <dt className="col-4">
-                        <label>Order</label>
+                        <label>To Order No.</label>
                     </dt>
                     <dd className="col-8">
                         <select className="form-control form-control-xs" >
@@ -1379,14 +1382,14 @@ const PinionTabBody = () => {
                             <input type="radio" id="RalPinion" name="RalPinion" class="custom-control-input" />
                             <label class="custom-control-label" for="RalPinion">A Series</label>
                         </div>
-                        <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeA.png" className="img-thumbnail thumbnail" />
+                        <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeA.png" className="img-thumbnail " />
                     </dt>
                     <dt className="col-6 col-xl-6">
                         <div class="custom-control custom-radio">
                             <input type="radio" id="RalPinion2" name="RalPinion" class="custom-control-input" />
                             <label class="custom-control-label" for="RalPinion2">B Series</label>
                         </div>
-                        <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeB.png" className="img-thumbnail thumbnail" />
+                        <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeB.png" className="img-thumbnail " />
                     </dt>
                 </dl>
                 <dl className="row">
@@ -1395,14 +1398,14 @@ const PinionTabBody = () => {
                             <input type="radio" id="RalPinion3" name="RalPinion" class="custom-control-input" />
                             <label class="custom-control-label" for="RalPinion3">C Series</label>
                         </div>
-                        <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeC.png" className="img-thumbnail thumbnail" />
+                        <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeC.png" className="img-thumbnail " />
                     </dt>
                     <dt className="col-6 col-xl-6">
                         <div class="custom-control custom-radio">
                             <input type="radio" id="RalPinion4" name="RalPinion" class="custom-control-input" />
                             <label class="custom-control-label" for="RalPinion4">D Series</label>
                         </div>
-                        <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeD.png" className="img-thumbnail thumbnail" />
+                        <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeD.png" className="img-thumbnail " />
                     </dt>
                 </dl>
                 <dl className="row">
@@ -1411,14 +1414,14 @@ const PinionTabBody = () => {
                             <input type="radio" id="RalPinion5" name="RalPinion" class="custom-control-input" />
                             <label class="custom-control-label" for="RalPinion5">E Series</label>
                         </div>
-                        <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeE.png" className="img-thumbnail thumbnail" />
+                        <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeE.png" className="img-thumbnail " />
                     </dt>
                     <dt className="col-6 col-xl-6">
                         <div class="custom-control custom-radio">
                             <input type="radio" id="RalPinion6" name="RalPinion" class="custom-control-input" />
                             <label class="custom-control-label" for="RalPinion6">F Series</label>
                         </div>
-                        <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeF.png" className="img-thumbnail thumbnail" />
+                        <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeF.png" className="img-thumbnail " />
                     </dt>
                 </dl>
                 <dl className="row">
@@ -1427,14 +1430,14 @@ const PinionTabBody = () => {
                             <input type="radio" id="RalPinion7" name="RalPinion" class="custom-control-input" />
                             <label class="custom-control-label" for="RalPinion7">G Series</label>
                         </div>
-                        <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeG.png" className="img-thumbnail thumbnail" />
+                        <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeG.png" className="img-thumbnail " />
                     </dt>
                     <dt className="col-6 col-xl-6">
                         <div class="custom-control custom-radio">
                             <input type="radio" id="RalPinion8" name="RalPinion" class="custom-control-input" />
                             <label class="custom-control-label" for="RalPinion8">H Series</label>
                         </div>
-                        <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeH.png" className="img-thumbnail thumbnail" />
+                        <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeH.png" className="img-thumbnail " />
                     </dt>
                 </dl><br />
                 <dl className="row">
@@ -1511,7 +1514,7 @@ const PinionTabBody = () => {
                 <dl className="row">
                     <dt className="col-12 text-center"><h5>Add to Order</h5></dt>
                     <dt className="col-4">
-                        <label>Order Piece Number</label>
+                        <label>Order Piece No.</label>
                     </dt>
                     <dd className="col-8">
                         <input type="text" className="form-control" />
@@ -1519,7 +1522,7 @@ const PinionTabBody = () => {
                 </dl>
                 <dl className="row">
                     <dt className="col-4">
-                        <label>Order</label>
+                        <label>To Order No.</label>
                     </dt>
                     <dd className="col-8">
                         <select className="form-control form-control-xs" >
@@ -1581,7 +1584,7 @@ const ACRTabBody = () => {
                 <dl className="row">
                     <dt className="col-12 text-center"><h5>Add to Order</h5></dt>
                     <dt className="col-4">
-                        <label>Order Piece Number</label>
+                        <label>Order Piece No</label>
                     </dt>
                     <dd className="col-8">
                         <input type="text" className="form-control" />
@@ -1589,7 +1592,7 @@ const ACRTabBody = () => {
                 </dl>
                 <dl className="row">
                     <dt className="col-4">
-                        <label>Order</label>
+                        <label>To Order No.</label>
                     </dt>
                     <dd className="col-8">
                         <select className="form-control form-control-xs" >
@@ -1649,7 +1652,7 @@ const CustomizedOrderTabBody = () => {
                 <dl className="row">
                     <dt className="col-12 text-center"><h5>Add to Order</h5></dt>
                     <dt className="col-4">
-                        <label>Order Piece Number</label>
+                        <label>Order Piece No.</label>
                     </dt>
                     <dd className="col-8">
                         <input type="text" className="form-control" />
@@ -1657,7 +1660,7 @@ const CustomizedOrderTabBody = () => {
                 </dl>
                 <dl className="row">
                     <dt className="col-4">
-                        <label>Order</label>
+                        <label>To Order No.</label>
                     </dt>
                     <dd className="col-8">
                         <select className="form-control form-control-xs" >
@@ -1755,6 +1758,7 @@ const App = () => (
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <Link className="dropdown-item nav-link" to="/Gearbox">Gearbox</Link>
                             <Link className="dropdown-item nav-link" to="/RackPinion">Rack / Pinion</Link>
+                            <Link className="dropdown-item nav-link" to="/">Gearbox + Rack + Pinion</Link>
                         </div>
                     </li>
                 </ul>
