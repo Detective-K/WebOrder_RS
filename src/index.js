@@ -741,10 +741,12 @@ class Gearbox extends React.Component {
                                                     </dt>
                                                     <dd className="col-9">
                                                         <select name="month" className="form-control form-control-xs">
-                                                            <option value="00"></option>
-                                                            <option value="BMP0701F_PCD82+ATV32H037N4,ATV320U04N4">BMP0701F_PCD82+ATV32H037N4,ATV320U04N4</option>
-                                                            <option value="8C1.1.30.1.xxxxxx.G.xxB">8C1.1.30.1.xxxxxx.G.xxB</option>
-                                                            <option value="1326AB-A1G-11-xx">1326AB-A1G-11-xx</option>
+                                                            <optgroup>
+                                                                <option value="00"></option>
+                                                                <option value="BMP0701F_PCD82+ATV32H037N4,ATV320U04N4" title="BMP0701F_PCD82+ATV32H037N4,ATV320U04N4">BMP0701F_PCD82+ATV32H037N4,ATV320U04N4</option>
+                                                                <option value="8C1.1.30.1.xxxxxx.G.xxB">8C1.1.30.1.xxxxxx.G.xxB</option>
+                                                                <option value="1326AB-A1G-11-xx">1326AB-A1G-11-xx</option>
+                                                            </optgroup>
                                                         </select>
                                                     </dd>
                                                 </dl>
@@ -818,26 +820,92 @@ class Gearbox extends React.Component {
                                                         <img src="http://www.apexdyna.com/weborder/image/moto_photo2.png" className="img-thumbnail" />
                                                     </dd>
                                                 </dl>
-                                                <dl className="row">                                                   
-                                                    <dt className="col-3 input-group">
-                                                        <span className="text-danger">*</span>
+                                                <dl className="row">
+                                                    <dt className="col-6 input-group">
                                                         <select className="form-control">
                                                             <option>LA</option>
                                                             <option>LA1</option>
                                                         </select>
+                                                        <span className="text-danger">*</span>
                                                     </dt>
-                                                    <dt className="col-3 input-group"> <span className="text-danger">*</span><input type="text" className="form-control" placeholder="LC" /> </dt>
-                                                    <dt className="col-3 input-group"> <span className="text-danger">*</span><input type="text" className="form-control" placeholder="LZ" /> </dt>
-                                                    <dt className="col-3"><input type="text" className="form-control" placeholder="LT" /> </dt>
+                                                    <dt className="col-6 ">
+                                                        <div class="input-group ">
+                                                            <div class="input-group-prepend ">
+                                                                <span class="input-group-text">LC</span>
+                                                            </div>
+                                                            <input type="text" className="form-control" />
+                                                            <span className="text-danger">*</span>
+                                                        </div>
+                                                    </dt>
                                                 </dl>
                                                 <dl className="row">
-                                                    <dt className="col-3 input-group"> <input type="text" className="form-control" placeholder="LG" />  </dt>
-                                                    <dt className="col-3 input-group"><span className="text-danger">*</span><input type="text" className="form-control" placeholder="LB" /> </dt>
-                                                    <dt className="col-3 input-group"><span className="text-danger">*</span><input type="text" className="form-control" placeholder="S" /> </dt>
-                                                    <dt className="col-3 input-group"><span className="text-danger">*</span><input type="text" className="form-control" placeholder="LR" /> </dt>
+                                                    <dt className="col-6 ">
+                                                        <div class="input-group ">
+                                                            <div class="input-group-prepend ">
+                                                                <span class="input-group-text">LZ</span>
+                                                            </div>
+                                                            <input type="text" className="form-control" />
+                                                            <span className="text-danger">*</span>
+                                                        </div>
+                                                    </dt>
+                                                    <dt className="col-6">
+                                                        <div class="input-group ">
+                                                            <div class="input-group-prepend ">
+                                                                <span class="input-group-text">LT</span>
+                                                            </div>
+                                                            <input type="text" className="form-control" />
+                                                        </div>
+                                                    </dt>
+                                                </dl>
+                                                <dl className="row">
+
+                                                    <dt className="col-6 ">
+                                                        <div class="input-group ">
+                                                            <div class="input-group-prepend ">
+                                                                <span class="input-group-text">LG</span>
+                                                            </div>
+                                                            <input type="text" className="form-control" />
+                                                        </div>
+                                                    </dt>
+                                                    <dt className="col-6 ">
+                                                        <div class="input-group ">
+                                                            <div class="input-group-prepend ">
+                                                                <span class="input-group-text">LB</span>
+                                                            </div>
+                                                            <input type="text" className="form-control" />
+                                                            <span className="text-danger">*</span>
+                                                        </div>
+                                                    </dt>
+                                                </dl>
+                                                <dl className="row">
+                                                    <dt className="col-6 ">
+                                                        <div class="input-group ">
+                                                            <div class="input-group-prepend ">
+                                                                <span class="input-group-text">S</span>
+                                                            </div>
+                                                            <input type="text" className="form-control" />
+                                                            <span className="text-danger">*</span>
+                                                        </div>
+                                                    </dt>
+                                                    <dt className="col-6 ">
+                                                        <div class="input-group ">
+                                                            <div class="input-group-prepend ">
+                                                                <span class="input-group-text">LR</span>
+                                                            </div>
+                                                            <input type="text" className="form-control" />
+                                                            <span className="text-danger">*</span>
+                                                        </div>
+                                                    </dt>
                                                 </dl>
                                                 <dl className="row mb-3">
-                                                    <dt className="col-3"><input type="text" className="form-control" placeholder="LE" /> </dt>
+                                                    <dt className="col-6 ">
+                                                        <div class="input-group ">
+                                                            <div class="input-group-prepend ">
+                                                                <span class="input-group-text">LE</span>
+                                                            </div>
+                                                            <input type="text" className="form-control" />
+                                                        </div>
+                                                    </dt>
                                                 </dl>
                                                 <dl className="row">
                                                     <dt className="col-12 text-center ">
@@ -1163,7 +1231,7 @@ const RPTabBody = () => {
                     <dt className="col-12">&nbsp;</dt>
                 </dl><br />
                 <dl className="row">
-                    <dt className="col-12 text-center"><h5>Add to Order</h5></dt>
+                    <dt className="col-12 text-center mb-3"><h5>Add to Order</h5></dt>
                     <dt className="col-4">
                         <label>Order Piece No.</label>
                     </dt>
@@ -1309,10 +1377,13 @@ const RackTabBody = () => {
                             </div>
                         </div>
                     </dt>
+
+                </dl>
+                <dl className="row">
                     <dt className="col-12  text-center ">
                         <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;Check&nbsp;&nbsp;&nbsp;</button>
                     </dt>
-                </dl><br />
+                </dl> <br />
                 <dl className="row  ">
                     <dt className="col-4">Order Code</dt> <dd className="col-8">0106R050C10</dd>
                     <dt className="col-4">Description</dt> <dd className="col-8">Mn1 / Q6 / Right-Hand Helical / 500 (15x15) mm / Carbon Steel</dd>
@@ -1328,7 +1399,7 @@ const RackTabBody = () => {
                     <dt className="col-12">&nbsp;</dt>
                 </dl><br />
                 <dl className="row">
-                    <dt className="col-12 text-center"><h5>Add to Order</h5></dt>
+                    <dt className="col-12 text-center mb-3"><h5>Add to Order</h5></dt>
                     <dt className="col-4">
                         <label>Order Piece No.</label>
                     </dt>
@@ -1492,11 +1563,12 @@ const PinionTabBody = () => {
                             </div>
                         </div>
                     </dt>
+                </dl>
+                <dl className="row">
                     <dt className="col-12  text-center ">
                         <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;Check&nbsp;&nbsp;&nbsp;</button>
                     </dt>
-                </dl>
-                <br />
+                </dl> <br />
                 <dl className="row  ">
                     <dt className="col-4">Order Code</dt> <dd className="col-8">0106R050C10</dd>
                     <dt className="col-4">Description</dt> <dd className="col-8">Mn1 / Q6 / Right-Hand Helical / 500 (15x15) mm / Carbon Steel</dd>
@@ -1512,7 +1584,7 @@ const PinionTabBody = () => {
                     <dt className="col-12">&nbsp;</dt>
                 </dl><br />
                 <dl className="row">
-                    <dt className="col-12 text-center"><h5>Add to Order</h5></dt>
+                    <dt className="col-12 text-center mb-3"><h5>Add to Order</h5></dt>
                     <dt className="col-4">
                         <label>Order Piece No.</label>
                     </dt>
@@ -1582,7 +1654,7 @@ const ACRTabBody = () => {
                     <dt className="col-4">Description</dt> <dd className="col-8">Mn1-D2-L20(B020)</dd>
                 </dl><br />
                 <dl className="row">
-                    <dt className="col-12 text-center"><h5>Add to Order</h5></dt>
+                    <dt className="col-12 text-center mb-3"><h5>Add to Order</h5></dt>
                     <dt className="col-4">
                         <label>Order Piece No</label>
                     </dt>
@@ -1650,7 +1722,7 @@ const CustomizedOrderTabBody = () => {
                     <dt className="col-4">Description</dt> <dd className="col-8">Mn1-D2-L20(B020)</dd>
                 </dl><br />
                 <dl className="row">
-                    <dt className="col-12 text-center"><h5>Add to Order</h5></dt>
+                    <dt className="col-12 text-center mb-3"><h5>Add to Order</h5></dt>
                     <dt className="col-4">
                         <label>Order Piece No.</label>
                     </dt>
