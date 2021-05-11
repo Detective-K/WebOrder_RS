@@ -121,7 +121,7 @@ class NewOrder extends React.Component {
 class AccordionCt extends React.Component {
     render() {
         return (
-            <div id={this.props.accodion}>
+            <div className="w-100 " id={this.props.accodion}>
                 <div className="card">
                     <div className="card-header no-padding-TB" >
                         <h5 className="mb-0">
@@ -385,7 +385,7 @@ class Order extends React.Component {
                                                                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                                                                         <a class="dropdown-item" href="#/Gearbox">Gearbox</a>
                                                                         <a class="dropdown-item" href="#/RackPinion">Rack / Pinion</a>
-                                                                        <a class="dropdown-item" href="#/RackPinion">Gearbox + Rack + Pinion</a>
+                                                                        <a class="dropdown-item" href="http://www.apexdyna.com/weborder/login.aspx">Gearbox + Rack + Pinion</a>
                                                                     </div>
                                                                 </div>
                                                             </dd>
@@ -822,7 +822,8 @@ class Gearbox extends React.Component {
                                                 </dl>
                                                 <dl className="row">
                                                     <dt className="col-6 input-group">
-                                                        <select className="form-control">
+                                                        <select className="form-control bg-F0" >
+                                                            <option value="" selected disabled>LA / LA1</option>
                                                             <option>LA</option>
                                                             <option>LA1</option>
                                                         </select>
@@ -854,6 +855,7 @@ class Gearbox extends React.Component {
                                                                 <span class="input-group-text">LT</span>
                                                             </div>
                                                             <input type="text" className="form-control" />
+                                                            <span>&nbsp;&nbsp;</span>
                                                         </div>
                                                     </dt>
                                                 </dl>
@@ -865,6 +867,7 @@ class Gearbox extends React.Component {
                                                                 <span class="input-group-text">LG</span>
                                                             </div>
                                                             <input type="text" className="form-control" />
+                                                            <span>&nbsp;&nbsp;</span>
                                                         </div>
                                                     </dt>
                                                     <dt className="col-6 ">
@@ -881,7 +884,7 @@ class Gearbox extends React.Component {
                                                     <dt className="col-6 ">
                                                         <div class="input-group ">
                                                             <div class="input-group-prepend ">
-                                                                <span class="input-group-text">S</span>
+                                                                <span class="input-group-text">S &nbsp;</span>
                                                             </div>
                                                             <input type="text" className="form-control" />
                                                             <span className="text-danger">*</span>
@@ -904,6 +907,7 @@ class Gearbox extends React.Component {
                                                                 <span class="input-group-text">LE</span>
                                                             </div>
                                                             <input type="text" className="form-control" />
+                                                            <span>&nbsp;&nbsp;</span>
                                                         </div>
                                                     </dt>
                                                 </dl>
@@ -962,7 +966,7 @@ class Gearbox extends React.Component {
                                             <dt className="col-12 text-center">
                                                 <div class="btn-toolbar d-inline-block" role="toolbar" aria-label="Toolbar with button groups">
                                                     <div class="btn-group mr-2 " role="group" aria-label="First group">
-                                                        <button type="button" class="btn btn-success btn-sm"> &nbsp; Standard &nbsp;  &nbsp;</button>
+                                                        <button type="button" class="btn btn-success btn-sm active"> &nbsp; Standard &nbsp;  &nbsp;</button>
                                                     </div>
                                                     <div class="btn-group mr-2" role="group" aria-label="Second group">
                                                         <button type="button" class="btn btn-warning btn-sm">Unlimited 1</button>
@@ -976,7 +980,7 @@ class Gearbox extends React.Component {
                                         <dl className="row">
                                             <dt className="col-6 col-sm-6 col-md-6">
 
-                                                <a href="#" data-toggle="modal" data-target="#gearboxInfoModal" className="text-dark" > <label>Gearbox</label> <i class="fas fa-info-circle fa-lg"></i>
+                                                <a href="#" data-toggle="modal" data-target="#gearboxInfoModal"  > <label className="text-dark">Gearbox</label> <i class="fas fa-info-circle fa-lg"></i>
                                                 </a>
 
                                                 <div class="modal fade" id="gearboxInfoModal">
@@ -1073,14 +1077,7 @@ class Gearbox extends React.Component {
 
                                         </dl><br />
                                         <hr />
-                                        <dl className="row no-gutters bg-F0 text-center">
-                                            <dt className="col-12"><h5>Download</h5></dt>
-                                            <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; PDF &nbsp;&nbsp;</button> </dt>
-                                            <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; DXF &nbsp;&nbsp;</button> </dt>
-                                            <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; IGS &nbsp;&nbsp;</button> </dt>
-                                            <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; STP &nbsp;&nbsp;</button> </dt>
-                                            <dt className="col-12">&nbsp;</dt>
-                                        </dl><br />
+                                        <Downloaddrawing />
                                         <hr />
                                         <dl className="row no-gutters">
                                             <dt className="col-9"><h5>Bom</h5></dt>  <dt className="col-3 text-right"><h5>Stock<sup className="text-danger">(1)</sup></h5></dt>
@@ -1094,34 +1091,47 @@ class Gearbox extends React.Component {
                                         </dl><br />
                                         <hr />
 
-                                        <dl className="row no-gutters bg-F0 ">
-                                            <dt className="col-12"><h5>Gearbox Specification</h5></dt>
-                                            <dt className="col-4" >Model </dt> <dd className="col-8">AB090 - 003 - S2 - P2</dd>
-                                            <dt className="col-4" >Ratio </dt> <dd className="col-8">3</dd>
-                                            <dt className="col-4" >Shaft Option </dt> <dd className="col-8">S2: Keyway</dd>
-                                            <dt className="col-4" >Backlash </dt> <dd className="col-8">P2: Standard Backlash</dd>
-                                            <dt className="col-4" >Adapter</dt> <dd className="col-8">P0401300503 / AD-W90-M100-3</dd>
-                                            <dt className="col-4" >Output Torque</dt> <dd className="col-8">130 Nm</dd>
-                                            <dt className="col-4" >Rated Speed</dt> <dd className="col-8">4000 rpm</dd>
-                                            <dt className="col-4" >Max. Torque</dt> <dd className="col-8">234 Nm</dd>
-                                            <dt className="col-4" >Max. Speed</dt> <dd className="col-8">8000 rpm</dd>
-                                            <dt className="col-4" >Inertia</dt> <dd className="col-8">0.61 kgcm<font size="1"><sup>^2</sup></font></dd>
-                                            <dt className="col-4" >Weight </dt> <dd className="col-8">3.70 kg</dd>
-                                            <dt className="col-4" >No Load </dt> <dd className="col-8">0.67 Nm<sup><font color="red">(3)</font></sup></dd>
-                                        </dl><br />
+                                        <dl className="row no-gutters  ">
+                                            <dd className="col-12">
+                                                <AccordionCt collapse="collapseGS" accordion="accordionGS" head={<dt className="col-12"><h5>Gearbox Specification</h5></dt>}
+                                                    body={
+                                                        <dl className="row">  
+                                                                <dt className="col-4" >Model </dt> <dd className="col-8">AB090 - 003 - S2 - P2</dd>
+                                                                <dt className="col-4" >Ratio </dt> <dd className="col-8">3</dd>
+                                                                <dt className="col-4" >Shaft Option </dt> <dd className="col-8">S2: Keyway</dd>
+                                                                <dt className="col-4" >Backlash </dt> <dd className="col-8">P2: Standard Backlash</dd>
+                                                                <dt className="col-4" >Adapter</dt> <dd className="col-8">P0401300503 / AD-W90-M100-3</dd>
+                                                                <dt className="col-4" >Output Torque</dt> <dd className="col-8">130 Nm</dd>
+                                                                <dt className="col-4" >Rated Speed</dt> <dd className="col-8">4000 rpm</dd>
+                                                                <dt className="col-4" >Max. Torque</dt> <dd className="col-8">234 Nm</dd>
+                                                                <dt className="col-4" >Max. Speed</dt> <dd className="col-8">8000 rpm</dd>
+                                                                <dt className="col-4" >Inertia</dt> <dd className="col-8">0.61 kgcm<font size="1"><sup>^2</sup></font></dd>
+                                                                <dt className="col-4" >Weight </dt> <dd className="col-8">3.70 kg</dd>
+                                                                <dt className="col-4" >No Load </dt> <dd className="col-8">0.67 Nm<sup><font color="red">(3)</font></sup></dd>
+                                                        </dl>
+                                                    }
+                                                />
+                                            </dd>
+                                        </dl>
                                         <hr />
                                         <dl className="row no-gutters">
-                                            <dt className="col-12"><h5>Motor Specification</h5></dt>
-                                            <dt className="col-4" >Brand </dt> <dd className="col-8">ABB</dd>
-                                            <dt className="col-4" >Model </dt> <dd className="col-8">8C1.1.30.1.xxxxxx.G.xxB</dd>
-                                            <dt className="col-4" >Motor Shaft</dt> <dd className="col-8">19 mm</dd>
-                                            <dt className="col-4" >Output Power </dt> <dd className="col-8">0.38 Kw</dd>
-                                            <dt className="col-4" >Rated Speed </dt> <dd className="col-8">3000 rpm</dd>
-                                            <dt className="col-4" >Rated Torque</dt> <dd className="col-8">1.20 Nm</dd>
-                                            <dt className="col-4" >Max. Speed</dt> <dd className="col-8">3000 rpm</dd>
-                                            <dt className="col-4" >Peak Torque</dt> <dd className="col-8">4.60 Nm</dd>
-                                            <dt className="col-4" >Inertia</dt> <dd className="col-8">0.90 kgcm<font size="1"><sup>^2</sup></font></dd>
-                                        </dl><br />
+                                            <dd className="col-12">
+                                                <AccordionCt head={<dt className="col-12"><h5>Motor Specification</h5></dt>} collapse="collapseMS" accordion="accordionMS"
+                                                    body={
+                                                        <div className="row">
+                                                                <dt className="col-4" >Brand </dt> <dd className="col-8">ABB</dd>
+                                                                <dt className="col-4" >Model </dt> <dd className="col-8">8C1.1.30.1.xxxxxx.G.xxB</dd>
+                                                                <dt className="col-4" >Motor Shaft</dt> <dd className="col-8">19 mm</dd>
+                                                                <dt className="col-4" >Output Power </dt> <dd className="col-8">0.38 Kw</dd>
+                                                                <dt className="col-4" >Rated Speed </dt> <dd className="col-8">3000 rpm</dd>
+                                                                <dt className="col-4" >Rated Torque</dt> <dd className="col-8">1.20 Nm</dd>
+                                                                <dt className="col-4" >Max. Speed</dt> <dd className="col-8">3000 rpm</dd>
+                                                                <dt className="col-4" >Peak Torque</dt> <dd className="col-8">4.60 Nm</dd>
+                                                                <dt className="col-4" >Inertia</dt> <dd className="col-8">0.90 kgcm<font size="1"><sup>^2</sup></font></dd>
+                                                        </div>
+                                                    } />
+                                            </dd>                                          
+                                        </dl>
                                         <hr />
                                         <dl className="row no-gutters bg-F0  text-danger  small">
                                             <dt className="col-2" >(*) </dt> <dd className="col-10">Without giving the max. moment of inertia of application or giving a wrong value, the warranty could be invalid in case of a gearbox damage due to the back-drive torque from application.</dd>
@@ -1195,6 +1205,50 @@ class Gearbox extends React.Component {
     }
 };
 
+const Downloaddrawing = () => {
+    return (
+        <dl className="row no-gutters bg-F0 text-center">
+            <dt className="col-12"><h5>Download</h5></dt>
+            <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; PDF &nbsp;&nbsp;</button> </dt>
+            <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; DXF &nbsp;&nbsp;</button> </dt>
+            <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; IGS &nbsp;&nbsp;</button> </dt>
+            <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; STP &nbsp;&nbsp;</button> </dt>
+            <dt className="col-12">&nbsp;</dt><br />
+        </dl>
+    );
+};
+
+const AddtoOrder = () => {
+    return (
+        <dl className="row bg-F0 no-gutters">
+            <dt className="col-12 text-center mb-3"><h5>Add to Order</h5></dt>
+            <dt className="col-4 mb-3">
+                <label>Order Piece No.</label>
+            </dt>
+            <dd className="col-8 mb-3">
+                <input type="text" className="form-control" />
+            </dd>
+
+            <dt className="col-4 mb-3">
+                <label>To Order No.</label>
+            </dt>
+            <dd className="col-8 mb-3">
+                <select className="form-control form-control-xs" >
+                    <option value="AA00051004051/Heidelberg 00041980230">AA00051004051/Heidelberg 00041980230</option>
+                    <option value="AA00051004052">AA00051004052</option>
+                    <option value="AA00051004053">AA00051004053</option>
+                </select>
+            </dd>
+            <dt className="col-12 text-center  mb-3">
+                <button type="button" className=" btn btn-success btn-sm">&nbsp;&nbsp; &nbsp; Add to Order &nbsp; &nbsp;</button>
+            </dt>
+            <dt className="col-12 text-center mb-3">
+                <NewOrder btname="Add to New Order" />
+            </dt>
+        </dl>
+    );
+};
+
 
 const RPTabBody = () => {
     return (
@@ -1222,46 +1276,8 @@ const RPTabBody = () => {
                     <dt className="col-4">Order Code</dt> <dd className="col-8">0106R050C10</dd>
                     <dt className="col-4">Description</dt> <dd className="col-8">Mn1 / Q6 / Right-Hand Helical / 500 (15x15) mm / Carbon Steel</dd>
                 </dl><br />
-                <dl className="row no-gutters bg-F0 text-center">
-                    <dt className="col-12"><h5>Download</h5></dt>
-                    <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; PDF &nbsp;&nbsp;</button> </dt>
-                    <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; DXF &nbsp;&nbsp;</button> </dt>
-                    <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; IGS &nbsp;&nbsp;</button> </dt>
-                    <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; STP &nbsp;&nbsp;</button> </dt>
-                    <dt className="col-12">&nbsp;</dt>
-                </dl><br />
-                <dl className="row">
-                    <dt className="col-12 text-center mb-3"><h5>Add to Order</h5></dt>
-                    <dt className="col-4">
-                        <label>Order Piece No.</label>
-                    </dt>
-                    <dd className="col-8">
-                        <input type="text" className="form-control" />
-                    </dd>
-                </dl>
-                <dl className="row">
-                    <dt className="col-4">
-                        <label>To Order No.</label>
-                    </dt>
-                    <dd className="col-8">
-                        <select className="form-control form-control-xs" >
-                            <option value="AA00051004051/Heidelberg 00041980230">AA00051004051/Heidelberg 00041980230</option>
-                            <option value="AA00051004052">AA00051004052</option>
-                            <option value="AA00051004053">AA00051004053</option>
-                        </select>
-                    </dd>
-                </dl>
-                <dl className="row">
-                    <dt className="col-12 text-center">
-                        <button type="button" className=" btn btn-success btn-sm">&nbsp;&nbsp; &nbsp; Add to Order &nbsp; &nbsp;</button>
-                    </dt>
-                </dl>
-                <dl className="row">
-                    <dt className="col-12 text-center">
-                        <NewOrder btname="Add to New Order" />
-                    </dt>
-                </dl>
-
+                <Downloaddrawing />
+                <AddtoOrder />
             </dd>
         </dl>
 
@@ -1389,46 +1405,8 @@ const RackTabBody = () => {
                     <dt className="col-4">Description</dt> <dd className="col-8">Mn1 / Q6 / Right-Hand Helical / 500 (15x15) mm / Carbon Steel</dd>
                     <dt className="col-4">Stock Number</dt> <dd className="col-8">{">100 pcs"}</dd>
                 </dl><br />
-                <dl className="row no-gutters bg-F0 text-center ">
-
-                    <dt className="col-12"><h5>Download</h5></dt>
-                    <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; PDF &nbsp;&nbsp;</button> </dt>
-                    <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; DXF &nbsp;&nbsp;</button> </dt>
-                    <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; IGS &nbsp;&nbsp;</button> </dt>
-                    <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; STP &nbsp;&nbsp;</button> </dt>
-                    <dt className="col-12">&nbsp;</dt>
-                </dl><br />
-                <dl className="row">
-                    <dt className="col-12 text-center mb-3"><h5>Add to Order</h5></dt>
-                    <dt className="col-4">
-                        <label>Order Piece No.</label>
-                    </dt>
-                    <dd className="col-8">
-                        <input type="text" className="form-control" />
-                    </dd>
-                </dl>
-                <dl className="row">
-                    <dt className="col-4">
-                        <label>To Order No.</label>
-                    </dt>
-                    <dd className="col-8">
-                        <select className="form-control form-control-xs" >
-                            <option value="AA00051004051/Heidelberg 00041980230">AA00051004051/Heidelberg 00041980230</option>
-                            <option value="AA00051004052">AA00051004052</option>
-                            <option value="AA00051004053">AA00051004053</option>
-                        </select>
-                    </dd>
-                </dl>
-                <dl className="row">
-                    <dt className="col-12 text-center">
-                        <button type="button" className=" btn btn-success btn-sm">&nbsp;&nbsp; &nbsp; Add to Order &nbsp; &nbsp;</button>
-                    </dt>
-                </dl>
-                <dl className="row">
-                    <dt className="col-12 text-center">
-                        <NewOrder btname="Add to New Order" />
-                    </dt>
-                </dl>
+                <Downloaddrawing />
+                <AddtoOrder />
 
             </dd>
         </dl>
@@ -1574,46 +1552,8 @@ const PinionTabBody = () => {
                     <dt className="col-4">Description</dt> <dd className="col-8">Mn1 / Q6 / Right-Hand Helical / 500 (15x15) mm / Carbon Steel</dd>
                     <dt className="col-4">Stock Number</dt> <dd className="col-8">{">100 pcs"}</dd>
                 </dl><br />
-                <dl className="row no-gutters bg-F0  text-center">
-
-                    <dt className="col-12"><h5>Download</h5></dt>
-                    <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; PDF &nbsp;&nbsp;</button> </dt>
-                    <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; DXF &nbsp;&nbsp;</button> </dt>
-                    <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; IGS &nbsp;&nbsp;</button> </dt>
-                    <dt className="col-3" ><button type="button" className="btn btn btn-success btn-sm">&nbsp;&nbsp; STP &nbsp;&nbsp;</button> </dt>
-                    <dt className="col-12">&nbsp;</dt>
-                </dl><br />
-                <dl className="row">
-                    <dt className="col-12 text-center mb-3"><h5>Add to Order</h5></dt>
-                    <dt className="col-4">
-                        <label>Order Piece No.</label>
-                    </dt>
-                    <dd className="col-8">
-                        <input type="text" className="form-control" />
-                    </dd>
-                </dl>
-                <dl className="row">
-                    <dt className="col-4">
-                        <label>To Order No.</label>
-                    </dt>
-                    <dd className="col-8">
-                        <select className="form-control form-control-xs" >
-                            <option value="AA00051004051/Heidelberg 00041980230">AA00051004051/Heidelberg 00041980230</option>
-                            <option value="AA00051004052">AA00051004052</option>
-                            <option value="AA00051004053">AA00051004053</option>
-                        </select>
-                    </dd>
-                </dl>
-                <dl className="row">
-                    <dt className="col-12 text-center">
-                        <button type="button" className=" btn btn-success btn-sm">&nbsp;&nbsp; &nbsp; Add to Order &nbsp; &nbsp;</button>
-                    </dt>
-                </dl>
-                <dl className="row">
-                    <dt className="col-12 text-center">
-                        <NewOrder btname="Add to New Order" />
-                    </dt>
-                </dl>
+                <Downloaddrawing />
+                <AddtoOrder />
             </dd>
         </dl>
     );
@@ -1653,37 +1593,7 @@ const ACRTabBody = () => {
                     <dt className="col-4">Prat No.</dt> <dd className="col-8">Z0947900001</dd>
                     <dt className="col-4">Description</dt> <dd className="col-8">Mn1-D2-L20(B020)</dd>
                 </dl><br />
-                <dl className="row">
-                    <dt className="col-12 text-center mb-3"><h5>Add to Order</h5></dt>
-                    <dt className="col-4">
-                        <label>Order Piece No</label>
-                    </dt>
-                    <dd className="col-8">
-                        <input type="text" className="form-control" />
-                    </dd>
-                </dl>
-                <dl className="row">
-                    <dt className="col-4">
-                        <label>To Order No.</label>
-                    </dt>
-                    <dd className="col-8">
-                        <select className="form-control form-control-xs" >
-                            <option value="AA00051004051/Heidelberg 00041980230">AA00051004051/Heidelberg 00041980230</option>
-                            <option value="AA00051004052">AA00051004052</option>
-                            <option value="AA00051004053">AA00051004053</option>
-                        </select>
-                    </dd>
-                </dl>
-                <dl className="row">
-                    <dt className="col-12 text-center">
-                        <button type="button" className=" btn btn-success btn-sm">&nbsp;&nbsp; &nbsp; Add to Order &nbsp; &nbsp;</button>
-                    </dt>
-                </dl>
-                <dl className="row">
-                    <dt className="col-12 text-center">
-                        <NewOrder btname="Add to New Order" />
-                    </dt>
-                </dl>
+                <AddtoOrder />
 
             </dd>
         </dl>
@@ -1706,11 +1616,11 @@ const CustomizedOrderTabBody = () => {
             <dd className="col-12">
                 <dl className="row">
                     <dt className="col-4">
-                        Order Code No.
+                        Customized drawing No.
                         </dt>
                     <dt className="col-8">
 
-                        <input type="text" class="form-control" placeholder="Order Code No" />
+                        <input type="text" class="form-control" placeholder="Customized drawing No." />
                     </dt>
                 </dl>
                 <dl className="row">                    <dt className="col-12 text-center">
@@ -1721,37 +1631,7 @@ const CustomizedOrderTabBody = () => {
                     <dt className="col-4">Prat No.</dt> <dd className="col-8">Z0947900001</dd>
                     <dt className="col-4">Description</dt> <dd className="col-8">Mn1-D2-L20(B020)</dd>
                 </dl><br />
-                <dl className="row">
-                    <dt className="col-12 text-center mb-3"><h5>Add to Order</h5></dt>
-                    <dt className="col-4">
-                        <label>Order Piece No.</label>
-                    </dt>
-                    <dd className="col-8">
-                        <input type="text" className="form-control" />
-                    </dd>
-                </dl>
-                <dl className="row">
-                    <dt className="col-4">
-                        <label>To Order No.</label>
-                    </dt>
-                    <dd className="col-8">
-                        <select className="form-control form-control-xs" >
-                            <option value="AA00051004051/Heidelberg 00041980230">AA00051004051/Heidelberg 00041980230</option>
-                            <option value="AA00051004052">AA00051004052</option>
-                            <option value="AA00051004053">AA00051004053</option>
-                        </select>
-                    </dd>
-                </dl>
-                <dl className="row">
-                    <dt className="col-12 text-center">
-                        <button type="button" className=" btn btn-success btn-sm">&nbsp;&nbsp; &nbsp; Add to Order &nbsp; &nbsp;</button>
-                    </dt>
-                </dl>
-                <dl className="row">
-                    <dt className="col-12 text-center">
-                        <NewOrder btname="Add to New Order" />
-                    </dt>
-                </dl>
+                <AddtoOrder />
 
             </dd>
         </dl>
@@ -1830,7 +1710,7 @@ const App = () => (
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <Link className="dropdown-item nav-link" to="/Gearbox">Gearbox</Link>
                             <Link className="dropdown-item nav-link" to="/RackPinion">Rack / Pinion</Link>
-                            <Link className="dropdown-item nav-link" to="/">Gearbox + Rack + Pinion</Link>
+                            <a className="dropdown-item nav-link" href="http://www.apexdyna.com/weborder/login.aspx" >Gearbox + Rack + Pinion</a>
                         </div>
                     </li>
                 </ul>
