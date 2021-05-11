@@ -743,7 +743,7 @@ class Gearbox extends React.Component {
                                                         <select name="month" className="form-control form-control-xs">
                                                             <optgroup>
                                                                 <option value="00"></option>
-                                                                <option value="BMP0701F_PCD82+ATV32H037N4,ATV320U04N4" title="BMP0701F_PCD82+ATV32H037N4,ATV320U04N4">BMP0701F_PCD82+ATV32H037N4,ATV320U04N4</option>
+                                                                <option value="BMP0701F_PCD82+ATV32H037N4,ATV320U04N4" dir="rtl" >BMP0701F_PCD82+ATV32H037N4,ATV320U04N4</option>
                                                                 <option value="8C1.1.30.1.xxxxxx.G.xxB">8C1.1.30.1.xxxxxx.G.xxB</option>
                                                                 <option value="1326AB-A1G-11-xx">1326AB-A1G-11-xx</option>
                                                             </optgroup>
