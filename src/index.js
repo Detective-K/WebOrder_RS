@@ -857,6 +857,7 @@ class Gearbox extends React.Component {
                                                             <option>LA</option>
                                                             <option>LA1</option>
                                                         </select>
+                                                        <input type="text" className="form-control"/>
                                                         <span className="text-danger">*</span>
                                                     </dt>
                                                     <dt className="col-6 ">
