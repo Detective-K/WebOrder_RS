@@ -1,4 +1,4 @@
-﻿//import App from './App';
+//import App from './App';
 
 
 //className=NameName App extends React.Component{
@@ -1740,27 +1740,22 @@ class GearboxRackPinion extends React.Component {
                             <dt className=" col-3">Idle time</dt>  <dd className="col-3"><input type="text" className="form-control" placeholder="sec" /> </dd>
                             <dt className=" col-3">Duty cycle (ED)</dt>  <dd className="col-3"><input type="text" className="form-control" placeholder="%" /> </dd>
                             <dt className=" col-3">Safety factor</dt>  <dd className="col-3"><input type="text" className="form-control" placeholder="1~10" /> </dd>
-                            <dt className="col-4">Angle from horizontal  θ</dt>
-                            <dd className="col-8">
+                            <dt className="col-4">Angle from horizontal  �c</dt>
+                            <dd className="col-4">
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="radhorizontal" />{"0˚"}
+                                        <input type="radio" class="form-check-input" name="radhorizontal" />{"0?"}
                                     </label>
                                 </div>
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="radhorizontal" />{"90˚ "}
-                                    </label>
+                                        <input type="radio" class="form-check-input" name="radhorizontal" />{"90? "}
+                                     </label>
                                 </div>
-                                <div class="form-check-inline  ">
-                                    <div className="input-group">
-                                        <div class="input-group-prepend">
-                                            <label class="form-check-label">
-                                                <input type="radio" class="form-check-input" name="radhorizontal" />other
+                                <div class="form-check-inline disabled">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="radhorizontal" />other 
                                       </label>
-                                        </div>
-                                        <input type="text" className="form-control" />
-                                    </div>
                                 </div>
                             </dd>
                         </dl>
@@ -1781,7 +1776,8 @@ class GRPstep1 extends React.Component {
             <main role="main" className="container-fluid"> <br />
                 <br />
                 <br />
-
+                <h1>ddd</h1>
+                <Link to="/GearboxRackPinion" className="btn btn-primary">Sign up</Link>
             </main>
         )
     }
