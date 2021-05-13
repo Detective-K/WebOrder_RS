@@ -1902,7 +1902,7 @@ const GRPstep2 = () => (
                             <span class="input-group-text  ">The Feed-Force for the application</span>
                         </div>
                         <div class="input-group-prepend ">
-                            <span class="input-group-text  ">396.2 (N)</span>
+                            <span class="input-group-text  no-padding-LR ">396.2 (N)</span>
                         </div>
                     </div>
                 </dd>
