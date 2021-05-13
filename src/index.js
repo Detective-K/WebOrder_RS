@@ -1719,7 +1719,7 @@ class GearboxRackPinion extends React.Component {
                 <br />
                 <dl className="row">
                     <div className="offset-md-3 col-md-6">
-                        <AccordionCt head="STEP 1" accordion="accordionGRP" collapse="collapseGRP" body={<GRPstep1 />} />
+                        <AccordionCt head={<div>STEP 1 <br /> Application Information </div> } accordion="accordionGRP" collapse="collapseGRP" body={<GRPstep1 />} />
                     </div>
                 </dl>
                 <dl className="row">
@@ -1737,9 +1737,6 @@ const GRPstep1 = () => (
     <dl className="row">
         <dd className="col-12">
 
-            <dl className="row ">
-                <dt className="col-12 text-center"><h3>Enter Application Information</h3></dt>
-            </dl>
             <dl className="row text-center">
                 <dt className=" col-12">
                     <img src="http://www.apexdyna.com/weborder/image/motion.gif" width="400px" />
@@ -1854,7 +1851,7 @@ const GRPstep1 = () => (
                 <dd className="col-12">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend ">
-                            <span class="input-group-text ">Angle from horizontal θ</span>
+                            <span class="input-group-text  GRPstp1Lab">Angle θ</span>
                         </div>
                         <div class="input-group-prepend">
                             <div class="form-check-inline">
