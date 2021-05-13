@@ -1719,7 +1719,7 @@ class GearboxRackPinion extends React.Component {
                 <br />
                 <dl className="row">
                     <div className="offset-md-3 col-md-6">
-                        <AccordionCt head={<div>STEP 1 <br /> Application Information </div> } accordion="accordionGRP" collapse="collapseGRP" body={<GRPstep1 />} />
+                        <AccordionCt head={<div>STEP 1 <br /> Application Information </div>} accordion="accordionGRP" collapse="collapseGRP" body={<GRPstep1 />} />
                     </div>
                 </dl>
                 <dl className="row">
@@ -1749,11 +1749,11 @@ const GRPstep1 = () => (
                         <div class="input-group-prepend ">
                             <span class="input-group-text GRPstp1Lab ">Weight of load M</span>
                         </div>
-                        <div class="input-group-prepend w-25">
+                        <div class="input-group-prepend  col-1 no-padding-LR">
                             <input type="text" className="form-control" />
                         </div>
                         <div class="input-group-prepend ">
-                            <span class="input-group-text ">Kg</span>
+                            <span class="input-group-text GRPstp1Lab2 ">Kg</span>
                         </div>
                     </div>
                 </dd>
@@ -1762,11 +1762,11 @@ const GRPstep1 = () => (
                         <div class="input-group-prepend ">
                             <span class="input-group-text GRPstp1Lab ">Velocity V</span>
                         </div>
-                        <div class="input-group-prepend w-25">
+                        <div class="input-group-prepend  col-1 no-padding-LR">
                             <input type="text" className="form-control" />
                         </div>
                         <div class="input-group-prepend ">
-                            <span class="input-group-text ">m/s</span>
+                            <span class="input-group-text GRPstp1Lab2">m/s</span>
                         </div>
                     </div>
                 </dd>
@@ -1775,11 +1775,11 @@ const GRPstep1 = () => (
                         <div class="input-group-prepend ">
                             <span class="input-group-text GRPstp1Lab ">Acceleration time</span>
                         </div>
-                        <div class="input-group-prepend w-25">
+                        <div class="input-group-prepend  col-1 no-padding-LR">
                             <input type="text" className="form-control" />
                         </div>
                         <div class="input-group-prepend ">
-                            <span class="input-group-text ">sec</span>
+                            <span class="input-group-text GRPstp1Lab2 ">sec</span>
                         </div>
                     </div>
                 </dd>
@@ -1788,11 +1788,11 @@ const GRPstep1 = () => (
                         <div class="input-group-prepend ">
                             <span class="input-group-text GRPstp1Lab ">Running time</span>
                         </div>
-                        <div class="input-group-prepend w-25">
+                        <div class="input-group-prepend  col-1 no-padding-LR">
                             <input type="text" className="form-control" />
                         </div>
                         <div class="input-group-prepend ">
-                            <span class="input-group-text ">sec</span>
+                            <span class="input-group-text GRPstp1Lab2 ">sec</span>
                         </div>
                     </div>
                 </dd>
@@ -1801,11 +1801,11 @@ const GRPstep1 = () => (
                         <div class="input-group-prepend ">
                             <span class="input-group-text GRPstp1Lab ">Deceleration time</span>
                         </div>
-                        <div class="input-group-prepend w-25">
+                        <div class="input-group-prepend  col-1 no-padding-LR">
                             <input type="text" className="form-control" />
                         </div>
                         <div class="input-group-prepend ">
-                            <span class="input-group-text ">sec</span>
+                            <span class="input-group-text GRPstp1Lab2 ">sec</span>
                         </div>
                     </div>
                 </dd>
@@ -1814,11 +1814,11 @@ const GRPstep1 = () => (
                         <div class="input-group-prepend ">
                             <span class="input-group-text  GRPstp1Lab">Idle time</span>
                         </div>
-                        <div class="input-group-prepend w-25">
+                        <div class="input-group-prepend  col-1 no-padding-LR">
                             <input type="text" className="form-control" />
                         </div>
                         <div class="input-group-prepend ">
-                            <span class="input-group-text ">sec</span>
+                            <span class="input-group-text GRPstp1Lab2 ">sec</span>
                         </div>
                     </div>
                 </dd>
@@ -1827,11 +1827,11 @@ const GRPstep1 = () => (
                         <div class="input-group-prepend ">
                             <span class="input-group-text GRPstp1Lab ">Duty cycle (ED)</span>
                         </div>
-                        <div class="input-group-prepend w-25">
+                        <div class="input-group-prepend  col-1 no-padding-LR">
                             <input type="text" className="form-control" />
                         </div>
                         <div class="input-group-prepend ">
-                            <span class="input-group-text ">%</span>
+                            <span class="input-group-text GRPstp1Lab2 ">%</span>
                         </div>
                     </div>
                 </dd>
@@ -1840,11 +1840,12 @@ const GRPstep1 = () => (
                         <div class="input-group-prepend ">
                             <span class="input-group-text GRPstp1Lab ">Safety factor</span>
                         </div>
-                        <div class="input-group-prepend w-25">
+                        <div class="input-group-prepend  col-1 no-padding-LR">
                             <input type="text" className="form-control" />
+
                         </div>
                         <div class="input-group-prepend ">
-                            <span class="input-group-text ">1~10</span>
+                            <span class="input-group-text GRPstp1Lab2 ">1~10</span>
                         </div>
                     </div>
                 </dd>
@@ -1853,29 +1854,12 @@ const GRPstep1 = () => (
                         <div class="input-group-prepend ">
                             <span class="input-group-text  GRPstp1Lab">Angle θ</span>
                         </div>
-                        <div class="input-group-prepend">
-                            <div class="form-check-inline">
-                                <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="radhorizontal" />{"0˚"}
-                                </label>
-                            </div>
-                            <div class="form-check-inline">
-                                <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="radhorizontal" />{"90˚ "}
-                                </label>
-                            </div>
-                            <div class="form-check-inline  ">
-                                <div className="input-group">
-                                    <div class="input-group-prepend">
-                                        <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" name="radhorizontal" />other
-                                      </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-group-prepend w-25">
+
+                        <div class="input-group-prepend  col-1 no-padding-LR ">
                             <input type="text" className="form-control " />
+
+                        </div>
+                        <div class="input-group-prepend ">
                             <span class="input-group-text  ">Degree</span>
                         </div>
                     </div>
