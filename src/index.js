@@ -770,7 +770,7 @@ class Gearbox extends React.Component {
                                                         <select name="month" className="form-control form-control-xs">
                                                             <optgroup>
                                                                 <option value="00"></option>
-                                                                <option value="BMP0701F_PCD82+ATV32H037N4,ATV320U04N4" dir="rtl" >BMP0701F_PCD82+ATV32H037N4,ATV320U04N4</option>
+                                                                <option value="BMP0701F_PCD82+ATV32H037N4,ATV320U04N4"  >BMP0701F_PCD82+ATV32H037N4,ATV320U04N4</option>
                                                                 <option value="8C1.1.30.1.xxxxxx.G.xxB">8C1.1.30.1.xxxxxx.G.xxB</option>
                                                                 <option value="1326AB-A1G-11-xx">1326AB-A1G-11-xx</option>
                                                             </optgroup>
@@ -857,7 +857,7 @@ class Gearbox extends React.Component {
                                                             <option>LA</option>
                                                             <option>LA1</option>
                                                         </select>
-                                                        <input type="text" className="form-control"/>
+                                                        <input type="text" className="form-control" />
                                                         <span className="text-danger">*</span>
                                                     </dt>
                                                     <dt className="col-6 ">
@@ -1718,57 +1718,14 @@ class GearboxRackPinion extends React.Component {
                 <br />
                 <br />
                 <dl className="row">
-                    <dd className="offset-md-3 col-md-6">
-
-                        <dl className="row ">
-                            <dt className="col-12"><h3>Selection of Rack & Pinion</h3></dt>
-                        </dl>
-                        <dl className="row ">
-                            <dt className="col-12"><h3>STEP 1 :  Enter Application Information</h3></dt>
-                        </dl>
-                        <dl className="row text-center">
-                            <dt className=" col-12">
-                                <img src="http://www.apexdyna.com/weborder/image/motion.gif" width="400px" />
-                                <img src="http://www.apexdyna.com/weborder/image/gear3.png" width="400px" />
-                            </dt>
-                        </dl>
-                        <dl className="row ">
-                            <dt className="col-3">Weight of load M</dt>  <dd className="col-3"><input type="text" className="form-control" placeholder="Kg" /> </dd>
-                            <dt className="col-3">Velocity V</dt>  <dd className="col-3"><input type="text" className="form-control" placeholder="m/s" /> </dd>
-                            <dt className=" col-3">Acceleration time</dt>  <dd className="col-3"><input type="text" className="form-control" placeholder="sec" /> </dd>
-                            <dt className=" col-3">Running time</dt>  <dd className="col-3"><input type="text" className="form-control" placeholder="sec" /> </dd>
-                            <dt className=" col-3">Deceleration time</dt>  <dd className="col-3"><input type="text" className="form-control" placeholder="sec" /> </dd>
-                            <dt className=" col-3">Idle time</dt>  <dd className="col-3"><input type="text" className="form-control" placeholder="sec" /> </dd>
-                            <dt className=" col-3">Duty cycle (ED)</dt>  <dd className="col-3"><input type="text" className="form-control" placeholder="%" /> </dd>
-                            <dt className=" col-3">Safety factor</dt>  <dd className="col-3"><input type="text" className="form-control" placeholder="1~10" /> </dd>
-                            <dt className="col-4">Angle from horizontal  θ</dt>
-                            <dd className="col-8">
-                                <div class="form-check-inline">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="radhorizontal" />{"0˚"}
-                                    </label>
-                                </div>
-                                <div class="form-check-inline">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="radhorizontal" />{"90˚ "}
-                                    </label>
-                                </div>
-                                <div class="form-check-inline  ">
-                                    <div className="input-group">
-                                        <div class="input-group-prepend">
-                                            <label class="form-check-label">
-                                                <input type="radio" class="form-check-input" name="radhorizontal" />other
-                                      </label>
-                                        </div>
-                                        <input type="text" className="form-control" />
-                                    </div>
-                                </div>
-                            </dd>
-                        </dl>
-                        <dl className="row text-center">
-                            <dd className="col-12"> <Link to="/GRPstep1" > <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;Next&nbsp;&nbsp;&nbsp;</button></Link></dd>
-                        </dl>
-                    </dd>
+                    <div className="offset-md-3 col-md-6">
+                        <AccordionCt head="STEP 1" accordion="accordionGRP" collapse="collapseGRP" body={<GRPstep1 />} />
+                    </div>
+                </dl>
+                <dl className="row">
+                    <div className="offset-md-3 col-md-6">
+                        <AccordionCt head="STEP 2" accordion="accordionGRP2" collapse="collapseGRP2" body={<GRPstep2 />} />
+                    </div>
                 </dl>
             </main>
         );
@@ -1776,17 +1733,284 @@ class GearboxRackPinion extends React.Component {
 }
 
 
-class GRPstep1 extends React.Component {
-    render() {
-        return (
-            <main role="main" className="container-fluid"> <br />
-                <br />
-                <br />
+const GRPstep1 = () => (
+    <dl className="row">
+        <dd className="col-12">
 
-            </main>
-        )
-    }
-}
+            <dl className="row ">
+                <dt className="col-12 text-center"><h3>Enter Application Information</h3></dt>
+            </dl>
+            <dl className="row text-center">
+                <dt className=" col-12">
+                    <img src="http://www.apexdyna.com/weborder/image/motion.gif" width="400px" />
+                    <img src="http://www.apexdyna.com/weborder/image/gear3.png" width="400px" />
+                </dt>
+            </dl>
+            <dl className="row no-gutters ">
+                <dd className="col-12">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text GRPstp1Lab ">Weight of load M</span>
+                        </div>
+                        <div class="input-group-prepend w-25">
+                            <input type="text" className="form-control" />
+                        </div>
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text ">Kg</span>
+                        </div>
+                    </div>
+                </dd>
+                <dd className="col-12">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text GRPstp1Lab ">Velocity V</span>
+                        </div>
+                        <div class="input-group-prepend w-25">
+                            <input type="text" className="form-control" />
+                        </div>
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text ">m/s</span>
+                        </div>
+                    </div>
+                </dd>
+                <dd className="col-12">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text GRPstp1Lab ">Acceleration time</span>
+                        </div>
+                        <div class="input-group-prepend w-25">
+                            <input type="text" className="form-control" />
+                        </div>
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text ">sec</span>
+                        </div>
+                    </div>
+                </dd>
+                <dd className="col-12">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text GRPstp1Lab ">Running time</span>
+                        </div>
+                        <div class="input-group-prepend w-25">
+                            <input type="text" className="form-control" />
+                        </div>
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text ">sec</span>
+                        </div>
+                    </div>
+                </dd>
+                <dd className="col-12">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text GRPstp1Lab ">Deceleration time</span>
+                        </div>
+                        <div class="input-group-prepend w-25">
+                            <input type="text" className="form-control" />
+                        </div>
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text ">sec</span>
+                        </div>
+                    </div>
+                </dd>
+                <dd className="col-12">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text  GRPstp1Lab">Idle time</span>
+                        </div>
+                        <div class="input-group-prepend w-25">
+                            <input type="text" className="form-control" />
+                        </div>
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text ">sec</span>
+                        </div>
+                    </div>
+                </dd>
+                <dd className="col-12">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text GRPstp1Lab ">Duty cycle (ED)</span>
+                        </div>
+                        <div class="input-group-prepend w-25">
+                            <input type="text" className="form-control" />
+                        </div>
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text ">%</span>
+                        </div>
+                    </div>
+                </dd>
+                <dd className="col-12">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text GRPstp1Lab ">Safety factor</span>
+                        </div>
+                        <div class="input-group-prepend w-25">
+                            <input type="text" className="form-control" />
+                        </div>
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text ">1~10</span>
+                        </div>
+                    </div>
+                </dd>
+                <dd className="col-12">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text ">Angle from horizontal θ</span>
+                        </div>
+                        <div class="input-group-prepend">
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="radhorizontal" />{"0˚"}
+                                </label>
+                            </div>
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="radhorizontal" />{"90˚ "}
+                                </label>
+                            </div>
+                            <div class="form-check-inline  ">
+                                <div className="input-group">
+                                    <div class="input-group-prepend">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="radhorizontal" />other
+                                      </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group-prepend w-25">
+                            <input type="text" className="form-control " />
+                            <span class="input-group-text  ">Degree</span>
+                        </div>
+                    </div>
+                </dd>
+
+            </dl>
+            <dl className="row text-center">
+                <dd className="col-12"> <Link to="/GRPstep1" > <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;check &nbsp;&nbsp;&nbsp;</button></Link></dd>
+            </dl>
+        </dd>
+    </dl>
+);
+
+const GRPstep2 = () => (
+    <dl className="row">
+        <dd className="col-12">
+            <dl className="row ">
+                <dd className="col-12">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text  ">The Feed-Force for the application</span>
+                        </div>
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text  ">396.2 (N)</span>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+            <dl className="row ">
+                <dt className="col-12">
+                    <h3>Pinion</h3>
+                </dt>
+            </dl>
+            <dl className="row">
+                <dt className="col-6 col-xl-6">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="RalPinion" name="RalPinion" class="custom-control-input" />
+                        <label class="custom-control-label" for="RalPinion">A Series</label>
+                    </div>
+                    <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeA.png" className="img-thumbnail " />
+                </dt>
+                <dt className="col-6 col-xl-6">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="RalPinion2" name="RalPinion" class="custom-control-input" />
+                        <label class="custom-control-label" for="RalPinion2">B Series</label>
+                    </div>
+                    <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeB.png" className="img-thumbnail " />
+                </dt>
+            </dl>
+            <dl className="row">
+                <dt className="col-6 col-xl-6">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="RalPinion3" name="RalPinion" class="custom-control-input" />
+                        <label class="custom-control-label" for="RalPinion3">C Series</label>
+                    </div>
+                    <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeC.png" className="img-thumbnail " />
+                </dt>
+                <dt className="col-6 col-xl-6">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="RalPinion4" name="RalPinion" class="custom-control-input" />
+                        <label class="custom-control-label" for="RalPinion4">D Series</label>
+                    </div>
+                    <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeD.png" className="img-thumbnail " />
+                </dt>
+            </dl>
+            <dl className="row">
+                <dt className="col-6 col-xl-6">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="RalPinion5" name="RalPinion" class="custom-control-input" />
+                        <label class="custom-control-label" for="RalPinion5">E Series</label>
+                    </div>
+                    <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeE.png" className="img-thumbnail " />
+                </dt>
+                <dt className="col-6 col-xl-6">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="RalPinion6" name="RalPinion" class="custom-control-input" />
+                        <label class="custom-control-label" for="RalPinion6">F Series</label>
+                    </div>
+                    <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeF.png" className="img-thumbnail " />
+                </dt>
+            </dl>
+            <dl className="row">
+                <dd className="col-12">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text  rack-Lab ">Helical Angle</span>
+                        </div>
+                        <div class="input-group-prepend ">
+                            <select className="form-control" >
+                                <option></option>
+                                <option>Helical</option>
+                                <option>Straight</option>
+                            </select>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+            <dl className="row">
+                <dd className="col-12">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text  rack-Lab  ">Gearbox</span>
+                        </div>
+                        <div class="input-group-prepend ">
+                            <select className="form-control" >
+                                <option></option>
+                                <option>Supporting AP, APK</option>
+                                <option>Supporting AD, ADR, ADS</option>
+                            </select>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+            <dl className="row">
+                <dd className="col-12">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text  rack-Lab  ">Rack Quality</span>
+                        </div>
+                        <div class="input-group-prepend ">
+                            <select className="form-control" >
+                                <option></option>
+                                <option>Q4</option>
+                                <option>Q5</option>
+                            </select>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </dd>
+    </dl>
+);
 
 const Login = () => <h1>Login</h1>
 const Register = () => <h1>Register</h1>
@@ -1830,7 +2054,6 @@ const App = () => (
         <Route path="/Gearbox" component={Gearbox} />
         <Route path="/RackPinion" component={RackPinion} />
         <Route path="/GearboxRackPinion" component={GearboxRackPinion} />
-        <Route path="/GRPstep1" component={GRPstep1} />
     </ReactRouterDOM.HashRouter>
 
 )
