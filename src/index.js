@@ -1801,19 +1801,21 @@ class GearboxRackPinion extends React.Component {
                                 </div>
                                 <div class="input-group-prepend ">
                                     <span class="input-group-text GRPstp1Lab2 ">%</span>
+                                </div> 
+                                <div class="input-group-prepend ">
+                                        &nbsp;
                                 </div>
-                                <div className="input-group-prepend">
-                                    <ModalCt btncontrol={
-                                        <a href="#" data-toggle="modal" data-target="#GRPmodal" ><i class="fas fa-info-circle fa-lg"></i>
-                                        </a>
+                                <ModalCt btncontrol={
+                                    <a href="#" data-toggle="modal" data-target="#GRPmodal" ><i class="fas fa-info-circle fa-lg"></i>
+                                    </a>
+                                }
+                                    modalID="GRPmodal" head="Information"
+                                    body={
+                                        <img src="../weborder_rs/public/image/DutyED.png" className="img-thumbnail" />
                                     }
-                                        modalID="GRPmodal" head="Information"
-                                        body={
-                                            <img src="../weborder_rs/public/image/DutyED.png" className="img-thumbnail" />
-                                        }
-                                    />
-                                </div>
-                            </div>
+                                />
+                            </div>                           
+   
                         </dd>
                         <dd className="col-12">
                             <div class="input-group mb-3">
