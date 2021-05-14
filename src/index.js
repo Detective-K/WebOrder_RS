@@ -122,14 +122,12 @@ class ModalCt extends React.Component {
     render() {
         return (
             <div>
-                <button type="button" className="btn btn-success btn-sm" data-toggle="modal" data-target="#modalSignUP">
-                    {this.props.btname}
-                </button>
-                <div className="modal fade" id="modalSignUP" tabindex="-1" role="dialog" aria-labelledby="ModalLSignUP" aria-hidden="true">
+                {this.props.btncontrol}
+                <div className="modal fade" id={this.props.modalID} tabindex="-1" role="dialog" aria-labelledby={this.props.modalID} aria-hidden="true">
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title" id="ModalLSignUP">{this.props.head}</h5>
+                                <h4 className="modal-title" >{this.props.head}</h4>
                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -966,10 +964,6 @@ class Gearbox extends React.Component {
                                                 </form>
                                             </div>
                                         </div>
-
-
-
-
                                     </div>
                                 </div>
                             </div>
@@ -1227,11 +1221,6 @@ class Gearbox extends React.Component {
                     </div>
                 </dl>
             </main>
-
-
-
-
-
         );
     }
 };
@@ -1598,81 +1587,81 @@ class PinionCt extends React.Component {
     }
 }
 
-const ACRTabBody = () => {
-    return (
-        <dl className="row">
-            <dd className="col-12">
-                <dl className="row">
-                    <dt className="col-12">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <select className="form-control ">
-                                    <option value="A">Rack Gauge for Installation</option>
-                                    <option value="B">Shrink-Disc</option>
-                                    <option value="F">L Series of Gearbox</option>
-                                </select>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Order Code No" />
-                        </div>
-                    </dt>
-                    <dt className="col-12 text-center">
-                        <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;Check&nbsp;&nbsp;&nbsp;</button>
-                    </dt>
-                </dl>
-                <dl className="row  ">
-                    <dt className="col-4">Order Code</dt> <dd className="col-8">B020</dd>
-                    <dt className="col-4">Prat No.</dt> <dd className="col-8">Z0947900001</dd>
-                    <dt className="col-4">Description</dt> <dd className="col-8">Mn1-D2-L20(B020)</dd>
-                </dl><br />
-                <AddtoOrder />
 
-            </dd>
-        </dl>
-
-
-    );
-};
 
 class AccessoryCt extends React.Component {
     render() {
+        const ACRTabBody = () => {
+            return (
+                <dl className="row">
+                    <dd className="col-12">
+                        <dl className="row">
+                            <dt className="col-12">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <select className="form-control ">
+                                            <option value="A">Rack Gauge for Installation</option>
+                                            <option value="B">Shrink-Disc</option>
+                                            <option value="F">L Series of Gearbox</option>
+                                        </select>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Order Code No" />
+                                </div>
+                            </dt>
+                            <dt className="col-12 text-center">
+                                <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;Check&nbsp;&nbsp;&nbsp;</button>
+                            </dt>
+                        </dl>
+                        <dl className="row  ">
+                            <dt className="col-4">Order Code</dt> <dd className="col-8">B020</dd>
+                            <dt className="col-4">Prat No.</dt> <dd className="col-8">Z0947900001</dd>
+                            <dt className="col-4">Description</dt> <dd className="col-8">Mn1-D2-L20(B020)</dd>
+                        </dl><br />
+                        <AddtoOrder />
+
+                    </dd>
+                </dl>
+            );
+        };
         return (
             <NavOneTabs head="SELECTION I" head2="SELECTION II" home="Accessoryhome" profile="Accessoryprofile" body={<ACRTabBody />} />
         );
     }
 }
 
-const CustomizedOrderTabBody = () => {
-    return (
-        <dl className="row">
-            <dd className="col-12">
-                <dl className="row">
-                    <dt className="col-4">
-                        Customizing Drawing No.
-                        </dt>
-                    <dt className="col-8">
 
-                        <input type="text" class="form-control" placeholder="Customizing Drawing No." />
-                    </dt>
-                </dl>
-                <dl className="row">                    <dt className="col-12 text-center">
-                    <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;Check&nbsp;&nbsp;&nbsp;</button>
-                </dt></dl>
-                <dl className="row  ">
-                    <dt className="col-4">Order Code</dt> <dd className="col-8">B020</dd>
-                    <dt className="col-4">Prat No.</dt> <dd className="col-8">Z0947900001</dd>
-                    <dt className="col-4">Description</dt> <dd className="col-8">Mn1-D2-L20(B020)</dd>
-                </dl><br />
-                <AddtoOrder />
-
-            </dd>
-        </dl>
-
-
-    );
-};
 
 class CustomizedOrderCt extends React.Component {
     render() {
+        const CustomizedOrderTabBody = () => {
+            return (
+                <dl className="row">
+                    <dd className="col-12">
+                        <dl className="row">
+                            <dt className="col-4">
+                                Customizing Drawing No.
+                        </dt>
+                            <dt className="col-8">
+
+                                <input type="text" class="form-control" placeholder="Customizing Drawing No." />
+                            </dt>
+                        </dl>
+                        <dl className="row">                    <dt className="col-12 text-center">
+                            <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;Check&nbsp;&nbsp;&nbsp;</button>
+                        </dt></dl>
+                        <dl className="row  ">
+                            <dt className="col-4">Order Code</dt> <dd className="col-8">B020</dd>
+                            <dt className="col-4">Prat No.</dt> <dd className="col-8">Z0947900001</dd>
+                            <dt className="col-4">Description</dt> <dd className="col-8">Mn1-D2-L20(B020)</dd>
+                        </dl><br />
+                        <AddtoOrder />
+
+                    </dd>
+                </dl>
+
+
+            );
+        };
         return (
             <NavOneTabs head="SELECTION I" home="CustomizedOrderhome" profile="CustomizedOrderprofile" body={<CustomizedOrderTabBody />} />
         );
@@ -1713,6 +1702,565 @@ class RackPinion extends React.Component {
 
 class GearboxRackPinion extends React.Component {
     render() {
+        const GRPstep1 = () => (
+            <dl className="row">
+                <dd className="col-12">
+
+                    <dl className="row text-center">
+                        <dt className=" col-12">
+                            <img src="http://www.apexdyna.com/weborder/image/motion.gif" width="400px" />
+                            <img src="http://www.apexdyna.com/weborder/image/gear3.png" width="400px" />
+                        </dt>
+                    </dl>
+                    <dl className="row no-gutters ">
+                        <dd className="col-12">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text GRPstp1Lab ">Weight of load M</span>
+                                </div>
+                                <div class="input-group-prepend  col-1 no-padding-LR">
+                                    <input type="text" className="form-control" />
+                                </div>
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text GRPstp1Lab2 ">Kg</span>
+                                </div>
+                            </div>
+                        </dd>
+                        <dd className="col-12">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text GRPstp1Lab ">Velocity V</span>
+                                </div>
+                                <div class="input-group-prepend  col-1 no-padding-LR">
+                                    <input type="text" className="form-control" />
+                                </div>
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text GRPstp1Lab2">m/s</span>
+                                </div>
+                            </div>
+                        </dd>
+                        <dd className="col-12">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text GRPstp1Lab ">Acceleration time</span>
+                                </div>
+                                <div class="input-group-prepend  col-1 no-padding-LR">
+                                    <input type="text" className="form-control" />
+                                </div>
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text GRPstp1Lab2 ">sec</span>
+                                </div>
+                            </div>
+                        </dd>
+                        <dd className="col-12">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text GRPstp1Lab ">Running time</span>
+                                </div>
+                                <div class="input-group-prepend  col-1 no-padding-LR">
+                                    <input type="text" className="form-control" />
+                                </div>
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text GRPstp1Lab2 ">sec</span>
+                                </div>
+                            </div>
+                        </dd>
+                        <dd className="col-12">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text GRPstp1Lab ">Deceleration time</span>
+                                </div>
+                                <div class="input-group-prepend  col-1 no-padding-LR">
+                                    <input type="text" className="form-control" />
+                                </div>
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text GRPstp1Lab2 ">sec</span>
+                                </div>
+                            </div>
+                        </dd>
+                        <dd className="col-12">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text  GRPstp1Lab">Idle time</span>
+                                </div>
+                                <div class="input-group-prepend  col-1 no-padding-LR">
+                                    <input type="text" className="form-control" />
+                                </div>
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text GRPstp1Lab2 ">sec</span>
+                                </div>
+                            </div>
+                        </dd>
+                        <dd className="col-12">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text GRPstp1Lab ">Duty cycle (ED)</span>
+                                </div>
+                                <div class="input-group-prepend  col-1 no-padding-LR">
+                                    <input type="text" className="form-control" />
+                                </div>
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text GRPstp1Lab2 ">%</span>
+                                </div>
+                                <div className="input-group-prepend">
+                                    <ModalCt btncontrol={
+                                        <a href="#" data-toggle="modal" data-target="#GRPmodal" ><i class="fas fa-info-circle fa-lg"></i>
+                                        </a>
+                                    }
+                                        modalID="GRPmodal" head="Information"
+                                        body={
+                                            <img src="../weborder_rs2/public/image/DutyED.png" className="img-thumbnail" />
+                                        }
+                                    />
+                                </div>
+                            </div>
+                        </dd>
+                        <dd className="col-12">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text GRPstp1Lab ">Safety factor</span>
+                                </div>
+                                <div class="input-group-prepend  col-1 no-padding-LR">
+                                    <input type="text" className="form-control" />
+
+                                </div>
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text GRPstp1Lab2 ">1~10</span>
+                                </div>
+                                <div className="input-group-prepend">
+                                    <ModalCt btncontrol={
+                                        <a href="#" data-toggle="modal" data-target="#GRPmodal2" ><i class="fas fa-info-circle fa-lg"></i>
+                                        </a>
+                                    }
+                                        modalID="GRPmodal2" head="Information"
+                                        body={
+                                            <dl className="row">
+                                                <dd className="col-12 text-center text-danger">
+                                                    For ED >= 60%, Safety factor >= 2 is recommended.
+                                        </dd>
+                                            </dl>
+                                        }
+                                    />
+                                </div>
+                            </div>
+                        </dd>
+                        <dd className="col-12">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text  GRPstp1Lab">Angle θ</span>
+                                </div>
+
+                                <div class="input-group-prepend  col-1 no-padding-LR ">
+                                    <input type="text" className="form-control " />
+
+                                </div>
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text  ">Degree</span>
+                                </div>
+                            </div>
+                        </dd>
+
+                    </dl>
+                    <dl className="row text-center">
+                        <dd className="col-12"> <Link to="/GRPstep1" > <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;check &nbsp;&nbsp;&nbsp;</button></Link></dd>
+                    </dl>
+                </dd>
+            </dl>
+        );
+        const GRPstep2 = () => (
+            <dl className="row">
+                <dd className="col-12">
+                    <dl className="row ">
+                        <dd className="col-12">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text  ">The Feed-Force for the application</span>
+                                </div>
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text  no-padding-LR ">396.2 (N)</span>
+                                </div>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl className="row ">
+                        <dt className="col-12">
+                            <h3>Pinion</h3>
+                        </dt>
+                    </dl>
+                    <dl className="row">
+                        <dt className="col-6 col-xl-6">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="RalPinion" name="RalPinion" class="custom-control-input" />
+                                <label class="custom-control-label" for="RalPinion">A Series</label>
+                            </div>
+                            <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeA.png" className="img-thumbnail " />
+                        </dt>
+                        <dt className="col-6 col-xl-6">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="RalPinion2" name="RalPinion" class="custom-control-input" />
+                                <label class="custom-control-label" for="RalPinion2">B Series</label>
+                            </div>
+                            <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeB.png" className="img-thumbnail " />
+                        </dt>
+                    </dl>
+                    <dl className="row">
+                        <dt className="col-6 col-xl-6">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="RalPinion3" name="RalPinion" class="custom-control-input" />
+                                <label class="custom-control-label" for="RalPinion3">C Series</label>
+                            </div>
+                            <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeC.png" className="img-thumbnail " />
+                        </dt>
+                        <dt className="col-6 col-xl-6">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="RalPinion4" name="RalPinion" class="custom-control-input" />
+                                <label class="custom-control-label" for="RalPinion4">D Series</label>
+                            </div>
+                            <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeD.png" className="img-thumbnail " />
+                        </dt>
+                    </dl>
+                    <dl className="row">
+                        <dt className="col-6 col-xl-6">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="RalPinion5" name="RalPinion" class="custom-control-input" />
+                                <label class="custom-control-label" for="RalPinion5">E Series</label>
+                            </div>
+                            <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeE.png" className="img-thumbnail " />
+                        </dt>
+                        <dt className="col-6 col-xl-6">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="RalPinion6" name="RalPinion" class="custom-control-input" />
+                                <label class="custom-control-label" for="RalPinion6">F Series</label>
+                            </div>
+                            <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeF.png" className="img-thumbnail " />
+                        </dt>
+                    </dl>
+                    <dl className="row">
+                        <dd className="col-12">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text  rack-Lab ">Helical Angle</span>
+                                </div>
+                                <div class="input-group-prepend ">
+                                    <select className="form-control" >
+                                        <option></option>
+                                        <option>Helical</option>
+                                        <option>Straight</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl className="row">
+                        <dd className="col-12">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text  rack-Lab  ">Gearbox</span>
+                                </div>
+                                <div class="input-group-prepend ">
+                                    <select className="form-control" >
+                                        <option></option>
+                                        <option>Supporting AP, APK</option>
+                                        <option>Supporting AD, ADR, ADS</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl className="row">
+                        <dd className="col-12">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text  rack-Lab  ">Rack Quality</span>
+                                </div>
+                                <div class="input-group-prepend ">
+                                    <select className="form-control" >
+                                        <option></option>
+                                        <option>Q4</option>
+                                        <option>Q5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl className="row text-center">
+                        <dd className="col-12">  <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;check &nbsp;&nbsp;&nbsp;</button></dd>
+                    </dl>
+                </dd>
+            </dl>
+        );
+        const GRPstep3 = () => (
+            <dl className="row">
+                <dd className="col-12">
+                    <dl className="row"><dt className="col-12 text-center"><h3>Pinion Parameter</h3></dt></dl>
+                    <dl className="row">
+                        <dd className="col-12">
+                            <table class="table-bordered ">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Select</th>
+                                        <th scope="col">Helical angle</th>
+                                        <th scope="col">Series</th>
+                                        <th scope="col">Module</th>
+                                        <th scope="col">Teeth No.</th>
+                                        <th scope="col">Rack Quality</th>
+                                        <th scope="col">F2T (N)</th>
+                                        <th scope="col">T2B (Nm)</th>
+                                        <th scope="col">d (mm)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><button type="button" className="btn btn-success btn-sm">Select</button> </th>
+                                        <td>Helical</td>
+                                        <td>B</td>
+                                        <td>5</td>
+                                        <td>12</td>
+                                        <td>4</td>
+                                        <td>31259</td>
+                                        <td>995</td>
+                                        <td>63.662</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><button type="button" className="btn btn-success btn-sm">Select</button> </th>
+                                        <td>Helical</td>
+                                        <td>B</td>
+                                        <td>5</td>
+                                        <td>14</td>
+                                        <td>4</td>
+                                        <td>42142</td>
+                                        <td>1565</td>
+                                        <td>74.272</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </dd>
+                    </dl>
+                    <dl className="row">
+                        <dt className="col-4">Helical angle</dt> <dd className="col-8">Helical</dd>
+                        <dt className="col-4">Series</dt> <dd className="col-8">B</dd>
+                        <dt className="col-4">Module</dt> <dd className="col-8">5</dd>
+                        <dt className="col-4">Teeth No.</dt> <dd className="col-8">12</dd>
+                        <dt className="col-4">Rack Quality</dt> <dd className="col-8">4</dd>
+                        <dt className="col-4">F2T (N)</dt> <dd className="col-8">31259</dd>
+                        <dt className="col-4">T2B (Nm)</dt> <dd className="col-8">995</dd>
+                        <dt className="col-4">d (mm)</dt> <dd className="col-8">63.662</dd>
+                    </dl>
+                    <dl className="row">
+                        <dt className="col-6">The Feed-Force for the application</dt> <dd className="col-6">396.2 (N)</dd>
+                        <dt className="col-6">The Speed of Pinion</dt> <dd className="col-6">300 (RPM)</dd>
+                        <dt className="col-6">The Driving Torque (T2B) for the application</dt> <dd className="col-6">12.6 (Nm)</dd>
+                    </dl>
+                    <dl className="row">
+                        <dt className="col-6">Input an estimated Motor Speed</dt> <dd className="col-2"><input type="text" className="form-control" /></dd><dd className="col-4"> RPM</dd>
+                    </dl>
+                    <dl className="row text-center">
+                        <dd className="col-12">  <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;check &nbsp;&nbsp;&nbsp;</button></dd>
+                    </dl>
+                </dd>
+            </dl>
+        );
+        const GRPstep4 = () => (
+            <dl className="row">
+                <dd className="col-12">
+                    <dl className="row">
+                        <dt className="col-6">The Feed-Force for the application</dt> <dd className="col-6">396.2 (N)</dd>
+                        <dt className="col-6">The Speed of Pinion</dt> <dd className="col-6">300 (RPM)</dd>
+                        <dt className="col-6">The Driving Torque (T2B) for the application</dt> <dd className="col-6">12.6 (Nm)</dd>
+                        <dt className="col-6">The estimated Motor Speed</dt> <dd className="col-6">3500 (RPM)</dd>
+                        <dt className="col-6">The Driving Torque (T2B) for the application</dt> <dd className="col-6">11.7</dd>
+                        <dt className="col-6">The Driving Torque (T2B) for the application</dt> <dd className="col-6">0.6 (Nm)</dd>
+                    </dl>
+                    <dl className="row">
+                        <dd className="col-12">
+                            <AccordionCt head="Select Motor" accordion="accordionGRPgb" collapse="accordionGRPgb" body={<GRPselectmotor />} />
+                        </dd>
+                    </dl>
+                    <dl className="row">
+                        <dd className="col-12">
+                            <AccordionCt head="Select Gearbox" accordion="accordionGRPgb2" collapse="accordionGRPgb2" body={<GRPselectGB />} />
+                        </dd>
+                    </dl>
+                    <dl className="row">
+                        <dd className="col-12">
+                            <AccordionCt head="Result" accordion="accordionGRPgb3" collapse="accordionGRPgb3" body={<GRPresult />} />
+                        </dd>
+                    </dl>
+                </dd>
+            </dl>
+        );
+        const GRPselectmotor = () => (
+            <div>
+                <dl className="row">
+                    <dt className="col-3">
+                        <label>Brand</label>
+                    </dt>
+                    <dd className="col-9">
+
+                        <select name="month" className="form-control form-control-xs">
+                            <option value="00"></option>
+                            <option value="01">ABB</option>
+                            <option value="02">ALLEN BRADLEY</option>
+                            <option value="03">ALLEN BRADLEY</option>
+                        </select>
+                    </dd>
+                    <dt className="col-3">
+                        <label>Model</label>
+                    </dt>
+                    <dd className="col-9">
+                        <select name="month" className="form-control form-control-xs">
+                            <optgroup>
+                                <option value="00"></option>
+                                <option value="BMP0701F_PCD82+ATV32H037N4,ATV320U04N4"  >BMP0701F_PCD82+ATV32H037N4,ATV320U04N4</option>
+                                <option value="8C1.1.30.1.xxxxxx.G.xxB">8C1.1.30.1.xxxxxx.G.xxB</option>
+                                <option value="1326AB-A1G-11-xx">1326AB-A1G-11-xx</option>
+                            </optgroup>
+                        </select>
+                    </dd>
+                </dl>
+                <dl className="row">
+                    <dt className="col-12 text-center ">
+                        <button type="button" className=" btn btn-success btn-sm">&nbsp;&nbsp;&nbsp; Check &nbsp;&nbsp;&nbsp;</button>
+                    </dt>
+                </dl>
+            </div>
+        );
+        const GRPselectGB = () => (
+            <div>
+                <dl className="row">
+                    <dt className="col-12 text-center">
+                        <div class="btn-toolbar d-inline-block" role="toolbar" aria-label="Toolbar with button groups">
+                            <div class="btn-group mr-2 " role="group" aria-label="First group">
+                                <button type="button" class="btn btn-success btn-sm active"> &nbsp; Standard &nbsp;  &nbsp;</button>
+                            </div>
+                            <div class="btn-group mr-2" role="group" aria-label="Second group">
+                                <button type="button" class="btn btn-warning btn-sm">Unlimited 1</button>
+                            </div>
+                        </div>
+                    </dt>
+                </dl><br />
+                <dl className="row">
+                    <dt className="col-6 col-sm-6 col-md-6">
+
+                        <a href="#" data-toggle="modal" data-target="#gearboxInfoModal"  > <label className="text-dark">Gearbox</label> <i class="fas fa-info-circle fa-lg"></i>
+                        </a>
+
+                        <div class="modal fade" id="gearboxInfoModal">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Information</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <dl className="row">
+                                            <dd className="col-12 text-danger">Material of AT series: Stainless</dd>
+                                            <dd className="col-12 text-danger">Material of ATB series: Carbon Steel with Phosphate</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <select name="month" className="form-control form-control-xs" disabled>
+                            <option value="R01" selected="selected">AB Series</option>
+                            <option value="R02">ABR Series</option>
+                        </select>
+                    </dt>
+                    <dt className="col-6 col-sm-6 col-md-6">
+                        <label>Model</label>
+                        <select name="month" className="form-control form-control-xs" disabled>
+                            <option selected="selected" value="AB090">AB090</option>
+                            <option value="AB090A">AB090A</option>
+                        </select>
+                    </dt>
+                </dl>
+                <dl className="row">
+                    <dt className="col-6 col-sm-6 col-md-6">
+                        <label>Ratio</label>
+                        <select name="month" className="form-control form-control-xs" disabled>
+                            <option selected="selected" value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </dt>
+                    <dt className="col-6 col-sm-6 col-md-6">
+                        <label>Backlash</label>
+                        <select name="month" className="form-control form-control-xs" disabled>
+                            <option value="P0">P0</option>
+                            <option value="P1">P1</option>
+                        </select>
+                    </dt>
+                </dl><br />
+                <dl className="row">
+                    <dt className="col-12 text-center" >
+                        <button type="button" className=" btn btn-success btn-sm">&nbsp;&nbsp;&nbsp; Check &nbsp;&nbsp;&nbsp;</button>
+                    </dt>
+                </dl>
+            </div>
+        );
+        const GRPresult = () => (
+            <div>
+                <dl className="row no-gutters">
+
+                    <dd class=" col-12 text-center">
+                        <img src="http://www.apexdyna.com/images/gearbox/pro_samll01.png" width="191" height="180" />
+                    </dd>
+
+                    <dt class="col-12 text-center">
+                        <h5 class="card-title">Ordering Code</h5>
+                        <h4 class="card-text"><span class="badge badge-primary">AB090 - 003 - S2 - P2 /</span></h4>
+                        <h4 class="card-text"><span class="badge badge-primary">ABB 8C1.1.30.1.xxxxxx.G.xxB</span></h4>
+                    </dt>
+
+                </dl><br />
+                <hr />
+                <Downloaddrawing />
+                <hr />
+
+                <dl className="row no-gutters  ">
+                    <dd className="col-12">
+                        <AccordionCt collapse="collapseGS" accordion="accordionGS" head={<dt className="col-12"><h5>Gearbox Specification</h5></dt>}
+                            body={
+                                <dl className="row">
+                                    <dt className="col-4" >Model </dt> <dd className="col-8">AB090 - 003 - S2 - P2</dd>
+                                    <dt className="col-4" >Ratio </dt> <dd className="col-8">3</dd>
+                                    <dt className="col-4" >Shaft Option </dt> <dd className="col-8">S2: Keyway</dd>
+                                    <dt className="col-4" >Backlash </dt> <dd className="col-8">P2: Standard Backlash</dd>
+                                    <dt className="col-4" >Adapter</dt> <dd className="col-8">P0401300503 / AD-W90-M100-3</dd>
+                                    <dt className="col-4" >Output Torque</dt> <dd className="col-8">130 Nm</dd>
+                                    <dt className="col-4" >Rated Speed</dt> <dd className="col-8">4000 rpm</dd>
+                                    <dt className="col-4" >Max. Torque</dt> <dd className="col-8">234 Nm</dd>
+                                    <dt className="col-4" >Max. Speed</dt> <dd className="col-8">8000 rpm</dd>
+                                    <dt className="col-4" >Inertia</dt> <dd className="col-8">0.61 kgcm<font size="1"><sup>^2</sup></font></dd>
+                                    <dt className="col-4" >Weight </dt> <dd className="col-8">3.70 kg</dd>
+                                    <dt className="col-4" >No Load </dt> <dd className="col-8">0.67 Nm<sup><font color="red">(3)</font></sup></dd>
+                                </dl>
+                            }
+                        />
+                    </dd>
+                </dl>
+                <hr />
+                <dl className="row no-gutters">
+                    <dd className="col-12">
+                        <AccordionCt head={<dt className="col-12"><h5>Motor Specification</h5></dt>} collapse="collapseMS" accordion="accordionMS"
+                            body={
+                                <div className="row">
+                                    <dt className="col-4" >Brand </dt> <dd className="col-8">ABB</dd>
+                                    <dt className="col-4" >Model </dt> <dd className="col-8">8C1.1.30.1.xxxxxx.G.xxB</dd>
+                                    <dt className="col-4" >Motor Shaft</dt> <dd className="col-8">19 mm</dd>
+                                    <dt className="col-4" >Output Power </dt> <dd className="col-8">0.38 Kw</dd>
+                                    <dt className="col-4" >Rated Speed </dt> <dd className="col-8">3000 rpm</dd>
+                                    <dt className="col-4" >Rated Torque</dt> <dd className="col-8">1.20 Nm</dd>
+                                    <dt className="col-4" >Max. Speed</dt> <dd className="col-8">3000 rpm</dd>
+                                    <dt className="col-4" >Peak Torque</dt> <dd className="col-8">4.60 Nm</dd>
+                                    <dt className="col-4" >Inertia</dt> <dd className="col-8">0.90 kgcm<font size="1"><sup>^2</sup></font></dd>
+                                </div>
+                            } />
+                    </dd>
+                </dl>
+                <hr />
+            </div>
+        );
         return (
             <main role="main" className="container-fluid"> <br />
                 <br />
@@ -1727,274 +2275,23 @@ class GearboxRackPinion extends React.Component {
                         <AccordionCt head="STEP 2" accordion="accordionGRP2" collapse="collapseGRP2" body={<GRPstep2 />} />
                     </div>
                 </dl>
+                <dl className="row">
+                    <div className="offset-md-3 col-md-6">
+                        <AccordionCt head="STEP 3" accordion="accordionGRP3" collapse="collapseGRP3" body={<GRPstep3 />} />
+                    </div>
+                </dl>
+                <dl className="row">
+                    <div className="offset-md-3 col-md-6">
+                        <AccordionCt head="STEP 4" accordion="accordionGRP4" collapse="collapseGRP4" body={<GRPstep4 />} />
+                    </div>
+                </dl>
             </main>
         );
     }
 }
 
 
-const GRPstep1 = () => (
-    <dl className="row">
-        <dd className="col-12">
 
-            <dl className="row text-center">
-                <dt className=" col-12">
-                    <img src="http://www.apexdyna.com/weborder/image/motion.gif" width="400px" />
-                    <img src="http://www.apexdyna.com/weborder/image/gear3.png" width="400px" />
-                </dt>
-            </dl>
-            <dl className="row no-gutters ">
-                <dd className="col-12">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text GRPstp1Lab ">Weight of load M</span>
-                        </div>
-                        <div class="input-group-prepend  col-1 no-padding-LR">
-                            <input type="text" className="form-control" />
-                        </div>
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text GRPstp1Lab2 ">Kg</span>
-                        </div>
-                    </div>
-                </dd>
-                <dd className="col-12">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text GRPstp1Lab ">Velocity V</span>
-                        </div>
-                        <div class="input-group-prepend  col-1 no-padding-LR">
-                            <input type="text" className="form-control" />
-                        </div>
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text GRPstp1Lab2">m/s</span>
-                        </div>
-                    </div>
-                </dd>
-                <dd className="col-12">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text GRPstp1Lab ">Acceleration time</span>
-                        </div>
-                        <div class="input-group-prepend  col-1 no-padding-LR">
-                            <input type="text" className="form-control" />
-                        </div>
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text GRPstp1Lab2 ">sec</span>
-                        </div>
-                    </div>
-                </dd>
-                <dd className="col-12">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text GRPstp1Lab ">Running time</span>
-                        </div>
-                        <div class="input-group-prepend  col-1 no-padding-LR">
-                            <input type="text" className="form-control" />
-                        </div>
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text GRPstp1Lab2 ">sec</span>
-                        </div>
-                    </div>
-                </dd>
-                <dd className="col-12">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text GRPstp1Lab ">Deceleration time</span>
-                        </div>
-                        <div class="input-group-prepend  col-1 no-padding-LR">
-                            <input type="text" className="form-control" />
-                        </div>
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text GRPstp1Lab2 ">sec</span>
-                        </div>
-                    </div>
-                </dd>
-                <dd className="col-12">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text  GRPstp1Lab">Idle time</span>
-                        </div>
-                        <div class="input-group-prepend  col-1 no-padding-LR">
-                            <input type="text" className="form-control" />
-                        </div>
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text GRPstp1Lab2 ">sec</span>
-                        </div>
-                    </div>
-                </dd>
-                <dd className="col-12">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text GRPstp1Lab ">Duty cycle (ED)</span>
-                        </div>
-                        <div class="input-group-prepend  col-1 no-padding-LR">
-                            <input type="text" className="form-control" />
-                        </div>
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text GRPstp1Lab2 ">%</span>
-                        </div>
-                    </div>
-                </dd>
-                <dd className="col-12">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text GRPstp1Lab ">Safety factor</span>
-                        </div>
-                        <div class="input-group-prepend  col-1 no-padding-LR">
-                            <input type="text" className="form-control" />
-
-                        </div>
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text GRPstp1Lab2 ">1~10</span>
-                        </div>
-                    </div>
-                </dd>
-                <dd className="col-12">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text  GRPstp1Lab">Angle θ</span>
-                        </div>
-
-                        <div class="input-group-prepend  col-1 no-padding-LR ">
-                            <input type="text" className="form-control " />
-
-                        </div>
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text  ">Degree</span>
-                        </div>
-                    </div>
-                </dd>
-
-            </dl>
-            <dl className="row text-center">
-                <dd className="col-12"> <Link to="/GRPstep1" > <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;check &nbsp;&nbsp;&nbsp;</button></Link></dd>
-            </dl>
-        </dd>
-    </dl>
-);
-
-const GRPstep2 = () => (
-    <dl className="row">
-        <dd className="col-12">
-            <dl className="row ">
-                <dd className="col-12">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text  ">The Feed-Force for the application</span>
-                        </div>
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text  no-padding-LR ">396.2 (N)</span>
-                        </div>
-                    </div>
-                </dd>
-            </dl>
-            <dl className="row ">
-                <dt className="col-12">
-                    <h3>Pinion</h3>
-                </dt>
-            </dl>
-            <dl className="row">
-                <dt className="col-6 col-xl-6">
-                    <div class="custom-control custom-radio">
-                        <input type="radio" id="RalPinion" name="RalPinion" class="custom-control-input" />
-                        <label class="custom-control-label" for="RalPinion">A Series</label>
-                    </div>
-                    <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeA.png" className="img-thumbnail " />
-                </dt>
-                <dt className="col-6 col-xl-6">
-                    <div class="custom-control custom-radio">
-                        <input type="radio" id="RalPinion2" name="RalPinion" class="custom-control-input" />
-                        <label class="custom-control-label" for="RalPinion2">B Series</label>
-                    </div>
-                    <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeB.png" className="img-thumbnail " />
-                </dt>
-            </dl>
-            <dl className="row">
-                <dt className="col-6 col-xl-6">
-                    <div class="custom-control custom-radio">
-                        <input type="radio" id="RalPinion3" name="RalPinion" class="custom-control-input" />
-                        <label class="custom-control-label" for="RalPinion3">C Series</label>
-                    </div>
-                    <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeC.png" className="img-thumbnail " />
-                </dt>
-                <dt className="col-6 col-xl-6">
-                    <div class="custom-control custom-radio">
-                        <input type="radio" id="RalPinion4" name="RalPinion" class="custom-control-input" />
-                        <label class="custom-control-label" for="RalPinion4">D Series</label>
-                    </div>
-                    <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeD.png" className="img-thumbnail " />
-                </dt>
-            </dl>
-            <dl className="row">
-                <dt className="col-6 col-xl-6">
-                    <div class="custom-control custom-radio">
-                        <input type="radio" id="RalPinion5" name="RalPinion" class="custom-control-input" />
-                        <label class="custom-control-label" for="RalPinion5">E Series</label>
-                    </div>
-                    <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeE.png" className="img-thumbnail " />
-                </dt>
-                <dt className="col-6 col-xl-6">
-                    <div class="custom-control custom-radio">
-                        <input type="radio" id="RalPinion6" name="RalPinion" class="custom-control-input" />
-                        <label class="custom-control-label" for="RalPinion6">F Series</label>
-                    </div>
-                    <img src="http://www.apexdyna.com/weborder/image/Pinion_TypeF.png" className="img-thumbnail " />
-                </dt>
-            </dl>
-            <dl className="row">
-                <dd className="col-12">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text  rack-Lab ">Helical Angle</span>
-                        </div>
-                        <div class="input-group-prepend ">
-                            <select className="form-control" >
-                                <option></option>
-                                <option>Helical</option>
-                                <option>Straight</option>
-                            </select>
-                        </div>
-                    </div>
-                </dd>
-            </dl>
-            <dl className="row">
-                <dd className="col-12">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text  rack-Lab  ">Gearbox</span>
-                        </div>
-                        <div class="input-group-prepend ">
-                            <select className="form-control" >
-                                <option></option>
-                                <option>Supporting AP, APK</option>
-                                <option>Supporting AD, ADR, ADS</option>
-                            </select>
-                        </div>
-                    </div>
-                </dd>
-            </dl>
-            <dl className="row">
-                <dd className="col-12">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend ">
-                            <span class="input-group-text  rack-Lab  ">Rack Quality</span>
-                        </div>
-                        <div class="input-group-prepend ">
-                            <select className="form-control" >
-                                <option></option>
-                                <option>Q4</option>
-                                <option>Q5</option>
-                            </select>
-                        </div>
-                    </div>
-                </dd>
-            </dl>
-            <dl className="row text-center">
-                <dd className="col-12"> <Link to="/GRPstep1" > <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;check &nbsp;&nbsp;&nbsp;</button></Link></dd>
-            </dl>
-        </dd>
-    </dl>
-);
 
 const Login = () => <h1>Login</h1>
 const Register = () => <h1>Register</h1>
