@@ -1809,7 +1809,7 @@ class GearboxRackPinion extends React.Component {
                                     }
                                         modalID="GRPmodal" head="Information"
                                         body={
-                                            <img src="../weborder_rs2/public/image/DutyED.png" className="img-thumbnail" />
+                                            <img src="../weborder_rs/public/image/DutyED.png" className="img-thumbnail" />
                                         }
                                     />
                                 </div>
