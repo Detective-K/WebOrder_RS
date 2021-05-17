@@ -1718,7 +1718,7 @@ class GearboxRackPinion extends React.Component {
                                 <div class="input-group-prepend ">
                                     <span class="input-group-text GRPstp1Lab ">Weight of load M</span>
                                 </div>
-                                <div class="input-group-prepend  col-1 no-padding-LR">
+                                <div class="input-group-prepend   no-padding-LR">
                                     <input type="text" className="form-control" />
                                 </div>
                                 <div class="input-group-prepend ">
@@ -1731,7 +1731,7 @@ class GearboxRackPinion extends React.Component {
                                 <div class="input-group-prepend ">
                                     <span class="input-group-text GRPstp1Lab ">Velocity V</span>
                                 </div>
-                                <div class="input-group-prepend  col-1 no-padding-LR">
+                                <div class="input-group-prepend   no-padding-LR">
                                     <input type="text" className="form-control" />
                                 </div>
                                 <div class="input-group-prepend ">
@@ -1744,7 +1744,7 @@ class GearboxRackPinion extends React.Component {
                                 <div class="input-group-prepend ">
                                     <span class="input-group-text GRPstp1Lab ">Acceleration time</span>
                                 </div>
-                                <div class="input-group-prepend  col-1 no-padding-LR">
+                                <div class="input-group-prepend   no-padding-LR">
                                     <input type="text" className="form-control" />
                                 </div>
                                 <div class="input-group-prepend ">
@@ -1757,7 +1757,7 @@ class GearboxRackPinion extends React.Component {
                                 <div class="input-group-prepend ">
                                     <span class="input-group-text GRPstp1Lab ">Running time</span>
                                 </div>
-                                <div class="input-group-prepend  col-1 no-padding-LR">
+                                <div class="input-group-prepend   no-padding-LR">
                                     <input type="text" className="form-control" />
                                 </div>
                                 <div class="input-group-prepend ">
@@ -1770,7 +1770,7 @@ class GearboxRackPinion extends React.Component {
                                 <div class="input-group-prepend ">
                                     <span class="input-group-text GRPstp1Lab ">Deceleration time</span>
                                 </div>
-                                <div class="input-group-prepend  col-1 no-padding-LR">
+                                <div class="input-group-prepend   no-padding-LR">
                                     <input type="text" className="form-control" />
                                 </div>
                                 <div class="input-group-prepend ">
@@ -1783,7 +1783,7 @@ class GearboxRackPinion extends React.Component {
                                 <div class="input-group-prepend ">
                                     <span class="input-group-text  GRPstp1Lab">Idle time</span>
                                 </div>
-                                <div class="input-group-prepend  col-1 no-padding-LR">
+                                <div class="input-group-prepend   no-padding-LR">
                                     <input type="text" className="form-control" />
                                 </div>
                                 <div class="input-group-prepend ">
@@ -1796,40 +1796,41 @@ class GearboxRackPinion extends React.Component {
                                 <div class="input-group-prepend ">
                                     <span class="input-group-text GRPstp1Lab ">Duty cycle (ED)</span>
                                 </div>
-                                <div class="input-group-prepend  col-1 no-padding-LR">
+                                <div class="input-group-prepend   no-padding-LR">
                                     <input type="text" className="form-control" />
                                 </div>
                                 <div class="input-group-prepend ">
                                     <span class="input-group-text GRPstp1Lab2 ">%</span>
-                                </div> 
-                                <div class="input-group-prepend ">
-                                        &nbsp;
                                 </div>
-                                <ModalCt btncontrol={
-                                    <a href="#" data-toggle="modal" data-target="#GRPmodal" ><i class="fas fa-info-circle fa-lg"></i>
-                                    </a>
-                                }
-                                    modalID="GRPmodal" head="Information"
-                                    body={
-                                        <img src="../weborder_rs/public/image/DutyED.png" className="img-thumbnail" />
+
+                                <div class="input-group-prepend  px-4 pt-2  ">
+                                    <ModalCt btncontrol={
+                                        <a href="#" data-toggle="modal" data-target="#GRPmodal" ><i class="fas fa-info-circle fa-lg"></i>
+                                        </a>
                                     }
-                                />
-                            </div>                           
-   
+                                        modalID="GRPmodal" head="Information"
+                                        body={
+                                            <img src="../weborder_rs/public/image/DutyED.png" className="img-thumbnail" />
+                                        }
+                                    />
+                                </div>
+
+                            </div>
+
                         </dd>
                         <dd className="col-12">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend ">
                                     <span class="input-group-text GRPstp1Lab ">Safety factor</span>
                                 </div>
-                                <div class="input-group-prepend  col-1 no-padding-LR">
+                                <div class="input-group-prepend   no-padding-LR">
                                     <input type="text" className="form-control" />
 
                                 </div>
                                 <div class="input-group-prepend ">
                                     <span class="input-group-text GRPstp1Lab2 ">1~10</span>
                                 </div>
-                                <div className="input-group-prepend">
+                                <div className="input-group-prepend  px-4 pt-2 ">
                                     <ModalCt btncontrol={
                                         <a href="#" data-toggle="modal" data-target="#GRPmodal2" ><i class="fas fa-info-circle fa-lg"></i>
                                         </a>
@@ -1852,7 +1853,7 @@ class GearboxRackPinion extends React.Component {
                                     <span class="input-group-text  GRPstp1Lab">Angle θ</span>
                                 </div>
 
-                                <div class="input-group-prepend  col-1 no-padding-LR ">
+                                <div class="input-group-prepend   no-padding-LR ">
                                     <input type="text" className="form-control " />
 
                                 </div>
@@ -1864,7 +1865,7 @@ class GearboxRackPinion extends React.Component {
 
                     </dl>
                     <dl className="row text-center">
-                        <dd className="col-12"> <Link to="/GRPstep1" > <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;check &nbsp;&nbsp;&nbsp;</button></Link></dd>
+                        <dd className="col-12"> <Link to="/GRPstep1" > <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;Check &nbsp;&nbsp;&nbsp;</button></Link></dd>
                     </dl>
                 </dd>
             </dl>
@@ -1879,7 +1880,8 @@ class GearboxRackPinion extends React.Component {
                                     <span class="input-group-text  ">The Feed-Force for the application</span>
                                 </div>
                                 <div class="input-group-prepend ">
-                                    <span class="input-group-text  no-padding-LR ">396.2 (N)</span>
+                                    <span class="input-group-text   ">396.2</span>
+                                    <span class="input-group-text   ">N</span>
                                 </div>
                             </div>
                         </dd>
@@ -1957,13 +1959,13 @@ class GearboxRackPinion extends React.Component {
                         <dd className="col-12">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend ">
-                                    <span class="input-group-text  rack-Lab  ">Gearbox</span>
+                                    <span class="input-group-text  rack-Lab  ">Supporting  Gearbox Model</span>
                                 </div>
                                 <div class="input-group-prepend ">
                                     <select className="form-control" >
                                         <option></option>
-                                        <option>Supporting AP, APK</option>
-                                        <option>Supporting AD, ADR, ADS</option>
+                                        <option>AP, APK</option>
+                                        <option>AD, ADR, ADS</option>
                                     </select>
                                 </div>
                             </div>
@@ -1986,7 +1988,7 @@ class GearboxRackPinion extends React.Component {
                         </dd>
                     </dl>
                     <dl className="row text-center">
-                        <dd className="col-12">  <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;check &nbsp;&nbsp;&nbsp;</button></dd>
+                        <dd className="col-12">  <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;Check &nbsp;&nbsp;&nbsp;</button></dd>
                     </dl>
                 </dd>
             </dl>
@@ -1994,18 +1996,18 @@ class GearboxRackPinion extends React.Component {
         const GRPstep3 = () => (
             <dl className="row">
                 <dd className="col-12">
-                    <dl className="row"><dt className="col-12 text-center"><h3>Pinion Parameter</h3></dt></dl>
+                    <dl className="row"><dt className="col-12 text-center"><h5>Helical / B Series / Rack : Q4 </h5></dt></dl>
                     <dl className="row">
                         <dd className="col-12">
                             <table class="table-bordered ">
                                 <thead>
                                     <tr>
                                         <th scope="col">Select</th>
-                                        <th scope="col">Helical angle</th>
-                                        <th scope="col">Series</th>
+
+
                                         <th scope="col">Module</th>
                                         <th scope="col">Teeth No.</th>
-                                        <th scope="col">Rack Quality</th>
+
                                         <th scope="col">F2T (N)</th>
                                         <th scope="col">T2B (Nm)</th>
                                         <th scope="col">d (mm)</th>
@@ -2014,22 +2016,21 @@ class GearboxRackPinion extends React.Component {
                                 <tbody>
                                     <tr>
                                         <th scope="row"><button type="button" className="btn btn-success btn-sm">Select</button> </th>
-                                        <td>Helical</td>
-                                        <td>B</td>
+
+
                                         <td>5</td>
                                         <td>12</td>
-                                        <td>4</td>
+
                                         <td>31259</td>
                                         <td>995</td>
                                         <td>63.662</td>
                                     </tr>
                                     <tr>
                                         <th scope="row"><button type="button" className="btn btn-success btn-sm">Select</button> </th>
-                                        <td>Helical</td>
-                                        <td>B</td>
+    
                                         <td>5</td>
                                         <td>14</td>
-                                        <td>4</td>
+
                                         <td>42142</td>
                                         <td>1565</td>
                                         <td>74.272</td>
@@ -2039,25 +2040,40 @@ class GearboxRackPinion extends React.Component {
                         </dd>
                     </dl>
                     <dl className="row">
-                        <dt className="col-4">Helical angle</dt> <dd className="col-8">Helical</dd>
-                        <dt className="col-4">Series</dt> <dd className="col-8">B</dd>
-                        <dt className="col-4">Module</dt> <dd className="col-8">5</dd>
-                        <dt className="col-4">Teeth No.</dt> <dd className="col-8">12</dd>
-                        <dt className="col-4">Rack Quality</dt> <dd className="col-8">4</dd>
-                        <dt className="col-4">F2T (N)</dt> <dd className="col-8">31259</dd>
-                        <dt className="col-4">T2B (Nm)</dt> <dd className="col-8">995</dd>
-                        <dt className="col-4">d (mm)</dt> <dd className="col-8">63.662</dd>
-                    </dl>
-                    <dl className="row">
-                        <dt className="col-6">The Feed-Force for the application</dt> <dd className="col-6">396.2 (N)</dd>
+                        <dt className="col-6">F2T (N)</dt> <dd className="col-6">31259</dd>
+                        <dt className="col-6">T2B (Nm)</dt> <dd className="col-6">995</dd>
+                        <dt className="col-6">d (mm)</dt> <dd className="col-6">63.662</dd>
+                        <dt className="col-6">The Feed-Force for the application</dt> <dd className="col-6">396.2(N)</dd>
                         <dt className="col-6">The Speed of Pinion</dt> <dd className="col-6">300 (RPM)</dd>
                         <dt className="col-6">The Driving Torque (T2B) for the application</dt> <dd className="col-6">12.6 (Nm)</dd>
                     </dl>
                     <dl className="row">
-                        <dt className="col-6">Input an estimated Motor Speed</dt> <dd className="col-2"><input type="text" className="form-control" /></dd><dd className="col-4"> RPM</dd>
+                        <dt className="col-12 mb-3">Pinion : C Series, Mn5, Z21, Helical, B080</dt>
+                        <dt className="col-8 input-group mb-3">Rack : Mn5, Q4, Helical, Length : &nbsp;
+                        <select className="form-control">
+                                <option>1000</option>
+                            </select> &nbsp;mm
+                        </dt>
+                        <dt className="col-8 input-group mb-3">  Material : &nbsp;
+                                 <select className="form-control">
+                                <option>Carbon Steel</option>
+                            </select>
+                        </dt>
+                        <dt className="col-8 input-group mb-3"> Screw Holes : &nbsp;
+                               <select className="form-control">
+                                <option>Standard</option>
+                                <option>Without</option>
+                            </select>
+                        </dt>
+                        <dt className="col-8 input-group mb-3">
+                            Coating : &nbsp;
+                               <select className="form-control">
+                                <option>None</option>
+                            </select>
+                        </dt>
                     </dl>
                     <dl className="row text-center">
-                        <dd className="col-12">  <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;check &nbsp;&nbsp;&nbsp;</button></dd>
+                        <dd className="col-12">  <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;Check &nbsp;&nbsp;&nbsp;</button></dd>
                     </dl>
                 </dd>
             </dl>
@@ -2066,13 +2082,20 @@ class GearboxRackPinion extends React.Component {
             <dl className="row">
                 <dd className="col-12">
                     <dl className="row">
-                        <dt className="col-6">The Feed-Force for the application</dt> <dd className="col-6">396.2 (N)</dd>
+                        <dt className="col-6">Input an estimated Motor Speed</dt> <dd className="col-2"><input type="text" className="form-control" /></dd><dd className="col-4"> RPM</dd>
+                    </dl>
+                    <dl className="row text-center">
+                        <dd className="col-12">  <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;Check &nbsp;&nbsp;&nbsp;</button></dd>
+                    </dl>
+                    <dl className="row">
+                        <dt className="col-6">The Feed-Force for the application</dt> <dd className="col-6">396.2(N)</dd>
                         <dt className="col-6">The Speed of Pinion</dt> <dd className="col-6">300 (RPM)</dd>
                         <dt className="col-6">The Driving Torque (T2B) for the application</dt> <dd className="col-6">12.6 (Nm)</dd>
                         <dt className="col-6">The estimated Motor Speed</dt> <dd className="col-6">3500 (RPM)</dd>
-                        <dt className="col-6">The Driving Torque (T2B) for the application</dt> <dd className="col-6">11.7</dd>
-                        <dt className="col-6">The Driving Torque (T2B) for the application</dt> <dd className="col-6">0.6 (Nm)</dd>
+                        <dt className="col-6">The max. Reduction Ratio of Gearbox</dt> <dd className="col-6">11.7</dd>
+                        <dt className="col-6">The min. Nominal Torque of Motor</dt> <dd className="col-6">0.6 (Nm)</dd>
                     </dl>
+        
                     <dl className="row">
                         <dd className="col-12">
                             <AccordionCt head="Select Motor" accordion="accordionGRPgb" collapse="accordionGRPgb" body={<GRPselectmotor />} />
@@ -2274,12 +2297,12 @@ class GearboxRackPinion extends React.Component {
                 </dl>
                 <dl className="row">
                     <div className="offset-md-3 col-md-6">
-                        <AccordionCt head="STEP 2" accordion="accordionGRP2" collapse="collapseGRP2" body={<GRPstep2 />} />
+                        <AccordionCt head={<div> STEP 2 <br /> Select Pinion Model </div>} accordion="accordionGRP2" collapse="collapseGRP2" body={<GRPstep2 />} />
                     </div>
                 </dl>
                 <dl className="row">
                     <div className="offset-md-3 col-md-6">
-                        <AccordionCt head="STEP 3" accordion="accordionGRP3" collapse="collapseGRP3" body={<GRPstep3 />} />
+                        <AccordionCt head={<div>STEP 3 <br /> Pinion Parameter </div>} accordion="accordionGRP3" collapse="collapseGRP3" body={<GRPstep3 />} />
                     </div>
                 </dl>
                 <dl className="row">
