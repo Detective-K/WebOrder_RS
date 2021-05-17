@@ -223,7 +223,7 @@ class Order extends React.Component {
                 <div className="row">
                     <div className="col-lg-4 col-lg-offset-4"> <input type="search" id="search" value="" className="form-control" placeholder="Search" /> </div>
                     <div className="col-lg-4 col-lg-offset-4">
-                        <NewOrder btname="Add Order" />
+                        <NewOrder btname="Add New Order" />
                     </div>
                 </div>
                 <br />
@@ -1941,7 +1941,7 @@ class GearboxRackPinion extends React.Component {
                     </dl>
                     <dl className="row">
                         <dd className="col-12">
-                            <div class="input-group mb-3">
+                            <div class="input-group">
                                 <div class="input-group-prepend ">
                                     <span class="input-group-text  rack-Lab ">Helical Angle</span>
                                 </div>
@@ -1957,7 +1957,7 @@ class GearboxRackPinion extends React.Component {
                     </dl>
                     <dl className="row">
                         <dd className="col-12">
-                            <div class="input-group mb-3">
+                            <div class="input-group ">
                                 <div class="input-group-prepend ">
                                     <span class="input-group-text  rack-Lab  ">Supporting  Gearbox Model</span>
                                 </div>
@@ -1973,9 +1973,9 @@ class GearboxRackPinion extends React.Component {
                     </dl>
                     <dl className="row">
                         <dd className="col-12">
-                            <div class="input-group mb-3">
+                            <div class="input-group ">
                                 <div class="input-group-prepend ">
-                                    <span class="input-group-text  rack-Lab  ">Rack Quality</span>
+                                    <span class="input-group-text  rack-Lab  ">To Combine Rack Quality</span>
                                 </div>
                                 <div class="input-group-prepend ">
                                     <select className="form-control" >
@@ -2001,20 +2001,20 @@ class GearboxRackPinion extends React.Component {
                         <dd className="col-12">
                             <table class="table-bordered ">
                                 <thead>
-                                    <tr>
+                                    <tr className="text-center">
                                         <th scope="col">Select</th>
 
 
-                                        <th scope="col">Module</th>
-                                        <th scope="col">Teeth No.</th>
+                                        <th scope="col">Module <br/> No.</th>
+                                        <th scope="col">Teeth <br /> No.</th>
 
-                                        <th scope="col">F2T (N)</th>
-                                        <th scope="col">T2B (Nm)</th>
-                                        <th scope="col">d (mm)</th>
+                                        <th scope="col">F2T <br /> (N)</th>
+                                        <th scope="col">T2B <br /> (Nm)</th>
+                                        <th scope="col">d <br /> (mm)</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr className="text-center">
                                         <th scope="row"><button type="button" className="btn btn-success btn-sm">Select</button> </th>
 
 
@@ -2025,7 +2025,7 @@ class GearboxRackPinion extends React.Component {
                                         <td>995</td>
                                         <td>63.662</td>
                                     </tr>
-                                    <tr>
+                                    <tr className="text-center">
                                         <th scope="row"><button type="button" className="btn btn-success btn-sm">Select</button> </th>
     
                                         <td>5</td>
@@ -2040,16 +2040,16 @@ class GearboxRackPinion extends React.Component {
                         </dd>
                     </dl>
                     <dl className="row">
-                        <dt className="col-6">F2T (N)</dt> <dd className="col-6">31259</dd>
-                        <dt className="col-6">T2B (Nm)</dt> <dd className="col-6">995</dd>
-                        <dt className="col-6">d (mm)</dt> <dd className="col-6">63.662</dd>
-                        <dt className="col-6">The Feed-Force for the application</dt> <dd className="col-6">396.2(N)</dd>
-                        <dt className="col-6">The Speed of Pinion</dt> <dd className="col-6">300 (RPM)</dd>
-                        <dt className="col-6">The Driving Torque (T2B) for the application</dt> <dd className="col-6">12.6 (Nm)</dd>
+                        <dt className="col-8">F2T (N)</dt> <dd className="col-4">31259</dd>
+                        <dt className="col-8">T2B (Nm)</dt> <dd className="col-4">995</dd>
+                        <dt className="col-8">d (mm)</dt> <dd className="col-4">63.662</dd>
+                        <dt className="col-8">The Feed-Force for the application</dt> <dd className="col-4">396.2(N)</dd>
+                        <dt className="col-8">The Speed of Pinion</dt> <dd className="col-4">300 (RPM)</dd>
+                        <dt className="col-8">The Driving Torque (T2B) for the application</dt> <dd className="col-4">12.6 (Nm)</dd>
                     </dl>
                     <dl className="row">
                         <dt className="col-12 mb-3">Pinion : C Series, Mn5, Z21, Helical, B080</dt>
-                        <dt className="col-8 input-group mb-3">Rack : Mn5, Q4, Helical, Length : &nbsp;
+                        <dt className="col-12 input-group mb-3">Rack : Mn5, Q4, Helical, Length : &nbsp;
                         <select className="form-control">
                                 <option>1000</option>
                             </select> &nbsp;mm
@@ -2058,19 +2058,19 @@ class GearboxRackPinion extends React.Component {
                                  <select className="form-control">
                                 <option>Carbon Steel</option>
                             </select>
-                        </dt>
+                        </dt><dd className="col-4"></dd>
                         <dt className="col-8 input-group mb-3"> Screw Holes : &nbsp;
                                <select className="form-control">
                                 <option>Standard</option>
                                 <option>Without</option>
                             </select>
-                        </dt>
+                        </dt><dd className="col-4"></dd>
                         <dt className="col-8 input-group mb-3">
                             Coating : &nbsp;
                                <select className="form-control">
                                 <option>None</option>
                             </select>
-                        </dt>
+                        </dt><dd className="col-4"></dd>
                     </dl>
                     <dl className="row text-center">
                         <dd className="col-12">  <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;Check &nbsp;&nbsp;&nbsp;</button></dd>
