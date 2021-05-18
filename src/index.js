@@ -2411,7 +2411,7 @@ class GearboxRackPinion extends React.Component {
                 <dl className="row">
                     <div className="offset-md-3 col-md-6">
                         <AccordionCt head={<div>STEP 4 <br /> For The Application Information </div>} accordion="accordionGRP4" collapse="collapseGRP4" body={<GRPstep4 />} />
-                    </div>s
+                    </div>
                 </dl>
 
             </main>
