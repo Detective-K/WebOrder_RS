@@ -1279,38 +1279,28 @@ const AddtoOrderMerge = () => {
             <dt className="col-3 mb-3">
                 Gearbox
             </dt>
-            <dt className="col-3  mb-3">
+            <dt className="col-9  mb-3">
                 AD140 - 016 - P2 / ABB 8C1.1.30.1.xxxxxx.G.xxB
             </dt>
-            <dt className="col-3  mb-3">
+            <dt className="offset-3 col-5  mb-3 text-right">
                 Re-Stocking
             </dt>
-            <dd className="col-3  mb-3">
+            <dd className="col-4  mb-3 text-right">
                 <input type="text" className="form-control" />
             </dd>
             <dt className="col-3 mb-3">
                 Selected Gearbox
             </dt>
-            <dt className="col-3 mb-3">
+            <dt className="col-9 mb-3">
                 AD140 - 016 - P2 / ABB 8C1.1.30.1.xxxxxx.G.xxB
             </dt>
-            <dt className="col-3 mb-3">
+            <dt className="offset-3 col-5 mb-3 text-right">
                 Standard Lubrication
             </dt>
-            <dt className="col-3 mb-3">
+            <dt className="col-4 mb-3 text-right">
                 Oil / Gel
             </dt>
             <dt className="col-12 mb-3  ">
-                <div class="form-check">
-                    <input type="checkbox" className="form-check-input" id="chkLub" />
-                    <label class="form-check-label" for="chkLub">Change Lubrication</label>
-                </div>
-                <select className="form-control">
-                    <option>Oil / Gel (Standard)</option>
-                    <option>Grease</option>
-                </select>
-            </dt>
-            <dt className="col-12 mb-3">
                 <select className="form-control">
                     <option>Oil / Gel (Standard)</option>
                     <option>Grease</option>
@@ -1320,27 +1310,27 @@ const AddtoOrderMerge = () => {
             <dt className="col-3 mb-3">
                 Rack
             </dt>
-            <dt className="col-3  mb-3">
+            <dt className="col-9  mb-3">
                 0504R100C10
                 / Mn5 / Q4 / Right-Hand Helical / 1000 (49x39) mm / Carbon Steel
             </dt>
-            <dt className="col-3  mb-3">
+            <dt className="offset-3 col-5 mb-3 text-right">
                 Re-Stocking
             </dt>
-            <dd className="col-3  mb-3">
+            <dd className="col-4  mb-3">
                 <input type="text" className="form-control" />
             </dd>
 
             <dt className="col-3 mb-3">
                 Pinion
             </dt>
-            <dt className="col-3  mb-3">
+            <dt className="col-9  mb-3">
                 C05L21B080 / Mn5 / Left-Hand Helical / Z21 / Alloy Steel
             </dt>
-            <dt className="col-3  mb-3">
+            <dt className="offset-3 col-5 mb-3 text-right">
                 >50 pcs
             </dt>
-            <dd className="col-3  mb-3">
+            <dd className="col-4  mb-3">
                 <input type="text" className="form-control" />
             </dd>
 
@@ -1813,7 +1803,7 @@ class GearboxRackPinion extends React.Component {
                                 <div class="input-group-prepend ">
                                     <span class="input-group-text GRPstp1Lab ">Weight of load M</span>
                                 </div>
-                                <div class="input-group-prepend col-3  no-padding-LR">
+                                <div class="input-group-prepend col-3   no-padding-LR">
                                     <input type="text" className="form-control" />
                                 </div>
                                 <div class="input-group-prepend ">
@@ -1898,7 +1888,7 @@ class GearboxRackPinion extends React.Component {
                                     <span class="input-group-text GRPstp1Lab2 ">%</span>
                                 </div>
 
-                                <div class="input-group-prepend  px-4 pt-2  ">
+                                <div class="input-group-prepend  px-1 pt-2  ">
                                     <ModalCt btncontrol={
                                         <a href="#" data-toggle="modal" data-target="#GRPmodal" ><i class="fas fa-info-circle fa-lg"></i>
                                         </a>
@@ -1925,7 +1915,7 @@ class GearboxRackPinion extends React.Component {
                                 <div class="input-group-prepend ">
                                     <span class="input-group-text GRPstp1Lab2 ">1~10</span>
                                 </div>
-                                <div className="input-group-prepend  px-4 pt-2 ">
+                                <div className="input-group-prepend  px-1 pt-2 ">
                                     <ModalCt btncontrol={
                                         <a href="#" data-toggle="modal" data-target="#GRPmodal2" ><i class="fas fa-info-circle fa-lg"></i>
                                         </a>
@@ -1934,7 +1924,7 @@ class GearboxRackPinion extends React.Component {
                                         body={
                                             <dl className="row">
                                                 <dd className="col-12 text-center text-danger">
-                                                    For ED >= 60%, Safety factor >= 2 is recommended.
+                                                    For ED ≥ 60%, Safety factor ≥ 2 is recommended.
                                         </dd>
                                             </dl>
                                         }
@@ -2085,16 +2075,10 @@ class GearboxRackPinion extends React.Component {
                     <dl className="row text-center">
                         <dd className="col-12">  <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;Check &nbsp;&nbsp;&nbsp;</button></dd>
                     </dl>
-                </dd>
-            </dl>
-        );
-        const GRPstep3 = () => (
-            <dl className="row">
-                <dd className="col-12">
                     <dl className="row"><dt className="col-12 text-center"><h5>Helical / B Series / Rack : Q4 </h5></dt></dl>
                     <dl className="row">
                         <dd className="col-12">
-                            <table class="table-bordered ">
+                            <table class="table-bordered w-100">
                                 <thead>
                                     <tr className="text-center">
                                         <th scope="col">Select</th>
@@ -2134,6 +2118,7 @@ class GearboxRackPinion extends React.Component {
                             </table>
                         </dd>
                     </dl>
+                    <dl className="row"><dt className="col-12 text-center"><h3> Pinion Parameter </h3></dt></dl>
                     <dl className="row">
                         <dt className="col-8">F2T (N)</dt> <dd className="col-4">31259</dd>
                         <dt className="col-8">T2B (Nm)</dt> <dd className="col-4">995</dd>
@@ -2149,23 +2134,34 @@ class GearboxRackPinion extends React.Component {
                                 <option>1000</option>
                             </select> &nbsp;mm
                         </dt>
-                        <dt className="col-8 input-group mb-3">  Material : &nbsp;
-                                 <select className="form-control">
+                        <dt className="col-5 col-xl-3 input-group mb-3">  Material :
+                        
+                        </dt>
+                        <dd className="col-7 col-xl-9 mb-3">
+                            <select className="form-control">
                                 <option>Carbon Steel</option>
                             </select>
-                        </dt><dd className="col-4"></dd>
-                        <dt className="col-8 input-group mb-3"> Screw Holes : &nbsp;
-                               <select className="form-control">
+                        </dd>
+                        <dt className="col-5 col-xl-3 input-group mb-3"> Screw Holes :
+                        
+                        </dt>
+                        <dd className="col-7 col-xl-9 mb-3">
+                            <select className="form-control">
                                 <option>Standard</option>
                                 <option>Without</option>
                             </select>
-                        </dt><dd className="col-4"></dd>
-                        <dt className="col-8 input-group mb-3">
-                            Coating : &nbsp;
-                               <select className="form-control">
+                        </dd>
+                        <dt className="col-5 col-xl-3 input-group mb-3">
+                            Coating :                         
+                        </dt>
+                        <dd className="col-7 col-xl-9 mb-3">
+                            <select className="form-control">
                                 <option>None</option>
                             </select>
-                        </dt><dd className="col-4"></dd>
+                        </dd>
+                    </dl>
+                    <dl className="row">
+                        <dt className="col-6">Input estimated <br /> Motor Speed</dt> <dd className="col-3"><input type="text" className="form-control" /></dd><dd className="col-3"> RPM</dd>
                     </dl>
                     <dl className="row text-center">
                         <dd className="col-12">  <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;Check &nbsp;&nbsp;&nbsp;</button></dd>
@@ -2173,18 +2169,17 @@ class GearboxRackPinion extends React.Component {
                 </dd>
             </dl>
         );
+        const GRPstep3 = () => (
+            <dl className="row">
+                <dd className="col-12">
+
+                </dd>
+            </dl>
+        );
         const GRPstep4 = () => (
             <dl className="row">
                 <dd className="col-12">
-                    <dl className="row">
-                        <dt className="col-6">Input estimated Motor Speed</dt> <dd className="col-3"><input type="text" className="form-control" /></dd><dd className="col-3"> RPM</dd>
-                    </dl>
-                    <dl className="row text-center">
-                        <dd className="col-12">  <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;Check &nbsp;&nbsp;&nbsp;</button></dd>
-                    </dl>
-                    <dl className="row">
-                        <dt className="col-12 text-center"><h3> Summary of the application information</h3></dt>
-                    </dl>
+
                     <dl className="row">
                         <dt className="col-6">Feed-Force</dt> <dd className="col-6">396.2(N)</dd>
                         <dt className="col-6">Speed of Pinion</dt> <dd className="col-6">300 (RPM)</dd>
@@ -2405,12 +2400,7 @@ class GearboxRackPinion extends React.Component {
                 </dl>
                 <dl className="row">
                     <div className="offset-md-3 col-md-6">
-                        <AccordionCt head={<div>STEP 3 <br /> Pinion Parameter </div>} accordion="accordionGRP3" collapse="collapseGRP3" body={<GRPstep3 />} />
-                    </div>
-                </dl>
-                <dl className="row">
-                    <div className="offset-md-3 col-md-6">
-                        <AccordionCt head={<div>STEP 4 <br /> For The Application Information </div>} accordion="accordionGRP4" collapse="collapseGRP4" body={<GRPstep4 />} />
+                        <AccordionCt head={<div>STEP 3 <br /> Summary of The Application Information </div>} accordion="accordionGRP4" collapse="collapseGRP4" body={<GRPstep4 />} />
                     </div>
                 </dl>
 
