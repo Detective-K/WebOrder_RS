@@ -40,7 +40,13 @@
 //ReactDOM.render(<App />, document.getElementById('root'));
 
 
-
+const pageTitle = (props) => (
+    <div className="row color-Apex  text-center">
+        <div className="offset-md-3 col-md-6">
+            props.head
+        </div>
+    </div>
+    );
 class NewOrder extends React.Component {
     render() {
         return (
@@ -722,6 +728,7 @@ class Gearbox extends React.Component {
             <main role="main" className="container-fluid"> <br />
                 <br />
                 <br />
+                <pageTitle head={ }/>
                 <div className="row">
                     <div className="offset-md-3 col-md-6">
                         <div id="accordion">
@@ -1279,13 +1286,13 @@ const AddtoOrderMerge = () => {
                 Gearbox
             </dt>
             <dt className="col-5  mb-3">
-                AD140 - 016 - P2 /<br/> ABB 8C1.1.30.1.xxxxxx.G.xxB
+                AD140 - 016 - P2 /<br /> ABB 8C1.1.30.1.xxxxxx.G.xxB
             </dt>
             <dt className=" col-4  mb-3 ">
                 Re-Stocking
             </dt>
- 
-           
+
+
             <dt className="offset-3 col-5 mb-3 ">
                 Standard Lubrication
             </dt>
@@ -2132,11 +2139,11 @@ class GearboxRackPinion extends React.Component {
                         <dt className="col-xl-8  mb-3">Rack : Mn5, Q4, Helical, Length : &nbsp;
                           </dt>
                         <dt className="col-xl-4  input-group  mb-3">
-                                <select className="form-control col-xl-6">
-                                    <option>1000</option>
-                                </select> &nbsp;mm
+                            <select className="form-control col-xl-6">
+                                <option>1000</option>
+                            </select> &nbsp;mm
                         </dt>
-                           
+
                         <dt className="col-5 col-xl-8 input-group mb-3">  Material :
                         
                         </dt>
@@ -2155,7 +2162,7 @@ class GearboxRackPinion extends React.Component {
                             </select>
                         </dd>
                         <dt className="col-5 col-xl-8 input-group mb-3">
-                            Coating :                         
+                            Coating :
                         </dt>
                         <dd className="col-7 col-xl-4 mb-3">
                             <select className="form-control">
@@ -2400,12 +2407,12 @@ class GearboxRackPinion extends React.Component {
                     <div className="offset-md-3 col-md-6">
                         <AccordionCt head={<div>STEP 3 <br /> Summary of  Application Parameter </div>} accordion="accordionGRP3" collapse="collapseGRP3" body={<GRPstep4 />} />
                     </div>
-                </dl>   
+                </dl>
                 <dl className="row">
                     <div className="offset-md-3 col-md-6">
                         <AccordionCt head={<div>STEP 4 <br /> Add to Order </div>} accordion="accordionGRP4" collapse="collapseGRP4" body={<AddtoOrderMerge />} />
                     </div>
-                </dl> 
+                </dl>
             </main>
         );
     }
