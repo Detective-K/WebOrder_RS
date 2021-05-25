@@ -822,9 +822,6 @@ class Gearbox extends React.Component {
                                             </div>
                                             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                                                 <dl className="row">
-                                                    <dt className="col-12 text-center text-danger">* Required </dt>
-                                                </dl>
-                                                <dl className="row">
                                                     <dt className="col-12 col-xl-6">
                                                         <div class="input-group mb-3">
                                                             <div class="input-group-prepend ">
@@ -858,7 +855,10 @@ class Gearbox extends React.Component {
                                                     </dd>
                                                 </dl>
                                                 <dl className="row">
-                                                    <dt className="col-6 input-group">
+                                                    <dt className="col-12 text-center text-danger">* Required </dt>
+                                                </dl>
+                                                <dl className="row">
+                                                    <dt className="col-8 input-group">
                                                         <select className="form-control bg-F0" >
                                                             <option value="" selected disabled>LA / LA1</option>
                                                             <option>LA</option>
@@ -867,6 +867,8 @@ class Gearbox extends React.Component {
                                                         <input type="text" className="form-control" />
                                                         <span className="text-danger">*</span>
                                                     </dt>
+                                                </dl>
+                                                <dl className="row">
                                                     <dt className="col-6 ">
                                                         <div class="input-group ">
                                                             <div class="input-group-prepend ">
@@ -876,8 +878,6 @@ class Gearbox extends React.Component {
                                                             <span className="text-danger">*</span>
                                                         </div>
                                                     </dt>
-                                                </dl>
-                                                <dl className="row">
                                                     <dt className="col-6 ">
                                                         <div class="input-group ">
                                                             <div class="input-group-prepend ">
@@ -887,6 +887,8 @@ class Gearbox extends React.Component {
                                                             <span className="text-danger">*</span>
                                                         </div>
                                                     </dt>
+                                                </dl>
+                                                <dl className="row">
                                                     <dt className="col-6">
                                                         <div class="input-group ">
                                                             <div class="input-group-prepend ">
@@ -896,9 +898,6 @@ class Gearbox extends React.Component {
                                                             <span>&nbsp;&nbsp;</span>
                                                         </div>
                                                     </dt>
-                                                </dl>
-                                                <dl className="row">
-
                                                     <dt className="col-6 ">
                                                         <div class="input-group ">
                                                             <div class="input-group-prepend ">
@@ -908,10 +907,21 @@ class Gearbox extends React.Component {
                                                             <span>&nbsp;&nbsp;</span>
                                                         </div>
                                                     </dt>
+                                                </dl>
+                                                <dl className="row">
                                                     <dt className="col-6 ">
                                                         <div class="input-group ">
                                                             <div class="input-group-prepend ">
                                                                 <span class="input-group-text">LB</span>
+                                                            </div>
+                                                            <input type="text" className="form-control" />
+                                                            <span className="text-danger">*</span>
+                                                        </div>
+                                                    </dt>
+                                                    <dt className="col-6 ">
+                                                        <div class="input-group ">
+                                                            <div class="input-group-prepend ">
+                                                                <span class="input-group-text">S &nbsp;</span>
                                                             </div>
                                                             <input type="text" className="form-control" />
                                                             <span className="text-danger">*</span>
@@ -922,23 +932,12 @@ class Gearbox extends React.Component {
                                                     <dt className="col-6 ">
                                                         <div class="input-group ">
                                                             <div class="input-group-prepend ">
-                                                                <span class="input-group-text">S &nbsp;</span>
-                                                            </div>
-                                                            <input type="text" className="form-control" />
-                                                            <span className="text-danger">*</span>
-                                                        </div>
-                                                    </dt>
-                                                    <dt className="col-6 ">
-                                                        <div class="input-group ">
-                                                            <div class="input-group-prepend ">
                                                                 <span class="input-group-text">LR</span>
                                                             </div>
                                                             <input type="text" className="form-control" />
                                                             <span className="text-danger">*</span>
                                                         </div>
                                                     </dt>
-                                                </dl>
-                                                <dl className="row mb-3">
                                                     <dt className="col-6 ">
                                                         <div class="input-group ">
                                                             <div class="input-group-prepend ">
@@ -994,7 +993,7 @@ class Gearbox extends React.Component {
                                 <div id="collapseTwo" className="collapse " aria-labelledby="headingOne" data-parent="#accordion2">
                                     <div className="card-body">
                                         <dl className="row">
-                                            <dt className="col-12 text-center text-danger">If there is no mortor information, to select gearbox only.</dt>
+                                            <dt className="col-12 text-center text-danger">If there is no motor information, to select gearbox only.</dt>
                                         </dl>
                                         <dl className="row">
                                             <dt className="col-12 text-center">
@@ -1115,13 +1114,13 @@ class Gearbox extends React.Component {
                                         <hr />
                                         <dl className="row no-gutters">
                                             <dt className="col-9"><h5>Bom</h5></dt>  <dt className="col-3 text-right"><h5>Stock<sup className="text-danger">(1)</sup></h5></dt>
-                                            <dt className="col-3" >List</dt> <dd className="col-6">Spec</dd><dd className="col-3"></dd>
-                                            <dt className="col-3" >Gearbox</dt> <dd className="col-5">AB090003S2P2 / A0100030122</dd><dd className="col-4 text-right">{">"}100 pcs<sup className="text-danger" >(2)</sup></dd>
-                                            <dt className="col-3" >Adapter</dt> <dd className="col-5">AD-W90-M100-3 / S0401300503</dd><dd className="col-4 text-right">Re-Stocking</dd>
-                                            <dt className="col-3" >Fix Plate</dt> <dd className="col-6">[No need]</dd><dd className="col-3"></dd>
-                                            <dt className="col-3" >Bushing</dt> <dd className="col-6">[No need]</dd><dd className="col-3"></dd>
-                                            <dt className="col-3" >Screw </dt> <dd className="col-6">SW-1-M8X1.25P-L25 / 2111B108025</dd><dd className="col-3"></dd>
-                                            <dt className="col-3" >Washer </dt> <dd className="col-6">WS-B1-D8 / 22120100501</dd><dd className="col-3"></dd>
+                                            <dt className="col-3" >List</dt> <dd className="col-9">Spec</dd>
+                                            <dt className="col-3" >Gearbox</dt> <dd className="col-9">AB090003S2P2 / A0100030122</dd>
+                                            <dt className="col-3" >Adapter</dt> <dd className="col-9">AD-W90-M100-3 / S0401300503</dd>
+                                            <dt className="col-3" >Fix Plate</dt> <dd className="col-9">[No need]</dd>
+                                            <dt className="col-3" >Bushing</dt> <dd className="col-9">[No need]</dd>
+                                            <dt className="col-3" >Screw </dt> <dd className="col-9">SW-1-M8X1.25P-L25 / 2111B108025</dd>
+                                            <dt className="col-3" >Washer </dt> <dd className="col-9">WS-B1-D8 / 22120100501</dd>
                                         </dl><br />
                                         <hr />
 
@@ -1130,18 +1129,17 @@ class Gearbox extends React.Component {
                                                 <AccordionCt collapse="collapseGS" accordion="accordionGS" head={<dt className="col-12"><h5>Gearbox Specification</h5></dt>}
                                                     body={
                                                         <dl className="row">
-                                                            <dt className="col-4" >Model </dt> <dd className="col-8">AB090 - 003 - S2 - P2</dd>
-                                                            <dt className="col-4" >Ratio </dt> <dd className="col-8">3</dd>
-                                                            <dt className="col-4" >Shaft Option </dt> <dd className="col-8">S2: Keyway</dd>
-                                                            <dt className="col-4" >Backlash </dt> <dd className="col-8">P2: Standard Backlash</dd>
-                                                            <dt className="col-4" >Adapter</dt> <dd className="col-8">P0401300503 / AD-W90-M100-3</dd>
-                                                            <dt className="col-4" >Output Torque</dt> <dd className="col-8">130 Nm</dd>
-                                                            <dt className="col-4" >Rated Speed</dt> <dd className="col-8">4000 rpm</dd>
-                                                            <dt className="col-4" >Max. Torque</dt> <dd className="col-8">234 Nm</dd>
-                                                            <dt className="col-4" >Max. Speed</dt> <dd className="col-8">8000 rpm</dd>
-                                                            <dt className="col-4" >Inertia</dt> <dd className="col-8">0.61 kgcm<font size="1"><sup>^2</sup></font></dd>
-                                                            <dt className="col-4" >Weight </dt> <dd className="col-8">3.70 kg</dd>
-                                                            <dt className="col-4" >No Load </dt> <dd className="col-8">0.67 Nm<sup><font color="red">(3)</font></sup></dd>
+                                                            <dt className="col-5" >Model </dt> <dd className="col-7">AB090 - 003 - S2 - P2</dd>
+                                                            <dt className="col-5" >Ratio </dt> <dd className="col-7">3</dd>
+                                                            <dt className="col-5" >Shaft Option </dt> <dd className="col-7">S2: Keyway</dd>
+                                                            <dt className="col-5" >Backlash </dt> <dd className="col-7">P2: Standard Backlash</dd>
+                                                            <dt className="col-5" >Output Torque</dt> <dd className="col-7">130 Nm</dd>
+                                                            <dt className="col-5" >Rated Speed</dt> <dd className="col-7">4000 rpm</dd>
+                                                            <dt className="col-5" >Max. Torque</dt> <dd className="col-7">234 Nm</dd>
+                                                            <dt className="col-5" >Max. Speed</dt> <dd className="col-7">8000 rpm</dd>
+                                                            <dt className="col-5" >Inertia</dt> <dd className="col-7">0.61 kgcm<font size="1"><sup>^2</sup></font></dd>
+                                                            <dt className="col-5" >Weight </dt> <dd className="col-7">3.70 kg</dd>
+                                                            <dt className="col-5" >No Load </dt> <dd className="col-7">0.67 Nm<sup><font color="red">(3)</font></sup></dd>
                                                         </dl>
                                                     }
                                                 />
@@ -1153,15 +1151,15 @@ class Gearbox extends React.Component {
                                                 <AccordionCt head={<dt className="col-12"><h5>Motor Specification</h5></dt>} collapse="collapseMS" accordion="accordionMS"
                                                     body={
                                                         <div className="row">
-                                                            <dt className="col-4" >Brand </dt> <dd className="col-8">ABB</dd>
-                                                            <dt className="col-4" >Model </dt> <dd className="col-8">8C1.1.30.1.xxxxxx.G.xxB</dd>
-                                                            <dt className="col-4" >Motor Shaft</dt> <dd className="col-8">19 mm</dd>
-                                                            <dt className="col-4" >Output Power </dt> <dd className="col-8">0.38 Kw</dd>
-                                                            <dt className="col-4" >Rated Speed </dt> <dd className="col-8">3000 rpm</dd>
-                                                            <dt className="col-4" >Rated Torque</dt> <dd className="col-8">1.20 Nm</dd>
-                                                            <dt className="col-4" >Max. Speed</dt> <dd className="col-8">3000 rpm</dd>
-                                                            <dt className="col-4" >Peak Torque</dt> <dd className="col-8">4.60 Nm</dd>
-                                                            <dt className="col-4" >Inertia</dt> <dd className="col-8">0.90 kgcm<font size="1"><sup>^2</sup></font></dd>
+                                                            <dt className="col-5" >Brand </dt> <dd className="col-7">ABB</dd>
+                                                            <dt className="col-5" >Model </dt> <dd className="col-7">8C1.1.30.1.xxxxxx.G.xxB</dd>
+                                                            <dt className="col-5" >Motor Shaft</dt> <dd className="col-7">19 mm</dd>
+                                                            <dt className="col-5" >Output Power </dt> <dd className="col-7">0.38 Kw</dd>
+                                                            <dt className="col-5" >Rated Speed </dt> <dd className="col-7">3000 rpm</dd>
+                                                            <dt className="col-5" >Rated Torque</dt> <dd className="col-7">1.20 Nm</dd>
+                                                            <dt className="col-5" >Max. Speed</dt> <dd className="col-7">3000 rpm</dd>
+                                                            <dt className="col-5" >Peak Torque</dt> <dd className="col-7">4.60 Nm</dd>
+                                                            <dt className="col-5" >Inertia</dt> <dd className="col-7">0.90 kgcm<font size="1"><sup>^2</sup></font></dd>
                                                         </div>
                                                     } />
                                             </dd>
@@ -1193,6 +1191,16 @@ class Gearbox extends React.Component {
 
                                 <div id="collapseFour" className="collapse " aria-labelledby="headingOne" data-parent="#accordion4">
                                     <div className="card-body">
+                                        <dl className="row no-gutters">
+                                            <dt className="col-9"><h5>Bom</h5></dt>  <dt className="col-3 text-right"><h5>Stock<sup className="text-danger">(1)</sup></h5></dt>
+                                            <dt className="col-3" >List</dt> <dd className="col-6">Spec</dd><dd className="col-3"></dd>
+                                            <dt className="col-3" >Gearbox</dt> <dd className="col-5">AB090003S2P2 / A0100030122</dd><dd className="col-4 text-right">{">"}100 pcs<sup className="text-danger" >(2)</sup></dd>
+                                            <dt className="col-3" >Adapter</dt> <dd className="col-5">AD-W90-M100-3 / S0401300503</dd><dd className="col-4 text-right">Re-Stocking</dd>
+                                            <dt className="col-3" >Fix Plate</dt> <dd className="col-6">[No need]</dd><dd className="col-3"></dd>
+                                            <dt className="col-3" >Bushing</dt> <dd className="col-6">[No need]</dd><dd className="col-3"></dd>
+                                            <dt className="col-3" >Screw </dt> <dd className="col-6">SW-1-M8X1.25P-L25 / 2111B108025</dd><dd className="col-3"></dd>
+                                            <dt className="col-3" >Washer </dt> <dd className="col-6">WS-B1-D8 / 22120100501</dd><dd className="col-3"></dd>
+                                        </dl><br />
                                         <dl className="row">
                                             <dt className="col-4">
                                                 <label>Order Piece No.</label>
@@ -1280,84 +1288,87 @@ const AddtoOrder = () => {
 
 const AddtoOrderMerge = () => {
     return (
-        <dl className="row bg-F0 no-gutters">
-            <dt className="col-8  mb-3">List</dt>
-            <dt className="col-4  mb-3">Stock</dt>
+        <div>
+            <dl className="row  no-gutters">
+                <dt className="col-8  mb-3">List</dt>
+                <dt className="col-4  mb-3 text-right">Stock</dt>
+            </dl>
+            <dl className="row bg-F0 no-gutters">
 
-            <dt className="col-3 mb-3">
-                Gearbox
-            </dt>
-            <dt className="col-5  mb-3">
-                AD140 - 016 - P2 /<br /> ABB 8C1.1.30.1.xxxxxx.G.xxB
-            </dt>
-            <dt className=" col-4  mb-3 ">
-                Re-Stocking
-            </dt>
-            <dt className="offset-3 col-5 mb-3 ">
-                Standard Lubrication
-            </dt>
-            <dt className="col-4 mb-3 ">
-                Oil / Gel
-            </dt>
-            <dt className="col-12 mb-3  ">
-                <select className="form-control">
-                    <option>Oil / Gel (Standard)</option>
-                    <option>Grease</option>
-                </select>
-            </dt>
-            <dt className="col-4 mb-5  ">Order Piece No.</dt>
-            <dd className="offset-4 col-4  mb-5 text-right">
-                <input type="text" className="form-control col-8 col-xl-4" />
-            </dd>
+                <dt className="col-3 mb-3">
+                    Gearbox
+                </dt>
+                <dt className="col-5 col-lg-6  mb-3">
+                    AD140 - 016 - P2 / ABB 8C1.1.30.1.xxxxxx.G.xxB
+                </dt>
+                <dt className=" col-4  col-lg-3  mb-3 text-right ">
+                    Re-Stocking
+                </dt>
+                <dt className="offset-3 col-5 col-lg-6 mb-3 ">
+                    Standard Lubrication
+                </dt>
+                <dt className="col-4 col-lg-3  mb-3 text-right ">
+                    Oil / Gel
+                </dt>
+                <dt className="col-12 mb-3  ">
+                    <select className="form-control">
+                        <option>Oil / Gel (Standard)</option>
+                        <option>Grease</option>
+                    </select>
+                </dt>
+                <dt className="col-4 mb-5  ">Order Piece No.</dt>
+                <dd className="offset-4 col-4  mb-5 text-right">
+                    <input type="text" className="form-control col-8 col-xl-4" />
+                </dd>
+            </dl>
+            <dl className="row bg-F0 no-gutters">
+                <dt className="col-3 mb-3">
+                    Rack
+                </dt>
+                <dt className="col-5  col-lg-6 mb-3">
+                    0504R100C10 / Mn5 / Q4 / Right-Hand Helical / 1000 (49x39) mm / Carbon Steel
+                </dt>
+                <dt className="col-4 col-lg-3  mb-3 text-right ">
+                    Re-Stocking
+                </dt>
+                <dt className="col-4 mb-5  ">Order Piece No.</dt>
+                <dd className="offset-4 col-4   mb-5 text-right">
+                    <input type="text" className="form-control col-8 col-xl-4" />
+                </dd>
+            </dl>
+            <dl className="row bg-F0 no-gutters">
+                <dt className="col-3 mb-3">
+                    Pinion
+                </dt>
+                <dt className="col-5  col-lg-6 mb-3">
+                    C05L21B080 / Mn5 / Left-Hand Helical / Z21 / Alloy Steel
+                </dt>
+                <dt className="col-4 col-lg-3  mb-3 text-right">
+                    >50 pcs
+                </dt>
+                <dt className="col-4 mb-5  ">Order Piece No.</dt>
+                <dd className="offset-4 col-4  mb-5 text-right">
+                    <input type="text" className="form-control col-8 col-xl-4" />
+                </dd>
 
-
-            <dt className="col-3 mb-3">
-                Rack
-            </dt>
-            <dt className="col-5  mb-3">
-                0504R100C10
-                / Mn5 / Q4 / Right-Hand Helical / 1000 (49x39) mm / Carbon Steel
-            </dt>
-            <dt className="col-4 mb-3 ">
-                Re-Stocking
-            </dt>
-            <dt className="col-4 mb-5  ">Order Piece No.</dt>
-            <dd className="offset-4 col-4   mb-5 text-right">
-                <input type="text" className="form-control col-8 col-xl-4" />
-            </dd>
-
-
-            <dt className="col-3 mb-3">
-                Pinion
-            </dt>
-            <dt className="col-5  mb-3">
-                C05L21B080 / Mn5 / Left-Hand Helical / Z21 / Alloy Steel
-            </dt>
-            <dt className="col-4 mb-3 ">
-                >50 pcs
-            </dt>
-            <dt className="col-4 mb-5  ">Order Piece No.</dt>
-            <dd className="offset-4 col-4  mb-5 text-right">
-                <input type="text" className="form-control col-8 col-xl-4" />
-            </dd>
-
-            <dt className="col-4 col-xl-3 mb-3">
-                <label>To Order No.</label>
-            </dt>
-            <dd className="col-8 col-xl-9 mb-3">
-                <select className="form-control form-control-xs" >
-                    <option value="AA00051004051/Heidelberg 00041980230">AA00051004051/Heidelberg 00041980230</option>
-                    <option value="AA00051004052">AA00051004052</option>
-                    <option value="AA00051004053">AA00051004053</option>
-                </select>
-            </dd>
-            <dt className="col-12 text-center  mb-3">
-                <button type="button" className=" btn btn-success btn-sm">&nbsp;&nbsp; &nbsp; Add to Order &nbsp; &nbsp;</button>
-            </dt>
-            <dt className="col-12 text-center mb-3">
-                <NewOrder btname="Add to New Order" />
-            </dt>
-        </dl>
+                <dt className="col-4 col-xl-3 mb-3">
+                    <label>To Order No.</label>
+                </dt>
+                <dd className="col-8 col-xl-9 mb-3">
+                    <select className="form-control form-control-xs" >
+                        <option value="AA00051004051/Heidelberg 00041980230">AA00051004051/Heidelberg 00041980230</option>
+                        <option value="AA00051004052">AA00051004052</option>
+                        <option value="AA00051004053">AA00051004053</option>
+                    </select>
+                </dd>
+                <dt className="col-12 text-center  mb-3">
+                    <button type="button" className=" btn btn-success btn-sm">&nbsp;&nbsp; &nbsp; Add to Order &nbsp; &nbsp;</button>
+                </dt>
+                <dt className="col-12 text-center mb-3">
+                    <NewOrder btname="Add to New Order" />
+                </dt>
+            </dl>
+        </div>
     );
 };
 
@@ -1387,146 +1398,148 @@ const RPTabBody = () => {
                     <dt className="col-4">Brand</dt> <dd className="col-8">APEX</dd>
                     <dt className="col-4">Order Code</dt> <dd className="col-8">0106R050C10</dd>
                     <dt className="col-4">Description</dt> <dd className="col-8">Mn1 / Q6 / Right-Hand Helical / 500 (15x15) mm / Carbon Steel</dd>
-                </dl><br />
-                <Downloaddrawing />
-                <AddtoOrder />
-            </dd>
-        </dl>
-
-
-    );
-};
-
-const RackTabBody = () => {
-    return (
-        <dl className="row">
-            <dd className="col-12">
-                <dl className="row">
-                    <dt className="col-12">
-                        <div className="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text rack-Lab">Module</span>
-                            </div>
-                            <div class="input-group-prepend">
-                                <select class="form-control">
-                                    <option selected>1</option>
-                                    <option >1.5</option>
-                                </select>
-                            </div>
-                        </div>
-                    </dt>
-                    <dt className="col-12">
-                        <div className="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text rack-Lab">Quality</span>
-                            </div>
-                            <div class="input-group-prepend">
-                                <select class="form-control">
-                                    <option selected>6</option>
-                                    <option >6M</option>
-                                </select>
-                            </div>
-                        </div>
-                    </dt>
-                    <dt className="col-12">
-                        <div className="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Helical Angle</span>
-                            </div>
-                            <div class="input-group-prepend">
-                                <select class="form-control">
-                                    <option selected>Right-Hand Helical</option>
-                                    <option >Straight</option>
-                                </select>
-                            </div>
-                        </div>
-                    </dt>
-                    <dt className="col-12 ">
-                        <div className="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text rack-Lab">Length </span>
-                            </div>
-                            <div class="input-group-prepend">
-                                <select class="form-control">
-                                    <option selected="selected" value="500">500</option>
-                                    <option selected="selected" value="1000">1000</option>
-                                </select>
-                            </div>
-                        </div>
-                    </dt>
-                    <dt className="col-12 ">
-                        <div className="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text rack-Lab">Material</span>
-                            </div>
-                            <div class="input-group-prepend">
-                                <select class="form-control">
-                                    <option selected="selected" value="Carbon Steel">Carbon Steel</option>
-                                </select>
-                            </div>
-                        </div>
-                    </dt>
-                    <dt className="col-12 ">
-                        <div className="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text rack-Lab ">	Screw Holes</span>
-                            </div>
-                            <div class="input-group-prepend">
-                                <select class="form-control">
-                                    <option value="1">Standard</option>
-                                    <option value="0">Without</option>
-                                </select>
-                            </div>
-                        </div>
-                    </dt>
-                    <dt className="col-12">
-                        <div className="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text rack-Lab">Coating</span>
-                            </div>
-                            <div class="input-group-prepend">
-                                <select class="form-control">
-                                    <option selected="selected" value="0">None</option>
-                                    <option value="">Select</option>
-                                </select>
-                            </div>
-                        </div>
-                    </dt>
-                    <dt className="col-12">
-                        <div className="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text rack-Lab">Interface</span>
-                            </div>
-                            <div class="input-group-prepend">
-                                <select class="form-control">
-                                    <option selected="selected" value="0">None</option>
-                                    <option value="90">A1</option>
-                                </select>
-                            </div>
-                        </div>
-                    </dt>
-
-                </dl>
-                <dl className="row">
-                    <dt className="col-12  text-center ">
-                        <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;Check&nbsp;&nbsp;&nbsp;</button>
-                    </dt>
-                </dl> <br />
-                <dl className="row  ">
-                    <dt className="col-4">Order Code</dt> <dd className="col-8">0106R050C10</dd>
-                    <dt className="col-4">Description</dt> <dd className="col-8">Mn1 / Q6 / Right-Hand Helical / 500 (15x15) mm / Carbon Steel</dd>
                     <dt className="col-4">Stock Number</dt> <dd className="col-8">{">100 pcs"}</dd>
                 </dl><br />
                 <Downloaddrawing />
                 <AddtoOrder />
-
             </dd>
         </dl>
+
+
     );
 };
 
+
+
 class RackCt extends React.Component {
     render() {
+        const RackTabBody = () => {
+            return (
+                <dl className="row">
+                    <dd className="col-12">
+                        <dl className="row">
+                            <dt className="col-12">
+                                <div className="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text rack-Lab">Module</span>
+                                    </div>
+                                    <div class="input-group-prepend">
+                                        <select class="form-control">
+                                            <option selected>1</option>
+                                            <option >1.5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </dt>
+                            <dt className="col-12">
+                                <div className="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text rack-Lab">Quality</span>
+                                    </div>
+                                    <div class="input-group-prepend">
+                                        <select class="form-control">
+                                            <option selected>6</option>
+                                            <option >6M</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </dt>
+                            <dt className="col-12">
+                                <div className="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Helical Angle</span>
+                                    </div>
+                                    <div class="input-group-prepend">
+                                        <select class="form-control">
+                                            <option selected>Right-Hand Helical</option>
+                                            <option >Straight</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </dt>
+                            <dt className="col-12 ">
+                                <div className="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text rack-Lab">Length </span>
+                                    </div>
+                                    <div class="input-group-prepend">
+                                        <select class="form-control">
+                                            <option selected="selected" value="500">500</option>
+                                            <option selected="selected" value="1000">1000</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </dt>
+                            <dt className="col-12 ">
+                                <div className="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text rack-Lab">Material</span>
+                                    </div>
+                                    <div class="input-group-prepend">
+                                        <select class="form-control">
+                                            <option selected="selected" value="Carbon Steel">Carbon Steel</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </dt>
+                            <dt className="col-12 ">
+                                <div className="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text rack-Lab ">	Screw Holes</span>
+                                    </div>
+                                    <div class="input-group-prepend">
+                                        <select class="form-control">
+                                            <option value="1">Standard</option>
+                                            <option value="0">Without</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </dt>
+                            <dt className="col-12">
+                                <div className="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text rack-Lab">Coating</span>
+                                    </div>
+                                    <div class="input-group-prepend">
+                                        <select class="form-control">
+                                            <option selected="selected" value="0">None</option>
+                                            <option value="">Select</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </dt>
+                            <dt className="col-12">
+                                <div className="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text rack-Lab">Interface</span>
+                                    </div>
+                                    <div class="input-group-prepend">
+                                        <select class="form-control">
+                                            <option selected="selected" value="0">None</option>
+                                            <option value="90">A1</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </dt>
+
+                        </dl>
+                        <dl className="row">
+                            <dt className="col-12  text-center ">
+                                <button class="btn btn-success btn-sm" type="button">&nbsp;&nbsp;&nbsp;Check&nbsp;&nbsp;&nbsp;</button>
+                            </dt>
+                        </dl> <br />
+                        <dl className="row  ">
+                            <dt className="col-4">Order Code</dt> <dd className="col-8">0106R050C10</dd>
+                            <dt className="col-4">Description</dt> <dd className="col-8">Mn1 / Q6 / Right-Hand Helical / 500 (15x15) mm / Carbon Steel</dd>
+                            <dt className="col-4">Stock Number</dt> <dd className="col-8">{">100 pcs"}</dd>
+                        </dl><br />
+                        <Downloaddrawing />
+                        <AddtoOrder />
+
+                    </dd>
+                </dl>
+            );
+        };
         return (
             <NavTabs head="SELECTION I" head2="SELECTION II" home="Rackhome" profile="Rackprofile" body={<RPTabBody />} body2={<RackTabBody />} />
         );
@@ -1785,7 +1798,7 @@ class RackPinion extends React.Component {
                 </dl>
                 <dl className="row">
                     <div className="offset-md-3 col-md-6">
-                        <AccordionCt head="Customized Re-Order" accordion="accordion4" collapse="collapse4" body={<CustomizedOrderCt />} />
+                        <AccordionCt head={<div>Customized Re-Order of <br /> Customized Rack / Pinion </div>} accordion="accordion4" collapse="collapse4" body={<CustomizedOrderCt />} />
                     </div>
                 </dl>
             </main>
@@ -2348,18 +2361,17 @@ class GearboxRackPinion extends React.Component {
                         <AccordionCt collapse="collapseGS" accordion="accordionGS" head={<dt className="col-12"><h5>Gearbox Specification</h5></dt>}
                             body={
                                 <dl className="row">
-                                    <dt className="col-4" >Model </dt> <dd className="col-8">AB090 - 003 - S2 - P2</dd>
-                                    <dt className="col-4" >Ratio </dt> <dd className="col-8">3</dd>
-                                    <dt className="col-4" >Shaft Option </dt> <dd className="col-8">S2: Keyway</dd>
-                                    <dt className="col-4" >Backlash </dt> <dd className="col-8">P2: Standard Backlash</dd>
-                                    <dt className="col-4" >Adapter</dt> <dd className="col-8">P0401300503 / AD-W90-M100-3</dd>
-                                    <dt className="col-4" >Output Torque</dt> <dd className="col-8">130 Nm</dd>
-                                    <dt className="col-4" >Rated Speed</dt> <dd className="col-8">4000 rpm</dd>
-                                    <dt className="col-4" >Max. Torque</dt> <dd className="col-8">234 Nm</dd>
-                                    <dt className="col-4" >Max. Speed</dt> <dd className="col-8">8000 rpm</dd>
-                                    <dt className="col-4" >Inertia</dt> <dd className="col-8">0.61 kgcm<font size="1"><sup>^2</sup></font></dd>
-                                    <dt className="col-4" >Weight </dt> <dd className="col-8">3.70 kg</dd>
-                                    <dt className="col-4" >No Load </dt> <dd className="col-8">0.67 Nm<sup><font color="red">(3)</font></sup></dd>
+                                    <dt className="col-5" >Model </dt> <dd className="col-7">AB090 - 003 - S2 - P2</dd>
+                                    <dt className="col-5" >Ratio </dt> <dd className="col-7">3</dd>
+                                    <dt className="col-5" >Shaft Option </dt> <dd className="col-7">S2: Keyway</dd>
+                                    <dt className="col-5" >Backlash </dt> <dd className="col-7">P2: Standard Backlash</dd>
+                                    <dt className="col-5" >Output Torque</dt> <dd className="col-7">130 Nm</dd>
+                                    <dt className="col-5" >Rated Speed</dt> <dd className="col-7">4000 rpm</dd>
+                                    <dt className="col-5" >Max. Torque</dt> <dd className="col-7">234 Nm</dd>
+                                    <dt className="col-5" >Max. Speed</dt> <dd className="col-7">8000 rpm</dd>
+                                    <dt className="col-5" >Inertia</dt> <dd className="col-7">0.61 kgcm<font size="1"><sup>^2</sup></font></dd>
+                                    <dt className="col-5" >Weight </dt> <dd className="col-7">3.70 kg</dd>
+                                    <dt className="col-5" >No Load </dt> <dd className="col-7">0.67 Nm<sup><font color="red">(3)</font></sup></dd>
                                 </dl>
                             }
                         />
