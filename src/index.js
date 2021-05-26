@@ -228,6 +228,7 @@ class Order extends React.Component {
                 <br />
                 <br />
                 <br />
+                <PageTitle head={<h3>Orders to APEX</h3>} />
                 <div className="row">
                     <div className="col-lg-4 col-lg-offset-4"> <input type="search" id="search" value="" className="form-control" placeholder="Search" /> </div>
                     <div className="col-lg-4 col-lg-offset-4">
@@ -1113,7 +1114,7 @@ class Gearbox extends React.Component {
                                         <Downloaddrawing />
                                         <hr />
                                         <dl className="row no-gutters">
-                                            <dt className="col-9"><h5>Bom</h5></dt>  <dt className="col-3 text-right"><h5>Stock<sup className="text-danger">(1)</sup></h5></dt>
+                                            <dt className="col-12"><h5>Bom</h5></dt>  
                                             <dt className="col-3" >List</dt> <dd className="col-9">Spec</dd>
                                             <dt className="col-3" >Gearbox</dt> <dd className="col-9">AB090003S2P2 / A0100030122</dd>
                                             <dt className="col-3" >Adapter</dt> <dd className="col-9">AD-W90-M100-3 / S0401300503</dd>
@@ -1798,7 +1799,7 @@ class RackPinion extends React.Component {
                 </dl>
                 <dl className="row">
                     <div className="offset-md-3 col-md-6">
-                        <AccordionCt head={<div>Customized Re-Order of <br /> Customized Rack / Pinion </div>} accordion="accordion4" collapse="collapse4" body={<CustomizedOrderCt />} />
+                        <AccordionCt head={<div>Re-Order of <br /> Customized Rack / Pinion </div>} accordion="accordion4" collapse="collapse4" body={<CustomizedOrderCt />} />
                     </div>
                 </dl>
             </main>
