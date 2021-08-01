@@ -12,15 +12,17 @@ class App extends React.Component {
     }
 
     loginClick() {
-        fetch("http://192.168.0.218/APEX-API/api/order/noauth", {
+        fetch("http://127.0.0.1/APEX-API/api/order", {
             method: 'GET',
+            body: JSON.stringify({})
             headers: {
                 'Content-Type': 'application/json'
             }
         }).then(function (res) {
-            console.log(res);
-        })
-            .catch(error => console.error('Error:', error))
+            return res.json();
+        }).then(function (JS) {
+            console.log(JS);
+        }).catch(error => console.error('Error:', error))
     }
 
     render() {
