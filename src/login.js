@@ -12,15 +12,23 @@ class App extends React.Component {
     }
 
     loginClick() {
+        const jsondata = {};
+        jsondata["username"] = login.value;
+        jsondata["password"] = password.value;
         fetch("http://127.0.0.1/APEX-API/api/order", {
-            method: 'GET',
-            body: JSON.stringify({})
+            method: 'POST',
+            body: JSON.stringify( jsondata ),
             headers: {
                 'Content-Type': 'application/json'
             }
         }).then(function (res) {
             return res.json();
         }).then(function (JS) {
+            if (JS["code"].toString() == "200") {
+                window.location.href ="index.html";
+            }
+            alert(JS["message"].toString());
+            
             console.log(JS);
         }).catch(error => console.error('Error:', error))
     }
@@ -40,8 +48,7 @@ class App extends React.Component {
 
                         <input type="text" id="login" className="fadeIn second" name="login" placeholder="login" />
                         <input type="text" id="password" className="fadeIn third" name="login" placeholder="password" />
-                        <input type="submit" formaction="./index.html" className="fadeIn fourth " value="Log In" />
-                        <input onClick={this.loginClick} className="fadeIn fourth " value="Log In2" />
+                        <input type="button" onClick={this.loginClick} className="fadeIn fourth " value="Log In" />
                     </form>
 
 
