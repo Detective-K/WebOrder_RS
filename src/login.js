@@ -12,15 +12,12 @@ class App extends React.Component {
     }
 
     loginClick() {
-        const jsondata = {};
-        jsondata["username"] = login.value;
-        jsondata["password"] = password.value;
+        const feStr = {};
+        feStr["username"] = login.value;
+        feStr["password"] = password.value;
         fetch("http://127.0.0.1/APEX-API/api/order", {
             method: 'POST',
-            body: JSON.stringify( jsondata ),
-            headers: {
-                'Content-Type': 'application/json'
-            }
+            body: { "feStr": feStr }
         }).then(function (res) {
             return res.json();
         }).then(function (JS) {
