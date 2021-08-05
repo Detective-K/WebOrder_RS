@@ -12,19 +12,16 @@ class App extends React.Component {
     }
 
     loginClick() {
-        //const feStr = {};
-        //feStr["SalesId"] = login.value;
-        //feStr["Pwd"] = password.value;
-        var data = { username: 'example' };
+        const feStr = {};
+        feStr["SalesId"] = login.value;
+        feStr["Pwd"] = password.value;
 
         fetch("https://localhost:44363/api/Order/Login", {
             method: 'POST',
-            mode: 'no-cors',
-            body: JSON.stringify(data), // data can be `string` or {object}!
             headers: {
-                'Accept': 'application/json; charset=utf-8',
-                'Content-Type': 'application/json;charset=UTF-8'
-            }
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(feStr)
         }).then(function (res) {
             return res.json();
         }).then(function (JS) {

@@ -221,6 +221,33 @@ class NavOneTabs extends React.Component {
 }
 
 class Order extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { forecasts: [], loading: true };
+    }
+
+    componentDidMount() {
+        this.populateWeatherData();
+    }
+
+    populateWeatherData() {
+        const feStr = {};
+        feStr["SalesId"] = 'D00482';
+        feStr["Pwd"] = 'D00482';
+
+        const response =  fetch("https://localhost:44363/api/Order/Login", {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(feStr)
+        }).then(function (res) {
+            return res.json();
+        });
+        const data = response;
+        this.setState({ forecasts: data, loading: false });
+    }
+
 
     render() {
         return (
