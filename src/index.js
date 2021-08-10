@@ -249,18 +249,18 @@ class Order extends React.Component {
     static renderOrderTable(forecasts) {
         return (
             <div id="home" class="container tab-pane active"> <br />
-                {forecasts.map((forecast, index) =>
+                {forecasts[0].Data.map((forecast, index) =>
                     <dl class="row no-gutters">
                         <dd class="col-sm-12">
-                            <h4><span class="badge badge-secondary">{forecast.oc.OrderDate} </span></h4>
+                            <h4><span class="badge badge-secondary">{forecast.OrderDate} </span></h4>
                             <div id="accordion">
                                 <div className="card">
                                     <div className="card-header no-padding-LR no-padding-TB " id={"heading" + index}>
                                         <h5 className="mb-0">
                                             <button className="btn btn-link accordionBtn no-padding-LR" data-toggle="collapse" data-target={"#collapse" + index} aria-expanded="true" aria-controls={"collapse" + index}>
                                                 <legend>      <div className="row no-gutters">
-                                                    <div className="col-6 col-sm-6 col-md-6 col-lg-6 ">{forecast.oc.OrderId}</div>
-                                                    <div className="col-6  col-sm-6 col-md-6 col-lg-6 ">{forecast.oc.Pono}</div>
+                                                    <div className="col-6 col-sm-6 col-md-6 col-lg-6 ">{forecast.OrderId}</div>
+                                                    <div className="col-6  col-sm-6 col-md-6 col-lg-6 ">{forecast.Pono}</div>
                                                 </div></legend>
                                             </button>
                                         </h5>
@@ -282,70 +282,75 @@ class Order extends React.Component {
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td colSpan="4">
-                                                            <div className="row">
-                                                                <div className="col-12  col-sm-6 col-md-7 col-lg-7 col-xl-7  "> {forecast.od.Spec.indexOf("舊") >= 0 ? forecast.od.Spec.substring(0, forecast.od.Spec.indexOf("舊")) + " / " + forecast.od.Mtmaker + " " + forecast.od.MotoName : forecast.od.Mtmaker != "" ? forecast.od.Spec + " / " + forecast.od.Mtmaker + " " + forecast.od.MotoName : forecast.od.Spec}</div>
-                                                                <div className="col-9  col-sm-2 col-md-2 col-lg-1 col-xl-1 text-right ">{forecast.od.Qty}</div>
-                                                                <div className="col-3 col-sm-3  col-md-2 col-lg-2 col-xl-2 text-right">3,715</div>
-                                                                <div className="col-12 col-sm-12 col-md-12 col-lg-2  col-xl-2 text-right">
-                                                                    <button type="button" className="btn btn-info btn-sm  " data-toggle="modal" data-target="#Modal1">
-                                                                        Detail
+                                                    {forecasts[0].Data2.map((forecast2, index2) =>
+                                                    {
+                                                        if (1 == 1) {
+                                                            <tr>
+                                                                <td colSpan="4">
+                                                                    <div className="row">
+                                                                        <div className="col-12  col-sm-6 col-md-7 col-lg-7 col-xl-7  "> {!forecast2.ods ? "" : (forecast2.ods.Spec.indexOf("舊") >= 0 ? forecast2.ods.Spec.substring(0, forecast2.ods.Spec.indexOf("舊")) + " / " + forecast2.ods.Mtmaker + " " + forecast2.ods.MotoName : forecast2.ods.Mtmaker != "" ? forecast2.ods.Spec + " / " + forecast2.ods.Mtmaker + " " + forecast2.ods.MotoName : forecast2.ods.Spec)}</div>
+                                                                        <div className="col-9  col-sm-2 col-md-2 col-lg-1 c ol-xl-1 text-right ">{!forecast2.ods ? "" : forecast2.ods.Qty}</div>
+
+                                                                        <div className="col-3 col-sm-3  col-md-2 col-lg-2 col-xl-2 text-right">3,715</div>
+                                                                        <div className="col-12 col-sm-12 col-md-12 col-lg-2  col-xl-2 text-right">
+                                                                            <button type="button" className="btn btn-info btn-sm  " data-toggle="modal" data-target="#Modal1">
+                                                                                Detail
                                                                                 </button>
                                                                                 &nbsp;&nbsp;&nbsp;
                                                                                 <button type="button" class="btn btn-danger btn-sm">
-                                                                        <i class="fas fa-trash-alt"></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div className="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                                    <div className="modal-dialog modal-dialog-centered" role="document">
-                                                                        <div className="modal-content">
-                                                                            <div className="modal-header">
-                                                                                <h5 className="modal-title" id="exampleModalLongTitle">AB142-005-S2-P2 / YASKAWA SGM7G-30A</h5>
-                                                                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                                                                    <span aria-hidden="true">&times;</span>
-                                                                                </button>
-                                                                            </div>
-                                                                            <div className="modal-body">
-                                                                                <dl className="row">
-                                                                                    <dt className="col-5 col-sm-5">{"Quantity"}</dt>
-                                                                                    <dd className="col-7 col-sm-7">5</dd>
-                                                                                    <dt className="col-5 col-sm-5">Unit Price</dt>
-                                                                                    <dd className="col-7 col-sm-7">3,715</dd>
-                                                                                    <dt className="col-5 col-sm-5">Part No.</dt>
-                                                                                    <dd className="col-7 col-sm-7">A0101041021</dd>
-                                                                                    <dt className="col-5 col-sm-5">Discount</dt>
-                                                                                    <dd className="col-7 col-sm-7">0 %</dd>
+                                                                                <i class="fas fa-trash-alt"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div className="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                                            <div className="modal-dialog modal-dialog-centered" role="document">
+                                                                                <div className="modal-content">
+                                                                                    <div className="modal-header">
+                                                                                        <h5 className="modal-title" id="exampleModalLongTitle">AB142-005-S2-P2 / YASKAWA SGM7G-30A</h5>
+                                                                                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                                                                            <span aria-hidden="true">&times;</span>
+                                                                                        </button>
+                                                                                    </div>
+                                                                                    <div className="modal-body">
+                                                                                        <dl className="row">
+                                                                                            <dt className="col-5 col-sm-5">{"Quantity"}</dt>
+                                                                                            <dd className="col-7 col-sm-7">5</dd>
+                                                                                            <dt className="col-5 col-sm-5">Unit Price</dt>
+                                                                                            <dd className="col-7 col-sm-7">3,715</dd>
+                                                                                            <dt className="col-5 col-sm-5">Part No.</dt>
+                                                                                            <dd className="col-7 col-sm-7">A0101041021</dd>
+                                                                                            <dt className="col-5 col-sm-5">Discount</dt>
+                                                                                            <dd className="col-7 col-sm-7">0 %</dd>
 
-                                                                                    <dt className="col-5 col-sm-5">Total Price</dt>
-                                                                                    <dd className="col-7 col-sm-7">15,748</dd>
-                                                                                    <dt className="col-5 col-sm-5">Currency</dt>
-                                                                                    <dd className="col-7 col-sm-7">TWD</dd>
+                                                                                            <dt className="col-5 col-sm-5">Total Price</dt>
+                                                                                            <dd className="col-7 col-sm-7">15,748</dd>
+                                                                                            <dt className="col-5 col-sm-5">Currency</dt>
+                                                                                            <dd className="col-7 col-sm-7">TWD</dd>
 
-                                                                                    <dt className="col-5 col-sm-5">Lubrication</dt>
-                                                                                    <dd className="col-7 col-sm-7">Oil / Gel</dd>
-                                                                                    <dt className="col-5 col-sm-5">Warranty</dt>
-                                                                                    <dd className="col-7 col-sm-7">Yes<sup><font color="red">(2)</font></sup></dd>
-                                                                                    <dt className="col-5 col-sm-5">Memo</dt>
-                                                                                    <dd className="col-7 col-sm-7"></dd>
-                                                                                    <dt className="col-5 col-sm-5">Customization</dt>
-                                                                                    <dd className="col-7 col-sm-7"></dd>
-                                                                                </dl>
-                                                                                <dl className="row">
-                                                                                    <dt className="col-sm-12 description-red text-danger">(1)&nbsp;Non-standard lubrication.</dt>
-                                                                                    <dt className="col-sm-12 description-red text-danger">(2)&nbsp;WARNING!!&nbsp;<sup>(*)</sup>></dt>
-                                                                                    <dt className="col-sm-12 description-red text-danger">(3)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty by the selected ratio.</dt>
-                                                                                    <dt className="col-sm-12 description-red text-danger">(4)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty due to exceeding back-drive </dt>
-                                                                                    <dt className="col-sm-12 description-red text-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;torque from application.</dt>
-                                                                                    <dt className="col-sm-12 description-red text-danger">*&nbsp;Price for reference only. For the real price, refer to P/I.</dt>
-                                                                                </dl>
+                                                                                            <dt className="col-5 col-sm-5">Lubrication</dt>
+                                                                                            <dd className="col-7 col-sm-7">Oil / Gel</dd>
+                                                                                            <dt className="col-5 col-sm-5">Warranty</dt>
+                                                                                            <dd className="col-7 col-sm-7">Yes<sup><font color="red">(2)</font></sup></dd>
+                                                                                            <dt className="col-5 col-sm-5">Memo</dt>
+                                                                                            <dd className="col-7 col-sm-7"></dd>
+                                                                                            <dt className="col-5 col-sm-5">Customization</dt>
+                                                                                            <dd className="col-7 col-sm-7"></dd>
+                                                                                        </dl>
+                                                                                        <dl className="row">
+                                                                                            <dt className="col-sm-12 description-red text-danger">(1)&nbsp;Non-standard lubrication.</dt>
+                                                                                            <dt className="col-sm-12 description-red text-danger">(2)&nbsp;WARNING!!&nbsp;<sup>(*)</sup>></dt>
+                                                                                            <dt className="col-sm-12 description-red text-danger">(3)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty by the selected ratio.</dt>
+                                                                                            <dt className="col-sm-12 description-red text-danger">(4)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty due to exceeding back-drive </dt>
+                                                                                            <dt className="col-sm-12 description-red text-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;torque from application.</dt>
+                                                                                            <dt className="col-sm-12 description-red text-danger">*&nbsp;Price for reference only. For the real price, refer to P/I.</dt>
+                                                                                        </dl>
+                                                                                    </div>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
+                                                                </td>
+                                                            </tr>
+                                                        )}
                                                     <tr>
                                                         <td colSpan="4">
                                                             <div className="row">
