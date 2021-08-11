@@ -247,6 +247,111 @@ class Order extends React.Component {
         this.setState({ forecasts: data, loading: false });
     }
     static renderOrderTable(forecasts) {
+
+        const SaleInfo = JSON.parse(localStorage.getItem("SaleInfo"));
+
+        const CustInfo = JSON.parse(localStorage.getItem("CustInfo"));
+
+        const filterMember = "BAC001";
+
+        let get_lub = (fetObj) => {
+            let temp = fetObj.ods.Lubrication;
+            if ((CustInfo[0].custId != "BAJ003") && (("A,C").indexOf(fetObj.ods.PartNo.Substring(0, 1)) > 0)) {
+                if (fetObj.ods.Spec.substring(0, 1) == "P") {
+                    if (fetObj.ods.Lubrication == "Multemp AC-D" || fetObj.ods.Lubrication == "Grease") {
+                        temp = "Grease";
+                    }
+                    else {
+                        temp = <div> {fetObj.ods.Lubrication} <sup><font color="red">(1)</font></sup></div>;
+                    }
+                }
+                else if (fetObj.ods.Spec.Substring(0, 3) == "AFX" || fetObj.ods.Spec.Substring(0, 2) == "AT" || fetObj.ods.PartNo.Substring(1, 2) == "42") {
+                    //AFX AT 系列預設潤滑油為Multemp AC-D
+                    //GL預設潤滑油為Multemp AC-D
+                    if (fetObj.ods.Lubrication == "Multemp AC-D" || fetObj.ods.Lubrication == "Grease") {
+                        temp = "Grease";
+                    }
+                    else {
+                        temp = <div> {fetObj.ods.Lubrication} <sup><font color="red">(1)</font></sup></div>;
+                    }
+                }
+                else if (("G4,G5").indexOf(fetObj.ods.PartNo.Substring(1, 2)) > 0) {
+                    //AES預設食物油
+                    if (fetObj.ods.Lubrication == "Food Grade Grease") {
+                        temp = "Food Grade Grease";
+                    }
+                    else {
+                        temp = <div> {fetObj.ods.Lubrication} <sup><font color="red">(1)</font></sup></div>;
+                    }
+
+                }
+                else {
+                    //預設油品show空白
+                    if (fetObj.ods.Lubrication == "Nye Nyogel 792D" || fetObj.ods.Lubrication == "Oil / Gel") {
+                        temp = "Oil / Gel";
+                    }
+                    else {
+                        temp = <div> {fetObj.ods.Lubrication} <sup><font color="red">(1)</font></sup></div>;
+                    }
+                }
+            }
+            else {
+                //預設油品show空白
+                if (fetObj.ods.Lubrication == "Multemp AC-D" || fetObj.ods.Lubrication == "Grease") {
+                    temp = "Grease";
+                }
+                else {
+                    temp = <div> {fetObj.ods.Lubrication} <sup><font color="red">(1)</font></sup></div>;
+                }
+            }
+
+            if (temp == "other") {
+                temp = "Else";
+
+                if (fetObj.ods.LubricationT1.length > 0) {
+                    temp = <div> {fetObj.ods.LubricationT1} <sup><font color="red">(1)</font></sup></div>;
+                }
+            }
+            return temp;
+        }
+
+        let Fun_show_warranty = (fetObj) => {
+            let temp = fetObj.ods.IsWarranty;
+            if (("A,C").indexOf(fetObj.ods.PartNo.Substring(0, 1))) {
+                if (!fetObj.ods.InertiaApp || parseFloat(fetObj.ods.InertiaApp) == 0) {
+                    if (fetObj.ods.IsWarranty == "True") {
+                        temp = <div>Yes<sup><font color="red">(2)</font></sup></div>;
+                    }
+                    else {
+                        temp = <div> No<sup><font color="red">(3)</font></sup> </div>;
+                    }
+                }
+                else {
+                    if (fetObj.ods.IsWarranty == "True") {
+                        if (fetObj.ods.InertiaAppWarranty == "True") {
+                            temp = "Yes";
+                        }
+                        else {
+                            temp = <div> No<sup><font color="red">(4)</font></sup></div>;
+                        }
+
+                    }
+                    else {
+                        temp = <div> No<sup><font color="red">(3)</font></sup></div>;
+                    }
+                }
+            }
+            else {
+                if (fetObj.ods.IsWarranty == "True") {
+                    temp = "Yes";
+                }
+                else {
+                    temp = "No";
+                }
+            }
+            return temp;
+        }
+
         return (
             <div id="home" class="container tab-pane active"> <br />
                 {forecasts[0].Data.map((forecast, index) =>
@@ -273,7 +378,7 @@ class Order extends React.Component {
                                                     <tr>
                                                         <th colSpan="4" >
                                                             <div className="row">
-                                                                <div className="  col-6 col-sm-5 col-md-7 col-lg-7 col-xl-7    ">Ordering Code </div>
+                                                                <div className="  col-6 col-sm-5 col-md-7 col-lg-7 col-xl-7">Ordering Code </div>
                                                                 <div className="col-3 col-sm-3  col-md-2  col-lg-1 col-xl-1  text-right">{"Q'ty"}</div>
                                                                 <div className="col-3 col-sm-3 col-md-2   col-lg-2 col-xl-2  text-right">Unit Price</div>
                                                                 <div className="col-1 col-sm-1 col-md-12  col-lg-12 col-xl-2  text-right "></div>
@@ -282,18 +387,17 @@ class Order extends React.Component {
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    {forecasts[0].Data2.map((forecast2, index2) =>
-                                                    {
-                                                        if (1 == 1) {
-                                                            <tr>
+                                                    {forecasts[0].Data2.map((forecast2, index2) => {
+                                                        if ((forecast2.ocs.OrderId == forecast.OrderId) && forecast2.ods) {
+                                                            return <tr>
                                                                 <td colSpan="4">
                                                                     <div className="row">
-                                                                        <div className="col-12  col-sm-6 col-md-7 col-lg-7 col-xl-7  "> {!forecast2.ods ? "" : (forecast2.ods.Spec.indexOf("舊") >= 0 ? forecast2.ods.Spec.substring(0, forecast2.ods.Spec.indexOf("舊")) + " / " + forecast2.ods.Mtmaker + " " + forecast2.ods.MotoName : forecast2.ods.Mtmaker != "" ? forecast2.ods.Spec + " / " + forecast2.ods.Mtmaker + " " + forecast2.ods.MotoName : forecast2.ods.Spec)}</div>
-                                                                        <div className="col-9  col-sm-2 col-md-2 col-lg-1 c ol-xl-1 text-right ">{!forecast2.ods ? "" : forecast2.ods.Qty}</div>
+                                                                        <div className="col-12  col-sm-6 col-md-7 col-lg-7 col-xl-7  "> {(forecast2.ods.Spec.indexOf("舊") >= 0 ? forecast2.ods.Spec.substring(0, forecast2.ods.Spec.indexOf("舊")) + " / " + forecast2.ods.Mtmaker + " " + forecast2.ods.MotoName : forecast2.ods.Mtmaker != "" ? forecast2.ods.Spec + " / " + forecast2.ods.Mtmaker + " " + forecast2.ods.MotoName : forecast2.ods.Spec)}</div>
+                                                                        <div className="col-9  col-sm-2 col-md-2 col-lg-1 c ol-xl-1 text-right ">{forecast2.ods.Qty}</div>
 
-                                                                        <div className="col-3 col-sm-3  col-md-2 col-lg-2 col-xl-2 text-right">3,715</div>
+                                                                        <div className="col-3 col-sm-3  col-md-2 col-lg-2 col-xl-2 text-right">{CustInfo.length > 0 ? (filterMember.indexOf(CustInfo[0].custId) > 0 ? "****" : forecast2.ods.Price) : forecast2.ods.Price}</div>
                                                                         <div className="col-12 col-sm-12 col-md-12 col-lg-2  col-xl-2 text-right">
-                                                                            <button type="button" className="btn btn-info btn-sm  " data-toggle="modal" data-target="#Modal1">
+                                                                            <button type="button" className="btn btn-info btn-sm  " data-toggle="modal" data-target={"#Modal" + index2}>
                                                                                 Detail
                                                                                 </button>
                                                                                 &nbsp;&nbsp;&nbsp;
@@ -301,11 +405,11 @@ class Order extends React.Component {
                                                                                 <i class="fas fa-trash-alt"></i>
                                                                             </button>
                                                                         </div>
-                                                                        <div className="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                                        <div className="modal fade" id={"Modal" + index2} tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                                                             <div className="modal-dialog modal-dialog-centered" role="document">
                                                                                 <div className="modal-content">
                                                                                     <div className="modal-header">
-                                                                                        <h5 className="modal-title" id="exampleModalLongTitle">AB142-005-S2-P2 / YASKAWA SGM7G-30A</h5>
+                                                                                        <h5 className="modal-title" id="exampleModalLongTitle"> {(forecast2.ods.Spec.indexOf("舊") >= 0 ? forecast2.ods.Spec.substring(0, forecast2.ods.Spec.indexOf("舊")) + " / " + forecast2.ods.Mtmaker + " " + forecast2.ods.MotoName : forecast2.ods.Mtmaker != "" ? forecast2.ods.Spec + " / " + forecast2.ods.Mtmaker + " " + forecast2.ods.MotoName : forecast2.ods.Spec)}</h5>
                                                                                         <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                                                                             <span aria-hidden="true">&times;</span>
                                                                                         </button>
@@ -313,23 +417,23 @@ class Order extends React.Component {
                                                                                     <div className="modal-body">
                                                                                         <dl className="row">
                                                                                             <dt className="col-5 col-sm-5">{"Quantity"}</dt>
-                                                                                            <dd className="col-7 col-sm-7">5</dd>
+                                                                                            <dd className="col-7 col-sm-7">{forecast2.ods.Qty}</dd>
                                                                                             <dt className="col-5 col-sm-5">Unit Price</dt>
-                                                                                            <dd className="col-7 col-sm-7">3,715</dd>
+                                                                                            <dd className="col-7 col-sm-7">{CustInfo.length > 0 ? (filterMember.indexOf(CustInfo[0].custId) > 0 ? "****" : forecast2.ods.Price) : forecast2.ods.Price}</dd>
                                                                                             <dt className="col-5 col-sm-5">Part No.</dt>
-                                                                                            <dd className="col-7 col-sm-7">A0101041021</dd>
+                                                                                            <dd className="col-7 col-sm-7">{forecast2.ods.PartNo}</dd>
                                                                                             <dt className="col-5 col-sm-5">Discount</dt>
-                                                                                            <dd className="col-7 col-sm-7">0 %</dd>
+                                                                                            <dd className="col-7 col-sm-7">{(CustInfo.length > 0 ? (filterMember.indexOf(CustInfo[0].custId) > 0 ? "****" : forecast2.ods.Discount) : forecast2.ods.Discount) + "%"} </dd>
 
                                                                                             <dt className="col-5 col-sm-5">Total Price</dt>
-                                                                                            <dd className="col-7 col-sm-7">15,748</dd>
+                                                                                            <dd className="col-7 col-sm-7">{(CustInfo.length > 0 ? (filterMember.indexOf(CustInfo[0].custId) > 0 ? "****" : forecast2.ods.SubTot) : forecast2.ods.SubTot)}</dd>
                                                                                             <dt className="col-5 col-sm-5">Currency</dt>
-                                                                                            <dd className="col-7 col-sm-7">TWD</dd>
+                                                                                            <dd className="col-7 col-sm-7">{forecast2.ocs.Currency}</dd>
 
                                                                                             <dt className="col-5 col-sm-5">Lubrication</dt>
-                                                                                            <dd className="col-7 col-sm-7">Oil / Gel</dd>
+                                                                                            <dd className="col-7 col-sm-7">{get_lub(forecast2)}</dd>
                                                                                             <dt className="col-5 col-sm-5">Warranty</dt>
-                                                                                            <dd className="col-7 col-sm-7">Yes<sup><font color="red">(2)</font></sup></dd>
+                                                                                            <dd className="col-7 col-sm-7">{Fun_show_warranty(forecast2)}</sup></dd>
                                                                                             <dt className="col-5 col-sm-5">Memo</dt>
                                                                                             <dd className="col-7 col-sm-7"></dd>
                                                                                             <dt className="col-5 col-sm-5">Customization</dt>
@@ -349,70 +453,9 @@ class Order extends React.Component {
                                                                         </div>
                                                                     </div>
                                                                 </td>
-                                                            </tr>
-                                                        )}
-                                                    <tr>
-                                                        <td colSpan="4">
-                                                            <div className="row">
-                                                                <div className="col-12  col-sm-6 col-md-7 col-lg-7 col-xl-7  "> PAII090-005-S2 / MITSUBISHI HG-KR73 </div>
-                                                                <div className="col-9  col-sm-2 col-md-2 col-lg-1 col-xl-1 text-right ">11</div>
-                                                                <div className="col-3 col-sm-3  col-md-2 col-lg-2 col-xl-2 text-right">4,431</div>
-                                                                <div className="col-12 col-sm-12 col-md-12 col-lg-2  col-xl-2 text-right">
-                                                                    <button type="button" className="btn btn-info btn-sm  " data-toggle="modal" data-target="#Modal2">
-                                                                        Detail
-                                                                                </button>
-                                                                                &nbsp;&nbsp;&nbsp;
-                                                                                <button type="button" class="btn btn-danger btn-sm">
-                                                                        <i class="fas fa-trash-alt"></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div className="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                                    <div className="modal-dialog modal-dialog-centered" role="document">
-                                                                        <div className="modal-content">
-                                                                            <div className="modal-header">
-                                                                                <h5 className="modal-title" id="exampleModalLongTitle">Detail</h5>
-                                                                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                                                                    <span aria-hidden="true">&times;</span>
-                                                                                </button>
-                                                                            </div>
-                                                                            <div className="modal-body">
-                                                                                <dl className="row">
-                                                                                    <dt className="col-5 col-sm-5">Part No.</dt>
-                                                                                    <dd className="col-7 col-sm-7">A0101041021</dd>
-                                                                                    <dt className="col-5 col-sm-5">Discount</dt>
-                                                                                    <dd className="col-7 col-sm-7">0</dd>
-
-                                                                                    <dt className="col-5 col-sm-5">Total</dt>
-                                                                                    <dd className="col-7 col-sm-7">15,748</dd>
-
-                                                                                    <dt className="col-5 col-sm-5">Lubrication</dt>
-                                                                                    <dd className="col-7 col-sm-7">Oil / Gel</dd>
-                                                                                    <dt className="col-5 col-sm-5">Warranty</dt>
-                                                                                    <dd className="col-7 col-sm-7">Yes<sup><font color="red">(2)</font></sup></dd>
-                                                                                    <dt className="col-5 col-sm-5">Memo</dt>
-                                                                                    <dd className="col-7 col-sm-7"></dd>
-                                                                                    <dt className="col-5 col-sm-5">Customization</dt>
-                                                                                    <dd className="col-7 col-sm-7"></dd>
-                                                                                </dl>
-                                                                                <dl className="row">
-                                                                                    <dt className="col-sm-12"><font color="red">(1)&nbsp;Non-standard lubrication.</font></dt>
-                                                                                    <dt className="col-sm-12"><font color="red">(2)&nbsp;WARNING!!&nbsp;<sup>(*)</sup></font></dt>
-                                                                                    <dt className="col-sm-12"><font color="red">(3)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty by the selected ratio.</font></dt>
-                                                                                    <dt className="col-sm-12"><font color="red">(4)&nbsp;WARNING!!&nbsp;&nbsp;No Warranty due to exceeding back-drive torque from application.</font></dt>
-                                                                                    <dt className="col-sm-12"><font color="red">*&nbsp;Price for reference only. For the real price, refer to P/I.</font></dt>
-                                                                                </dl>
-                                                                            </div>
-
-
-                                                                            <div className="modal-footer">
-                                                                                <button type="button" className="btn btn-secondary " data-dismiss="modal">Close</button>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
+                                                            </tr>;
+                                                        }
+                                                    })}
                                                 </tbody>
                                             </table>
                                             <dl className="row">

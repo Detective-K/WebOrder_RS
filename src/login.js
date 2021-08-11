@@ -15,6 +15,8 @@ class App extends React.Component {
         const feStr = {};
         feStr["SalesId"] = login.value;
         feStr["Pwd"] = password.value;
+        feStr["CustId"] = login.value;
+        feStr["Pwd"] = password.value;
 
         fetch("https://localhost:44363/api/Order/Login", {
             method: 'POST',
@@ -26,6 +28,8 @@ class App extends React.Component {
             return res.json();
         }).then(function (JS) {
             if (JS["code"].toString() == "200") {
+                localStorage.setItem("CustInfo", JSON.stringify(JS.custInfo));
+                localStorage.setItem("SaleInfo", JSON.stringify(JS.saleInfo));
                 window.location.href ="index.html";
             }
             alert(JS["message"].toString());
@@ -48,7 +52,7 @@ class App extends React.Component {
                     <form>
 
                         <input type="text" id="login" className="fadeIn second" name="login" placeholder="login" />
-                        <input type="text" id="password" className="fadeIn third" name="login" placeholder="password" />
+                        <input type="password" id="password" className="fadeIn third" name="login" placeholder="password" />
                         <input type="button" onClick={this.loginClick} className="fadeIn fourth " value="Log In" />
                     </form>
 
