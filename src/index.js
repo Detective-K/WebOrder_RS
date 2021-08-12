@@ -256,7 +256,7 @@ class Order extends React.Component {
 
         let get_lub = (fetObj) => {
             let temp = fetObj.ods.Lubrication;
-            if ((CustInfo[0].custId != "BAJ003") && (("A,C").indexOf(fetObj.ods.PartNo.Substring(0, 1)) > 0)) {
+            if ((CustInfo[0].custId != "BAJ003") && (("A,C").indexOf(fetObj.ods.PartNo.substring(0, 1)) > 0)) {
                 if (fetObj.ods.Spec.substring(0, 1) == "P") {
                     if (fetObj.ods.Lubrication == "Multemp AC-D" || fetObj.ods.Lubrication == "Grease") {
                         temp = "Grease";
@@ -265,7 +265,7 @@ class Order extends React.Component {
                         temp = <div> {fetObj.ods.Lubrication} <sup><font color="red">(1)</font></sup></div>;
                     }
                 }
-                else if (fetObj.ods.Spec.Substring(0, 3) == "AFX" || fetObj.ods.Spec.Substring(0, 2) == "AT" || fetObj.ods.PartNo.Substring(1, 2) == "42") {
+                else if (fetObj.ods.Spec.substring(0, 3) == "AFX" || fetObj.ods.Spec.Substring(0, 2) == "AT" || fetObj.ods.PartNo.substring(1, 2) == "42") {
                     //AFX AT 系列預設潤滑油為Multemp AC-D
                     //GL預設潤滑油為Multemp AC-D
                     if (fetObj.ods.Lubrication == "Multemp AC-D" || fetObj.ods.Lubrication == "Grease") {
@@ -275,7 +275,7 @@ class Order extends React.Component {
                         temp = <div> {fetObj.ods.Lubrication} <sup><font color="red">(1)</font></sup></div>;
                     }
                 }
-                else if (("G4,G5").indexOf(fetObj.ods.PartNo.Substring(1, 2)) > 0) {
+                else if (("G4,G5").indexOf(fetObj.ods.PartNo.substring(1, 2)) > 0) {
                     //AES預設食物油
                     if (fetObj.ods.Lubrication == "Food Grade Grease") {
                         temp = "Food Grade Grease";
@@ -317,7 +317,7 @@ class Order extends React.Component {
 
         let Fun_show_warranty = (fetObj) => {
             let temp = fetObj.ods.IsWarranty;
-            if (("A,C").indexOf(fetObj.ods.PartNo.Substring(0, 1))) {
+            if (("A,C").indexOf(fetObj.ods.PartNo.substring(0, 1)) >0) {
                 if (!fetObj.ods.InertiaApp || parseFloat(fetObj.ods.InertiaApp) == 0) {
                     if (fetObj.ods.IsWarranty == "True") {
                         temp = <div>Yes<sup><font color="red">(2)</font></sup></div>;
@@ -357,7 +357,7 @@ class Order extends React.Component {
                 {forecasts[0].Data.map((forecast, index) =>
                     <dl class="row no-gutters">
                         <dd class="col-sm-12">
-                            <h4><span class="badge badge-secondary">{forecast.OrderDate} </span></h4>
+                            <h4><span class="badge badge-secondary">{moment(forecast.OrderDate).format('YYYY-MM-DD')} </span></h4>
                             <div id="accordion">
                                 <div className="card">
                                     <div className="card-header no-padding-LR no-padding-TB " id={"heading" + index}>
@@ -433,11 +433,11 @@ class Order extends React.Component {
                                                                                             <dt className="col-5 col-sm-5">Lubrication</dt>
                                                                                             <dd className="col-7 col-sm-7">{get_lub(forecast2)}</dd>
                                                                                             <dt className="col-5 col-sm-5">Warranty</dt>
-                                                                                            <dd className="col-7 col-sm-7">{Fun_show_warranty(forecast2)}</sup></dd>
+                                                                                            <dd className="col-7 col-sm-7">{Fun_show_warranty(forecast2)}</dd>
                                                                                             <dt className="col-5 col-sm-5">Memo</dt>
-                                                                                            <dd className="col-7 col-sm-7"></dd>
+                                                                                            <dd className="col-7 col-sm-7">{forecast2.ods.Memo}</dd>
                                                                                             <dt className="col-5 col-sm-5">Customization</dt>
-                                                                                            <dd className="col-7 col-sm-7"></dd>
+                                                                                            <dd className="col-7 col-sm-7">{forecast2.ods.Memo ? forecast2.ods.Memo :"" }</dd>
                                                                                         </dl>
                                                                                         <dl className="row">
                                                                                             <dt className="col-sm-12 description-red text-danger">(1)&nbsp;Non-standard lubrication.</dt>
