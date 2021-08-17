@@ -51,6 +51,19 @@ const PageTitle = (props) => {
     )
 };
 class NewOrder extends React.Component {
+    constructor(props) {
+        super(props);
+        const options = [
+            { value: 'TWD', label: 'TWD' },
+            { value: 'USD', label: 'USD' },
+            { value: 'CNY', label: 'CNY' },
+            { value: 'EUR', label: 'EUR' }
+        ];
+        this.state = { options: options, selectedValue: { value: 'EUR', label: 'EUR' } };
+    }
+    handleChange(value) {
+        this.setState({ selectedValue: value })
+    }
     render() {
         return (
             <div>
@@ -81,11 +94,14 @@ class NewOrder extends React.Component {
                                             <div class="input-group-prepend">
                                                 <span className="input-group-text" id="basic-addon1">Currency</span>
                                             </div>
-                                            <select className="form-control" id="currencySel">
-                                                <option></option>
-                                                <option>TWD</option>
-                                                <option>USD</option>
-                                            </select>
+                                            <div className="form-control p-0">
+                                                <Select  id="currencySel"
+                                                    value={this.state.selectedValue}
+                                                    options={this.state.options}
+                                                    onChange={value => this.handleChange(value)}
+                                                />
+                                            </div>
+                                           
                                         </div>
                                     </div>
                                     <div className="form-group">
@@ -260,7 +276,7 @@ class Order extends React.Component {
         const SaleInfo = JSON.parse(localStorage.getItem("SaleInfo"));
 
         const CustInfo = JSON.parse(localStorage.getItem("CustInfo"));
-
+        const test = { 'SaleInfo': JSON.stringify(SaleInfo), 'CustInfo': JSON.stringify(CustInfo) };
         const filterMember = "BAC001";
 
         let get_lub = (fetObj) => {
@@ -274,7 +290,7 @@ class Order extends React.Component {
                         temp = <div> {fetObj.ods.Lubrication} <sup><font color="red">(1)</font></sup></div>;
                     }
                 }
-                else if (fetObj.ods.Spec.substring(0, 3) == "AFX" || fetObj.ods.Spec.Substring(0, 2) == "AT" || fetObj.ods.PartNo.substring(1, 2) == "42") {
+                else if (fetObj.ods.Spec.substring(0, 3) == "AFX" || fetObj.ods.Spec.substring(0, 2) == "AT" || fetObj.ods.PartNo.substring(1, 2) == "42") {
                     //AFX AT 系列預設潤滑油為Multemp AC-D
                     //GL預設潤滑油為Multemp AC-D
                     if (fetObj.ods.Lubrication == "Multemp AC-D" || fetObj.ods.Lubrication == "Grease") {
@@ -495,6 +511,10 @@ class Order extends React.Component {
         );
     }
 
+     addClick () {
+
+    }
+
     render() {
         let contents = this.state.loading
             ? <p><em>Loading...</em></p>
@@ -511,7 +531,7 @@ class Order extends React.Component {
                 <div className="row">
                     <div className="col-lg-4 col-lg-offset-4"> <input type="search" id="search" value="" className="form-control" placeholder="Search" /> </div>
                     <div className="col-lg-4 col-lg-offset-4">
-                        <NewOrder btname="Add New Order" />
+                        <NewOrder onClick={this.loginClick} btname="Add New Order" />
                     </div>
                 </div>
                 <br />
@@ -530,7 +550,7 @@ class Order extends React.Component {
                         <div class="tab-content">
                             <div id="home" class="container tab-pane active"> <br />
                                 {contents}
-                                </div>
+                            </div>
                             <div id="menu1" class="container tab-pane fade"><br />
                                 {contents2}
                             </div>
