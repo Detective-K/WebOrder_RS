@@ -59,7 +59,8 @@ class NewOrder extends React.Component {
             { value: 'CNY', label: 'CNY' },
             { value: 'EUR', label: 'EUR' }
         ];
-        this.state = { options: options, selectedValue: { value: 'EUR', label: 'EUR' } };
+        const CustInfo = JSON.parse(localStorage.getItem("CustInfo"));
+        this.state = { options: options, selectedValue: { value: CustInfo[0].countryCode, label: CustInfo[0].countryCode } };
     }
     handleChange(value) {
         this.setState({ selectedValue: value })
